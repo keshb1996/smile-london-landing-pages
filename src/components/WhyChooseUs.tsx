@@ -88,7 +88,7 @@ const WhyChooseUs = () => {
               <h3 className="text-xl font-semibold text-dental-gold mb-2">Advanced Technology</h3>
               <p className="text-gray-700 mb-3">3D Digital Scanning</p>
               <p className="text-sm text-gray-400">
-                Precise treatment planning with iTero digital impressions for optimal results
+                We use cutting edge dental technology, which enables our dentists to give you the perfect smile.
               </p>
             </div>
           </div>
