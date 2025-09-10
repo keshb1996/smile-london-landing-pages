@@ -23,7 +23,12 @@ const Index = () => {
       <ConsultationIncludes />
       
       {/* Consultation Form Section */}
-      <section className="bg-white">
+      <section 
+        className="relative bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('/lovable-uploads/79136365-29bd-4c22-a3a0-910e8989d6e2.png')`
+        }}
+      >
         <div className="dental-section">
           <ConsultationForm />
         </div>
