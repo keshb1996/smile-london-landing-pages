@@ -1,32 +1,55 @@
-import { Check } from 'lucide-react';
+import { Scan, Sparkles, Shield, Smile } from 'lucide-react';
 
 const ConsultationIncludes = () => {
   const benefits = [
-    "Personalised Treatment Plan",
-    "FREE iTero scan (worth £150)",
-    "FREE Hygiene & Airflow (worth £170+)",
-    "FREE Vivera Retainers (worth £500)",
-    "FREE Teeth Whitening (worth £450)"
+    {
+      icon: Scan,
+      title: "Full personalised FREE iTero scan",
+      value: "worth £150"
+    },
+    {
+      icon: Sparkles,
+      title: "FREE Hygiene & Airflow",
+      value: "worth £170+"
+    },
+    {
+      icon: Shield,
+      title: "FREE Vivera Retainers",
+      value: "worth £500"
+    },
+    {
+      icon: Smile,
+      title: "FREE Teeth Whitening",
+      value: "worth £450"
+    }
   ];
 
   return (
-    <section className="bg-dental-gold/5 py-16">
+    <section className="bg-gray-50 py-16">
       <div className="dental-section">
-        <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-dental-black mb-12">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-dental-black mb-4">
             and what's included in the consultation?
           </h2>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="flex flex-col items-center text-center space-y-4 p-6 bg-white rounded-lg shadow-sm">
-                <div className="bg-dental-gold rounded-full p-3">
-                  <Check className="h-6 w-6 text-white" />
+        </div>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {benefits.map((benefit, index) => {
+            const IconComponent = benefit.icon;
+            return (
+              <div key={index} className="bg-white rounded-lg p-6 text-center shadow-sm border border-gray-100">
+                <div className="bg-dental-gold/10 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                  <IconComponent className="h-8 w-8 text-dental-gold" />
                 </div>
-                <span className="text-sm font-medium text-dental-black leading-relaxed">{benefit}</span>
+                <h3 className="font-semibold text-dental-black mb-2 text-sm leading-tight">
+                  {benefit.title}
+                </h3>
+                <p className="text-dental-gold font-medium text-sm">
+                  {benefit.value}
+                </p>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>
