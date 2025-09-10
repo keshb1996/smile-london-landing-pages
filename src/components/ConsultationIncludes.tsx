@@ -30,7 +30,7 @@ const ConsultationIncludes = () => {
   ];
 
   return (
-    <section className="bg-yellow-400 py-8">
+    <section className="bg-dental-gold/20 py-8">
       <div className="dental-section">
         <div className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">
