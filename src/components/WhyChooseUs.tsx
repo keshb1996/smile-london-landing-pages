@@ -61,8 +61,8 @@ const WhyChooseUs = () => {
           </div>
           
           <div className="text-center text-white">
-            <div className="relative mb-6 bg-dental-gold rounded-2xl w-64 h-64 mx-auto flex items-center justify-center">
-              <Zap className="h-24 w-24 text-dental-black" />
+            <div className="relative mb-6">
+              <img src="/lovable-uploads/28609ed5-650c-4d6c-bc43-5ee4fabfc4e6.png" alt="Harley Street W1 location sign" className="rounded-2xl mx-auto w-64 h-64 object-cover shadow-dental-lg" />
             </div>
             <h3 className="text-xl font-semibold text-dental-gold mb-2">Advanced Technology</h3>
             <p className="text-gray-300 mb-3">3D Digital Scanning</p>
