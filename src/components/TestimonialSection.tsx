@@ -13,20 +13,18 @@ const TestimonialSection = () => {
           </div>
           
           <blockquote className="text-2xl md:text-3xl font-medium text-dental-black mb-8 leading-relaxed">
-            "I was initially hesitant about getting my teeth straightened as an adult, but the Invisalign 
-            treatment at Elite Dental exceeded all my expectations. The aligners were comfortable, 
-            virtually invisible, and the results were amazing. I now have the confident smile I've always wanted!"
+            "I am delighted to share my outstanding experience with Invisalign, a game-changer in orthodontic treatment. From the start, the process was seamless, with custom-made, virtually invisible aligners allowing me to undergo the treatment without any self-consciousness. The flexibility of removing the aligners for oral care and special occasions made the journey convenient, and the speed of progress was impressive"
           </blockquote>
           
           <div className="flex items-center justify-center space-x-4">
             <img 
-              src={testimonialImage} 
-              alt="Emma Thompson - Happy Invisalign Patient"
+              src="/lovable-uploads/66b23212-9510-4b5b-8cce-76957148a66c.png" 
+              alt="Harry Bradley - Happy Invisalign Patient"
               className="w-16 h-16 rounded-full object-cover border-2 border-dental-black"
             />
             <div className="text-left">
-              <div className="font-semibold text-dental-black text-lg">Emma Thompson</div>
-              <div className="text-dental-black opacity-80">Marketing Executive, London</div>
+              <div className="font-semibold text-dental-black text-lg">Harry Bradley</div>
+              <div className="text-dental-black opacity-80">Legal Practice Manager</div>
             </div>
           </div>
           
