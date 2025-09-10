@@ -75,7 +75,7 @@ const WhyChooseUs = () => {
                 <img src="/lovable-uploads/28609ed5-650c-4d6c-bc43-5ee4fabfc4e6.png" alt="Harley Street W1 location sign" className="rounded-2xl mx-auto w-64 h-64 object-cover shadow-dental-lg" />
               </div>
               <h3 className="text-xl font-semibold text-dental-gold mb-2">Modern Clinic</h3>
-              <p className="text-gray-700 mb-3">State-of-the-Art Facility</p>
+              <p className="text-gray-700 mb-3">In a relaxed, discrete location</p>
               <p className="text-sm text-gray-400">
                 Located in the heart of London with the latest dental technology and comfortable amenities
               </p>
