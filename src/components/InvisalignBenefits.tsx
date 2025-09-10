@@ -1,7 +1,7 @@
-import { Eye, Utensils, Heart, Clock } from 'lucide-react';
+import { EyeOff, Utensils, Heart, Clock } from 'lucide-react';
 const InvisalignBenefits = () => {
   const benefits = [{
-    icon: Eye,
+    icon: EyeOff,
     text: "Invisible, with no metal brackets or wires"
   }, {
     icon: Utensils,
