@@ -47,16 +47,20 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
-        },
+        // Dental brand colors
+        "dental-gold": "hsl(var(--dental-gold))",
+        "dental-black": "hsl(var(--dental-black))",
+        "dental-gray": "hsl(var(--dental-gray))",
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
+      spacing: {
+        'dental-section': '5rem',
+      },
+      boxShadow: {
+        'dental': 'var(--dental-shadow)',
+        'dental-lg': 'var(--dental-shadow-lg)',
       },
       borderRadius: {
         lg: "var(--radius)",
