@@ -24,14 +24,19 @@ const Index = () => {
       
       {/* Consultation Form Section */}
       <section 
-        className="bg-cover bg-center bg-no-repeat relative"
+        className="bg-cover bg-center bg-no-repeat relative min-h-[600px]"
         style={{
           backgroundImage: "url('/lovable-uploads/66625a79-01c3-4a44-8581-efd2809ba38c.png')"
         }}
       >
-        <div className="bg-white/80">
-          <div className="dental-section">
-            <ConsultationForm />
+        <div className="dental-section">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            <div className="bg-white/90 p-8 rounded-lg">
+              <ConsultationForm />
+            </div>
+            <div className="hidden lg:block">
+              {/* Empty space to show background image */}
+            </div>
           </div>
         </div>
       </section>
