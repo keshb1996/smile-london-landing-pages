@@ -36,12 +36,9 @@ const HeroSection = () => {
               ))}
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div>
               <Button className="dental-cta text-xl px-12 py-6">
                 Book Free Consultation
-              </Button>
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-dental-black text-xl px-12 py-6">
-                Learn More
               </Button>
             </div>
           </div>
