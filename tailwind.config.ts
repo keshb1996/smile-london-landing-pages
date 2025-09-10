@@ -53,8 +53,7 @@ export default {
         "dental-gray": "hsl(var(--dental-gray))",
       },
       fontFamily: {
-        sans: ['Poppins', 'system-ui', 'sans-serif'],
-        'poppins': ['Poppins', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       spacing: {
         'dental-section': '5rem',
