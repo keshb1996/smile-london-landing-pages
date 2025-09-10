@@ -51,35 +51,29 @@ const WhyChooseUs = () => {
         <div className="grid md:grid-cols-3 gap-12">
           <div className="text-center text-white">
             <div className="relative mb-6">
-              <img src="/lovable-uploads/02d62cc8-f83b-406c-a10b-b2adc96f859e.png" alt="Dr. Shruti Premsagar, Leading Invisalign Specialist" className="rounded-2xl mx-auto w-64 h-64 object-cover shadow-dental-lg" />
+              <img src={dentistImage} alt="Dr. Sarah Johnson, Lead Invisalign Specialist" className="rounded-2xl mx-auto w-64 h-64 object-cover shadow-dental-lg" />
             </div>
-            <h3 className="text-xl font-semibold text-dental-gold mb-2">Dr. Shruti Premsagar</h3>
-            <p className="text-gray-300 mb-3">Leading Invisalign Specialist</p>
-            <p className="text-sm text-gray-400">
-              Award-winning Invisalign provider with extensive experience in complex orthodontic cases
-            </p>
-          </div>
-          
-          <div className="text-center text-white">
-            <div className="relative mb-6">
-              <img src="/lovable-uploads/28609ed5-650c-4d6c-bc43-5ee4fabfc4e6.png" alt="Harley Street W1 location sign" className="rounded-2xl mx-auto w-64 h-64 object-cover shadow-dental-lg" />
-            </div>
-            <h3 className="text-xl font-semibold text-dental-gold mb-2">Modern Clinic</h3>
-            <p className="text-gray-300 mb-3">State-of-the-Art Facility</p>
-            <p className="text-sm text-gray-400">
-              Located in the heart of London with the latest dental technology and comfortable amenities
-            </p>
+            <h3 className="text-xl font-semibold text-dental-gold mb-2">Dr. Sarah Johnson</h3>
+            <p className="text-gray-300 mb-3">Lead Invisalign Specialist</p>
+            <p className="text-sm text-gray-400">Award-winning Invisalign provider with extensive experience in complex orthodontic cases.</p>
           </div>
           
           <div className="text-center text-white">
             <div className="relative mb-6">
               <img src={clinicImage} alt="Elite Dental modern clinic interior" className="rounded-2xl mx-auto w-64 h-64 object-cover shadow-dental-lg" />
             </div>
+            <h3 className="text-xl font-semibold text-dental-gold mb-2">Relaxed, Discrete Location</h3>
+            <p className="text-gray-300 mb-3">State-of-the-Art Facility</p>
+            <p className="text-sm text-gray-400">Based in the Harley Street District in Central London, our practice is located in a beautiful London townhouse in a quiet, discrete street.</p>
+          </div>
+          
+          <div className="text-center text-white">
+            <div className="relative mb-6 bg-dental-gold rounded-2xl w-64 h-64 mx-auto flex items-center justify-center">
+              <Zap className="h-24 w-24 text-dental-black" />
+            </div>
             <h3 className="text-xl font-semibold text-dental-gold mb-2">Advanced Technology</h3>
             <p className="text-gray-300 mb-3">3D Digital Scanning</p>
-            <p className="text-sm text-gray-400">
-              Precise treatment planning with iTero digital impressions for optimal results
-            </p>
+            <p className="text-sm text-gray-400">Precise treatment planning with cutting-edge technology to give you the perfect smile.</p>
           </div>
         </div>
       </div>
