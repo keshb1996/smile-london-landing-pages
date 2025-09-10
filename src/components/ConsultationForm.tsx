@@ -11,7 +11,7 @@ interface ConsultationFormProps {
 
 const ConsultationForm = ({ 
   title = "Book an Expert Consultation", 
-  subtitle = "Get your personalized treatment plan",
+  subtitle = "Get your personalised treatment plan",
   className = ""
 }: ConsultationFormProps) => {
   const [formData, setFormData] = useState({
