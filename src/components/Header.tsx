@@ -1,4 +1,4 @@
-import { Phone, Mail } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 
 const Header = () => {
   return (
@@ -29,6 +29,10 @@ const Header = () => {
             <div className="flex items-center space-x-2">
               <Mail className="h-4 w-4 text-yellow-400" />
               <span className="font-medium">info@smilelondon.co.uk</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <MapPin className="h-4 w-4 text-yellow-400" />
+              <span className="font-medium">Marylebone, London</span>
             </div>
           </div>
         </div>
