@@ -11,7 +11,7 @@ const Header = () => {
               <img 
                 src="/lovable-uploads/a4e94840-c583-4032-9b0c-18600c1a83d6.png" 
                 alt="Smile London" 
-                className="h-12 mb-2"
+                className="h-8 object-contain mb-2"
               />
               <p className="text-sm text-gray-300 font-light">
                 Based in Central London's world<br />
