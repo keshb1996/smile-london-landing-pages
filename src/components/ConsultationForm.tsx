@@ -30,7 +30,7 @@ const ConsultationForm = ({
     }));
   };
   return <div className={`max-w-md mx-auto ${className}`}>
-      <div className="text-center mb-8">
+      <div className="text-center mb-4">
         <h2 className="dental-subheading mb-3">{title}</h2>
         <p className="text-muted-foreground">{subtitle}</p>
       </div>
