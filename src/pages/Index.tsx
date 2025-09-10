@@ -9,6 +9,7 @@ import InvisalignInfo from '@/components/InvisalignInfo';
 import TestimonialSection from '@/components/TestimonialSection';
 import GoogleReviews from '@/components/GoogleReviews';
 import SmileTransformations from '@/components/SmileTransformations';
+import BeforeAfterGallery from '@/components/BeforeAfterGallery';
 import DentalJourney from '@/components/DentalJourney';
 import FAQSection from '@/components/FAQSection';
 import FinalCTA from '@/components/FinalCTA';
@@ -43,6 +44,7 @@ const Index = () => {
       
       <InvisalignBenefits />
       <PromotionalBanner />
+      <BeforeAfterGallery />
       <WhyChooseUs />
       <InvisalignInfo />
       <TestimonialSection />
