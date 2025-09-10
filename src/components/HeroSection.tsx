@@ -14,7 +14,7 @@ const HeroSection = () => {
     <section 
       className="relative overflow-hidden bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: `url('/lovable-uploads/180fd707-9b51-4aba-a9c2-f44daf6128e5.png')`
+        backgroundImage: `url('/lovable-uploads/ee994950-7d02-4927-9fe4-23623b41e806.png')`
       }}
     >
       <div className="dental-section">
