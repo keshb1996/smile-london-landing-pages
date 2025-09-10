@@ -10,13 +10,12 @@ const Header = () => {
           <div className="flex items-center justify-between">
             {/* Logo and location */}
             <div className="flex flex-col">
-              <div className="text-4xl font-bold text-dental-gold tracking-wider">
-                SMILE
-              </div>
-              <div className="text-4xl font-bold text-dental-gold tracking-wider -mt-2">
-                LONDON
-              </div>
-              <div className="text-white text-sm mt-2">
+              <img 
+                src="/lovable-uploads/f6c782dd-e64e-4944-b5b2-7fb4b4d18d36.png" 
+                alt="Smile London Logo"
+                className="h-16 w-auto mb-2"
+              />
+              <div className="text-white text-sm">
                 Based in Central London's world<br />
                 renowned Harley Street district
               </div>
