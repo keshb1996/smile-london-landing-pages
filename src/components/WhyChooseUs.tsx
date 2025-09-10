@@ -86,7 +86,7 @@ const WhyChooseUs = () => {
                 <img src={clinicImage} alt="Elite Dental modern clinic interior" className="rounded-2xl mx-auto w-64 h-64 object-cover shadow-dental-lg" />
               </div>
               <h3 className="text-xl font-semibold text-dental-gold mb-2">Advanced Technology</h3>
-              <p className="text-gray-700 mb-3">3D Digital Scanning</p>
+              <p className="text-gray-700 mb-3">State-of-the-Art Facility</p>
               <p className="text-sm text-gray-400">
                 We use cutting edge dental technology, which enables our dentists to give you the perfect smile.
               </p>
