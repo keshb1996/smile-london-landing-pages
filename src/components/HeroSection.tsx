@@ -25,7 +25,7 @@ const HeroSection = () => {
               Clear, discreet teeth alignment 
               <span className="text-dental-gold"> without traditional braces</span>
             </h1>
-            <p className="text-2xl md:text-3xl text-black font-medium">
+            <p className="text-2xl md:text-3xl text-white font-medium">
               ...in Marylebone, London
             </p>
             
