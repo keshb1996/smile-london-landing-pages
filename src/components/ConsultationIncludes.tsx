@@ -30,10 +30,10 @@ const ConsultationIncludes = () => {
   ];
 
   return (
-    <section className="bg-gray-50 py-16">
+    <section className="bg-gray-50 py-8">
       <div className="dental-section">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+        <div className="text-center mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">
             and what's included in the consultation?
           </h2>
         </div>
@@ -42,9 +42,9 @@ const ConsultationIncludes = () => {
           {benefits.map((benefit, index) => {
             const IconComponent = benefit.icon;
             return (
-              <div key={index} className="flex flex-col items-center text-center space-y-4 p-6 bg-white rounded-lg shadow-sm">
-                <div className="bg-dental-gold/10 rounded-full p-4">
-                  <IconComponent className="h-8 w-8 text-dental-gold" />
+              <div key={index} className="flex flex-col items-center text-center space-y-3 p-4 bg-white rounded-lg shadow-sm">
+                <div className="bg-dental-gold/10 rounded-full p-3">
+                  <IconComponent className="h-6 w-6 text-dental-gold" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-800 mb-1">{benefit.title}</h3>
