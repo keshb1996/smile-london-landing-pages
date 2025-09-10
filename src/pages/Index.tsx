@@ -1,6 +1,5 @@
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
-import ConsultationIncludes from '@/components/ConsultationIncludes';
 import ConsultationForm from '@/components/ConsultationForm';
 import InvisalignBenefits from '@/components/InvisalignBenefits';
 import PromotionalBanner from '@/components/PromotionalBanner';
@@ -20,7 +19,6 @@ const Index = () => {
     <div className="min-h-screen">
       <Header />
       <HeroSection />
-      <ConsultationIncludes />
       
       {/* Consultation Form Section */}
       <section className="bg-white">
