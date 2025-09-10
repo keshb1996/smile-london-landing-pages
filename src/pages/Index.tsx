@@ -29,7 +29,7 @@ const Index = () => {
           backgroundImage: "url('/lovable-uploads/66625a79-01c3-4a44-8581-efd2809ba38c.png')"
         }}
       >
-        <div className="bg-white/90 backdrop-blur-sm">
+        <div className="bg-white/80">
           <div className="dental-section">
             <ConsultationForm />
           </div>
