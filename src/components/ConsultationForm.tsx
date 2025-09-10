@@ -59,6 +59,19 @@ const ConsultationForm = ({
         <p className="text-xs text-muted-foreground text-center">
           By submitting this form, you agree to our privacy policy and consent to be contacted about our services.
         </p>
+        
+        <div className="text-center mt-6">
+          <p className="text-sm text-muted-foreground mb-3">Or call us directly</p>
+          <Button 
+            variant="outline" 
+            className="w-full" 
+            asChild
+          >
+            <a href="tel:02045401566">
+              Call Now: 020 4540 1566
+            </a>
+          </Button>
+        </div>
       </form>
     </div>;
 };
