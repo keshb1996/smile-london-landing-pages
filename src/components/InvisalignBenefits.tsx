@@ -15,6 +15,9 @@ const InvisalignBenefits = () => {
   }];
   return <section className="bg-gray-50 py-0">
       <div className="dental-section">
+        <div className="text-center mb-12">
+          <h2 className="dental-heading">Why Choose Invisalign?</h2>
+        </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {benefits.map((benefit, index) => {
           const IconComponent = benefit.icon;
