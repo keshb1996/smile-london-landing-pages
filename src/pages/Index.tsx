@@ -23,14 +23,20 @@ const Index = () => {
       <ConsultationIncludes />
       
       {/* Consultation Form Section */}
-      <section 
-        className="relative bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('/lovable-uploads/79136365-29bd-4c22-a3a0-910e8989d6e2.png')`
-        }}
-      >
+      <section className="bg-white">
         <div className="dental-section">
-          <ConsultationForm />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div className="order-2 lg:order-1">
+              <ConsultationForm />
+            </div>
+            <div className="order-1 lg:order-2">
+              <img 
+                src="/lovable-uploads/1504bfc1-6241-4489-a851-012e24ca6203.png" 
+                alt="Hands holding Invisalign clear aligners" 
+                className="w-full h-auto rounded-lg"
+              />
+            </div>
+          </div>
         </div>
       </section>
       
