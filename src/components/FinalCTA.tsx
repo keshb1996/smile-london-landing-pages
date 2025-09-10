@@ -16,7 +16,7 @@ const FinalCTA = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="text-dental-black">
             <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
-              Book Your Free Consultation Today
+              Book Your Expert Consultation Today
             </h2>
             <p className="text-xl mb-8 opacity-90">
               Take the first step towards your perfect smile. Our expert team will assess your needs 
@@ -44,7 +44,7 @@ const FinalCTA = () => {
           
           <div className="bg-white rounded-2xl p-8 shadow-dental-lg">
             <ConsultationForm 
-              title="Book Your Free Consultation"
+              title="Book Your Expert Consultation"
               subtitle="Normally £150 - Limited time offer"
             />
           </div>

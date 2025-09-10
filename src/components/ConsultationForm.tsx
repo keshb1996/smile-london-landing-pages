@@ -10,7 +10,7 @@ interface ConsultationFormProps {
 }
 
 const ConsultationForm = ({ 
-  title = "Book a Free Consultation", 
+  title = "Book an Expert Consultation", 
   subtitle = "Get your personalized treatment plan",
   className = ""
 }: ConsultationFormProps) => {

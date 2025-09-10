@@ -4,7 +4,7 @@ const DentalJourney = () => {
   const steps = [
     {
       icon: Calendar,
-      title: "1. Free Consultation",
+      title: "1. Expert Consultation",
       description: "Comprehensive examination and treatment planning discussion",
       duration: "45 minutes"
     },
@@ -79,10 +79,10 @@ const DentalJourney = () => {
               Ready to Start Your Journey?
             </h3>
             <p className="text-muted-foreground mb-6">
-              Book your free consultation today and take the first step towards your perfect smile.
+              Book your expert consultation today and take the first step towards your perfect smile.
             </p>
             <button className="dental-cta">
-              Schedule Free Consultation
+              Schedule Expert Consultation
             </button>
           </div>
         </div>

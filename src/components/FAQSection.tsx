@@ -25,7 +25,7 @@ const FAQSection = () => {
     },
     {
       question: "How much does Invisalign cost?",
-      answer: "The cost of Invisalign varies depending on the complexity of your case and length of treatment. We offer flexible payment plans and work with most insurance providers. During your free consultation, we'll provide you with a detailed cost breakdown and discuss payment options that work for your budget."
+      answer: "The cost of Invisalign varies depending on the complexity of your case and length of treatment. We offer flexible payment plans and work with most insurance providers. During your expert consultation, we'll provide you with a detailed cost breakdown and discuss payment options that work for your budget."
     },
     {
       question: "Are the aligners really invisible?",

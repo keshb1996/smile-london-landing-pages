@@ -42,7 +42,7 @@ const HeroSection = () => {
             
             <div>
               <Button className="dental-cta text-xl px-12 py-6">
-                Book Free Consultation
+                Book Expert Consultation
               </Button>
             </div>
           </div>
