@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import ConsultationForm from '@/components/ConsultationForm';
+import InvisalignBenefits from '@/components/InvisalignBenefits';
 import PromotionalBanner from '@/components/PromotionalBanner';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import InvisalignInfo from '@/components/InvisalignInfo';
@@ -26,6 +27,7 @@ const Index = () => {
         </div>
       </section>
       
+      <InvisalignBenefits />
       <PromotionalBanner />
       <WhyChooseUs />
       <InvisalignInfo />
