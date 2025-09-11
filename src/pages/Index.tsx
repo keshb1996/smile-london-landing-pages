@@ -49,10 +49,10 @@ const Index = () => {
       <InvisalignInfo />
       <TestimonialSection />
       <GoogleReviews />
+      <FinalCTA />
       <SmileTransformations />
       <DentalJourney />
       <FAQSection />
-      <FinalCTA />
       <ContactInfo />
       <Footer />
     </div>
