@@ -9,6 +9,9 @@ import WhyChooseUs from '@/components/WhyChooseUs';
 import InvisalignInfo from '@/components/InvisalignInfo';
 import TestimonialSection from '@/components/TestimonialSection';
 import GoogleReviews from '@/components/GoogleReviews';
+import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { useState } from 'react';
 
 import BeforeAfterGallery from '@/components/BeforeAfterGallery';
 import DentalJourney from '@/components/DentalJourney';
@@ -18,6 +21,8 @@ import ContactInfo from '@/components/ContactInfo';
 import Footer from '@/components/Footer';
 
 const Index = () => {
+  const [expertDialogOpen, setExpertDialogOpen] = useState(false);
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -48,6 +53,23 @@ const Index = () => {
       <PromotionalBanner />
       <BeforeAfterGallery />
       <WhyChooseUs />
+      
+      {/* Overlapping Expert Button */}
+      <div className="relative -my-12 z-10">
+        <div className="flex justify-center">
+          <Dialog open={expertDialogOpen} onOpenChange={setExpertDialogOpen}>
+            <DialogTrigger asChild>
+              <Button className="dental-cta text-xl px-12 py-6 shadow-lg">
+                Speak To An Expert
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-w-md bg-white">
+              <ConsultationForm />
+            </DialogContent>
+          </Dialog>
+        </div>
+      </div>
+      
       <InvisalignInfo />
       <TestimonialSection />
       <GoogleReviews />
