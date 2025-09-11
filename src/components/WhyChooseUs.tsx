@@ -104,7 +104,7 @@ const WhyChooseUs = () => {
           <div className="text-center mt-12">
             <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
               <DialogTrigger asChild>
-                <Button size="lg" className="bg-dental-gold text-dental-black hover:bg-dental-gold/90 font-semibold px-8 py-3">
+                <Button size="lg" className="bg-dental-gold text-dental-black hover:bg-dental-gold/90 font-semibold px-12 py-4 text-lg">
                   Speak To An Expert
                 </Button>
               </DialogTrigger>
