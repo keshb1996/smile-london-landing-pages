@@ -6,7 +6,7 @@ const ContactInfo = () => {
     {
       icon: MapPin,
       title: "Address",
-      info: "123 Harley Street, Marylebone, London W1G 7JU",
+      info: "38 Queen Anne Street, Marylebone, London W1G 8HZ",
       extra: "Located in the prestigious medical district"
     },
     {
