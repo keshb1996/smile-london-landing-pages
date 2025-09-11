@@ -43,7 +43,9 @@ const Index = () => {
       <section 
         className="bg-cover bg-center bg-no-repeat relative min-h-[600px]"
         style={{
-          backgroundImage: "url('/lovable-uploads/66625a79-01c3-4a44-8581-efd2809ba38c.png')"
+          backgroundImage: window.innerWidth < 768 
+            ? "url('/lovable-uploads/db13b79a-4942-44e2-b7e9-0b6aba52d09b.png')" 
+            : "url('/lovable-uploads/66625a79-01c3-4a44-8581-efd2809ba38c.png')"
         }}
       >
         <div className="dental-section">
