@@ -1,15 +1,11 @@
 import { Star } from 'lucide-react';
 import testimonialImage from '@/assets/testimonial-patient.jpg';
-
 const TestimonialSection = () => {
-  return (
-    <section className="bg-dental-gold">
+  return <section className="bg-dental-gold">
       <div className="dental-section">
         <div className="text-center max-w-4xl mx-auto">
           <div className="flex justify-center mb-6">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="h-8 w-8 text-dental-black fill-current" />
-            ))}
+            {[...Array(5)].map((_, i) => <Star key={i} className="h-8 w-8 text-dental-black fill-current" />)}
           </div>
           
           <blockquote className="text-2xl md:text-3xl font-medium text-dental-black mb-8 leading-relaxed">
@@ -17,24 +13,16 @@ const TestimonialSection = () => {
           </blockquote>
           
           <div className="flex items-center justify-center space-x-4">
-            <img 
-              src="/lovable-uploads/66b23212-9510-4b5b-8cce-76957148a66c.png" 
-              alt="Harry Bradley - Happy Invisalign Patient"
-              className="w-16 h-16 rounded-full object-cover border-2 border-dental-black"
-            />
+            <img src="/lovable-uploads/66b23212-9510-4b5b-8cce-76957148a66c.png" alt="Harry Bradley - Happy Invisalign Patient" className="w-16 h-16 rounded-full object-cover border-2 border-dental-black" />
             <div className="text-left">
               <div className="font-semibold text-dental-black text-lg">Harry Bradley</div>
               <div className="text-dental-black opacity-80">Legal Practice Manager</div>
             </div>
           </div>
           
-          <div className="mt-8 text-sm text-dental-black opacity-75">
-            Treatment completed in 14 months • Age 32
-          </div>
+          <div className="mt-8 text-sm text-dental-black opacity-75">Treatment completed in 8 months • Age 32</div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default TestimonialSection;
