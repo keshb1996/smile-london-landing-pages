@@ -22,9 +22,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Header />
       <MobileHeroImage />
-      <div className="-mt-8 md:mt-0">
-        <HeroSection />
-      </div>
+      <HeroSection />
       <ConsultationIncludes />
       
       {/* Consultation Form Section */}
