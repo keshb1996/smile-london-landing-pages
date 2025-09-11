@@ -1,13 +1,7 @@
 import { Check } from 'lucide-react';
 import ConsultationForm from './ConsultationForm';
 const FinalCTA = () => {
-const benefits = [
-    "Harley Street Centre of Excellence",
-    "World-Renowned Dentists",
-    "5 year guarantee", 
-    "FREE X-ray",
-    "0% Finance Available"
-  ];
+  const benefits = ["Harley Street Centre of Excellence", "World-Renowned Dentists", "5 year guarantee", "FREE X-ray", "0% Finance Available"];
   return <section className="bg-dental-gold">
       <div className="dental-section">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -26,12 +20,7 @@ const benefits = [
                 </div>)}
             </div>
             
-            <div className="bg-dental-black/10 rounded-2xl p-6">
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-2">£150 VALUE</div>
-                <div className="text-lg">FREE During Limited Time</div>
-              </div>
-            </div>
+            
           </div>
           
           <div className="bg-white rounded-2xl p-8 shadow-dental-lg">
