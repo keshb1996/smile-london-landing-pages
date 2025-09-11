@@ -28,33 +28,8 @@ const benefits = [
             
             <div className="bg-dental-black/10 rounded-2xl p-6">
               <div className="text-center">
-                <h3 className="text-2xl font-bold mb-2">Our FREE Invisalign® Offer</h3>
-                <div className="text-3xl font-bold text-dental-gold mb-4">Save £1,000+</div>
-                <div className="text-left space-y-2 mb-4">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-dental-gold rounded-full"></div>
-                    <span className="text-sm">FREE iTero scan (worth £150)</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-dental-gold rounded-full"></div>
-                    <span className="text-sm">FREE Hygiene & Airflow (worth £170+)</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-dental-gold rounded-full"></div>
-                    <span className="text-sm">Free In-Clinic Consultation (worth £350)</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-dental-gold rounded-full"></div>
-                    <span className="text-sm">FREE Vivera Retainers (worth £500)</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-dental-gold rounded-full"></div>
-                    <span className="text-sm">Treatment Plan + 0% APR Finance Option</span>
-                  </div>
-                </div>
-                <div className="bg-dental-gold/20 rounded-lg p-3">
-                  <div className="text-dental-black font-semibold text-sm">UK&apos;S PREMIER INVISALIGN PROVIDER</div>
-                </div>
+                <div className="text-3xl font-bold mb-2">£150 VALUE</div>
+                <div className="text-lg">FREE During Limited Time</div>
               </div>
             </div>
           </div>
