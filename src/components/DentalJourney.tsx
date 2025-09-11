@@ -60,13 +60,9 @@ const DentalJourney = () => {
                     {step.title}
                   </h3>
                   
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed">
                     {step.description}
                   </p>
-                  
-                  <div className="text-sm text-dental-gold font-semibold">
-                    {step.duration}
-                  </div>
                 </div>
               </div>
             ))}
