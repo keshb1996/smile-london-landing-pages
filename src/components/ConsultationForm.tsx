@@ -32,7 +32,7 @@ const ConsultationForm = ({
   return <div className={`max-w-md mx-auto ${className}`}>
       <div className="text-center mb-4">
         <h2 className="dental-subheading mb-3">{title}</h2>
-        <p className="text-muted-foreground">{subtitle}</p>
+        
       </div>
       
       <form onSubmit={handleSubmit} className="space-y-6">
@@ -62,11 +62,7 @@ const ConsultationForm = ({
         
         <div className="text-center mt-6">
           <p className="text-sm text-muted-foreground mb-3">Or call us directly</p>
-          <Button 
-            variant="outline" 
-            className="w-full" 
-            asChild
-          >
+          <Button variant="outline" className="w-full" asChild>
             <a href="tel:02045401566">
               Call Now: 020 4540 1566
             </a>
