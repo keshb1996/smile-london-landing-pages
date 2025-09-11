@@ -9,8 +9,8 @@ const WhyChooseUs = () => {
     description: "Saturday appointments available"
   }, {
     icon: Clock,
-    title: "Evening Hours",
-    description: "Convenient appointments until 8pm weekdays"
+    title: "Your Consultation Includes:",
+    description: "Free X-Ray, Hygiene, Whitening, and More!"
   }, {
     icon: Shield,
     title: "Insurance Accepted",
