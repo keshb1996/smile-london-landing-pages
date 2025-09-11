@@ -48,11 +48,11 @@ const Index = () => {
       <WhyChooseUs />
       <InvisalignInfo />
       <TestimonialSection />
-      <FinalCTA />
       <GoogleReviews />
       <SmileTransformations />
       <DentalJourney />
       <FAQSection />
+      <FinalCTA />
       <ContactInfo />
       <Footer />
     </div>
