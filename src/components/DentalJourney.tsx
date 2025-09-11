@@ -16,7 +16,7 @@ const DentalJourney = () => {
     },
     {
       icon: Scan,
-      title: "3. 3D Scanning",
+      title: "3. iTero 3D Scanning",
       description: "Precise digital impressions using iTero 3D technology",
       duration: "20 minutes" 
     },
