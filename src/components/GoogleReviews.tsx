@@ -10,39 +10,53 @@ import {
 const GoogleReviews = () => {
   const reviews = [
     {
-      name: "James Wilson",
+      name: "James Dore",
       rating: 5,
-      review: "Exceptional service from start to finish. The team made the Invisalign process seamless and comfortable.",
-      platform: "Google",
-      date: "2 weeks ago"
-    },
-    {
-      name: "Sarah Mitchell", 
-      rating: 5,
-      review: "Dr. Johnson and her team are absolutely fantastic. My Invisalign treatment exceeded all expectations!",
-      platform: "Google",
-      date: "1 month ago"
-    },
-    {
-      name: "Michael Chen",
-      rating: 5, 
-      review: "Professional, friendly, and highly skilled. The clinic is modern and the results speak for themselves.",
-      platform: "Google",
-      date: "3 weeks ago"
-    },
-    {
-      name: "Lisa Rodriguez",
-      rating: 5,
-      review: "Amazing transformation! The clear aligners were so convenient and the staff was incredibly supportive.",
-      platform: "Google", 
-      date: "1 week ago"
-    },
-    {
-      name: "David Thompson",
-      rating: 5,
-      review: "Couldn't be happier with my new smile. The entire process was smooth and professional.",
+      review: "Great staff who were warm and welcoming and made the kids' first trip to the dentist lovely. Dr Gupta was excellent. Very pleased that this is our new dentist surgery!",
       platform: "Google",
       date: "2 months ago"
+    },
+    {
+      name: "Millie Demachen", 
+      rating: 5,
+      review: "Had the most amazing experience here! My teeth look unbelievable and all the staff are so kind and attentive. My teeth look exactly how i wanted them. i cant recommend this place enough!",
+      platform: "Google",
+      date: "7 months ago"
+    },
+    {
+      name: "Olya Nogovitsyna",
+      rating: 5, 
+      review: "Thanks to Dr. Nhova and Smile London, I have my confidence back! My teeth look fantastic, and I am genuinely impressed with the level of care I received.",
+      platform: "Google",
+      date: "10 months ago"
+    },
+    {
+      name: "Phillip A.",
+      rating: 5,
+      review: "They are the best. Very punctual, was confident and happy with the work Nikita did. It was my first time and I was very comfortable and she answered all of my questions. Thank you Smile :)",
+      platform: "Google", 
+      date: "a year ago"
+    },
+    {
+      name: "Nekel Tatt",
+      rating: 5,
+      review: "Best dental experience I have had! So professional and painless. I have already booked another consultation for composite bonding, I can't wait to start my straight teeth journey!",
+      platform: "Google",
+      date: "2 years ago"
+    },
+    {
+      name: "Amy Barrett",
+      rating: 5,
+      review: "Amazing experience from start to finish. Such an understanding and patient team that aim to reach your every expectation. Could not be happier with my experience with Smile London! I highly recommend",
+      platform: "Google",
+      date: "a year ago"
+    },
+    {
+      name: "Ruby Whish",
+      rating: 5,
+      review: "Everything was perfect ! From the consultation to the finished result I was so well taken care of and so happy with the results. I would recommend 100%",
+      platform: "Google",
+      date: "9 months ago"
     }
   ];
 
