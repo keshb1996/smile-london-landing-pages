@@ -6,7 +6,7 @@ const WhyChooseUs = () => {
   const benefits = [{
     icon: Calendar,
     title: "Open Weekends",
-    description: "Saturday and Sunday appointments available"
+    description: "Saturday appointments available"
   }, {
     icon: Clock,
     title: "Evening Hours",
