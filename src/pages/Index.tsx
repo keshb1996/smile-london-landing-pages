@@ -50,11 +50,11 @@ const Index = () => {
 
       {/* Consultation Form Section */}
       <section 
-        className="relative min-h-[600px] bg-dental-gold md:bg-cover md:bg-center md:bg-no-repeat"
+        className="bg-cover bg-center bg-no-repeat relative min-h-[600px]"
         style={{
-          backgroundImage: window.innerWidth >= 768 
-            ? "url('/lovable-uploads/66625a79-01c3-4a44-8581-efd2809ba38c.png')" 
-            : "none"
+          backgroundImage: window.innerWidth < 768 
+            ? "url('/lovable-uploads/e8a15ef0-8fe8-483c-b18e-c8473e899a28.png')" 
+            : "url('/lovable-uploads/66625a79-01c3-4a44-8581-efd2809ba38c.png')"
         }}
       >
         <div className="dental-section">
