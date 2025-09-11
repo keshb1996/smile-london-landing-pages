@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 const Header = () => {
   return (
     <header className="bg-black text-white sticky top-0 z-50">
-      <div className="container mx-auto px-4 py-4 md:py-6">
+      <div className="container mx-auto px-4 py-6">
         <div className="flex items-center justify-between">
           {/* Logo and location */}
           <div className="flex items-center">
@@ -11,14 +11,11 @@ const Header = () => {
               <img 
                 src="/lovable-uploads/a4e94840-c583-4032-9b0c-18600c1a83d6.png" 
                 alt="Smile London" 
-                className="h-6 md:h-8 object-contain mb-1 md:mb-2"
+                className="h-8 object-contain mb-2"
               />
-              <p className="text-xs md:text-sm text-gray-300 font-light hidden sm:block">
+              <p className="text-sm text-gray-300 font-light">
                 Based in Central London's world<br />
                 renowned Harley Street district
-              </p>
-              <p className="text-xs text-gray-300 font-light sm:hidden">
-                Harley Street, London
               </p>
             </div>
           </div>
