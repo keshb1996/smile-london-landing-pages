@@ -59,7 +59,7 @@ const GoogleReviews = () => {
                 <Star key={i} className="h-6 w-6 text-dental-gold fill-current" />
               ))}
             </div>
-            <span className="text-xl font-semibold">4.9/5</span>
+            <span className="text-xl font-semibold">4.6/5</span>
             <span className="text-muted-foreground">Based on 200+ reviews</span>
           </div>
         </div>
