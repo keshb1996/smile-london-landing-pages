@@ -50,7 +50,7 @@ const Index = () => {
 
       {/* Consultation Form Section */}
       <section 
-        className="relative min-h-[600px] bg-dental-gray md:bg-cover md:bg-center md:bg-no-repeat"
+        className="relative min-h-[600px] bg-dental-gold md:bg-cover md:bg-center md:bg-no-repeat"
         style={{
           backgroundImage: window.innerWidth >= 768 
             ? "url('/lovable-uploads/66625a79-01c3-4a44-8581-efd2809ba38c.png')" 
