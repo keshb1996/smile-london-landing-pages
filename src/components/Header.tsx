@@ -7,16 +7,23 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo and location */}
           <div className="flex items-center">
-            <div className="flex flex-col">
+            <div className="flex flex-col md:flex-col">
               <img 
                 src="/lovable-uploads/a4e94840-c583-4032-9b0c-18600c1a83d6.png" 
                 alt="Smile London" 
-                className="h-8 object-contain mb-2"
+                className="h-8 object-contain mb-2 md:mb-2 hidden md:block"
               />
-              <p className="text-sm text-gray-300 font-light">
-                Based in Central London's world<br />
-                renowned Harley Street district
-              </p>
+              <div className="flex items-center md:block">
+                <p className="text-sm text-gray-300 font-light">
+                  Based in Central London's world<br className="hidden md:block" />
+                  <span className="md:block">renowned Harley Street district</span>
+                </p>
+                <img 
+                  src="/lovable-uploads/a4e94840-c583-4032-9b0c-18600c1a83d6.png" 
+                  alt="Smile London" 
+                  className="h-6 object-contain ml-3 md:hidden"
+                />
+              </div>
             </div>
           </div>
           
