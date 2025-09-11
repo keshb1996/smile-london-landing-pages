@@ -22,6 +22,8 @@ const InteractiveMap = () => {
       center: clinicLocation,
       zoom: 15,
       pitch: 45,
+      interactive: true,
+      trackResize: false
     });
 
     // Add navigation controls
