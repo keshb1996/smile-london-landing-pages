@@ -19,9 +19,17 @@ import ContactInfo from '@/components/ContactInfo';
 import Footer from '@/components/Footer';
 
 const Index = () => {
-  // Ensure page loads at the top
+  // Ensure page loads at the top, especially important for mobile
   useEffect(() => {
+    // Immediate scroll to top
     window.scrollTo(0, 0);
+    
+    // Additional scroll restoration after a brief delay for mobile
+    const timer = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
+    
+    return () => clearTimeout(timer);
   }, []);
 
   return (
