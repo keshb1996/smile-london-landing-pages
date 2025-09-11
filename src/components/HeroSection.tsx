@@ -23,7 +23,7 @@ const HeroSection = () => {
       }}
     >
       <div className="dental-section">
-        <div className="grid md:grid-cols-2 gap-12 items-center min-h-[400px]">
+        <div className="grid md:grid-cols-2 gap-12 items-center min-h-[200px]">
           {/* Content */}
           <div className="text-black space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
