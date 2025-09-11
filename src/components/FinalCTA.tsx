@@ -1,7 +1,13 @@
 import { Check } from 'lucide-react';
 import ConsultationForm from './ConsultationForm';
 const FinalCTA = () => {
-  const benefits = ["Free comprehensive consultation (normally £150)", "3D digital smile preview", "Personalized treatment plan", "Flexible payment options available", "No obligation - just expert advice"];
+  const benefits = [
+    "Harley Street Centre of Excellence",
+    "World-Renowned Dentists",
+    "5 year guarantee",
+    "FREE X-ray",
+    "0% Finance Available"
+  ];
   return <section className="bg-dental-gold">
       <div className="dental-section">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
