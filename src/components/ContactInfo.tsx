@@ -107,7 +107,7 @@ const ContactInfo = () => {
             {/* Overlay with key location info */}
             <div className="absolute top-6 left-6 bg-white rounded-lg p-4 shadow-dental">
               <div className="text-sm">
-                <div className="font-semibold text-dental-black">Elite Dental</div>
+                <div className="font-semibold text-dental-black">Smile London</div>
                 <div className="text-muted-foreground">123 Harley Street</div>
                 <div className="text-dental-gold font-medium">2 min from Oxford Circus</div>
               </div>
