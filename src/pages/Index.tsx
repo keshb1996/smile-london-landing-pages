@@ -3,15 +3,14 @@ import MobileHeroImage from '@/components/MobileHeroImage';
 import HeroSection from '@/components/HeroSection';
 import ConsultationIncludes from '@/components/ConsultationIncludes';
 import ConsultationForm from '@/components/ConsultationForm';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
 import InvisalignBenefits from '@/components/InvisalignBenefits';
 import PromotionalBanner from '@/components/PromotionalBanner';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import InvisalignInfo from '@/components/InvisalignInfo';
 import TestimonialSection from '@/components/TestimonialSection';
 import GoogleReviews from '@/components/GoogleReviews';
-import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
-import { useState } from 'react';
 
 import BeforeAfterGallery from '@/components/BeforeAfterGallery';
 import DentalJourney from '@/components/DentalJourney';
@@ -21,8 +20,6 @@ import ContactInfo from '@/components/ContactInfo';
 import Footer from '@/components/Footer';
 
 const Index = () => {
-  const [expertDialogOpen, setExpertDialogOpen] = useState(false);
-
   return (
     <div className="min-h-screen">
       <Header />
@@ -54,12 +51,12 @@ const Index = () => {
       <BeforeAfterGallery />
       <WhyChooseUs />
       
-      {/* Overlapping Expert Button */}
-      <div className="relative -my-12 z-10">
-        <div className="flex justify-center">
-          <Dialog open={expertDialogOpen} onOpenChange={setExpertDialogOpen}>
+      {/* Speak To An Expert CTA Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="dental-section text-center">
+          <Dialog>
             <DialogTrigger asChild>
-              <Button className="dental-cta text-xl px-12 py-6 shadow-lg">
+              <Button className="dental-cta text-xl px-12 py-6">
                 Speak To An Expert
               </Button>
             </DialogTrigger>
@@ -68,7 +65,7 @@ const Index = () => {
             </DialogContent>
           </Dialog>
         </div>
-      </div>
+      </section>
       
       <InvisalignInfo />
       <TestimonialSection />
