@@ -1,13 +1,7 @@
 import { Check } from 'lucide-react';
 import ConsultationForm from './ConsultationForm';
 const FinalCTA = () => {
-  const benefits = [
-    "Harley Street Centre of Excellence",
-    "World-Renowned Dentists",
-    "5 year guarantee",
-    "FREE X-ray",
-    "0% Finance Available"
-  ];
+  const benefits = ["Free comprehensive consultation (normally £150)", "3D digital smile preview", "Personalized treatment plan", "Flexible payment options available", "No obligation - just expert advice"];
   return <section className="bg-dental-gold">
       <div className="dental-section">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -19,9 +13,7 @@ const FinalCTA = () => {
             
             <div className="space-y-4 mb-8">
               {benefits.map((benefit, index) => <div key={index} className="flex items-center space-x-3">
-                  <div className="bg-dental-black rounded-full p-1">
-                    <Check className="h-4 w-4 text-dental-gold" />
-                  </div>
+                  
                   <span className="text-lg font-medium">{benefit}</span>
                 </div>)}
             </div>
