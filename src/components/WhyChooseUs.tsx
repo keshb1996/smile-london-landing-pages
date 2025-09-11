@@ -1,4 +1,4 @@
-import { Clock, Calendar, Shield, Award, Users, Zap } from 'lucide-react';
+import { Gift, Calendar, Shield, Award, Users, Zap } from 'lucide-react';
 import dentistImage from '@/assets/dentist-portrait.jpg';
 import clinicImage from '@/assets/clinic-interior.jpg';
 
@@ -8,7 +8,7 @@ const WhyChooseUs = () => {
     title: "Open Weekends",
     description: "Saturday appointments available"
   }, {
-    icon: Clock,
+    icon: Gift,
     title: "Your Consultation Includes:",
     description: "Free X-Ray, Hygiene, Whitening, and More!"
   }, {
