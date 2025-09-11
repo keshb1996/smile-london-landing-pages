@@ -41,10 +41,7 @@ const Index = () => {
       
       {/* Consultation Form Section */}
       <section 
-        className="bg-cover bg-center bg-no-repeat relative min-h-[600px]"
-        style={{
-          backgroundImage: "url('/lovable-uploads/66625a79-01c3-4a44-8581-efd2809ba38c.png')"
-        }}
+        className="bg-cover bg-center bg-no-repeat relative min-h-[600px] md:bg-[url('/lovable-uploads/66625a79-01c3-4a44-8581-efd2809ba38c.png')] bg-[url('/lovable-uploads/20b5cbf2-8d51-4d9b-aaea-63c02baa661c.png')]"
       >
         <div className="dental-section">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
