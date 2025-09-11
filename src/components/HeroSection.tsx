@@ -18,14 +18,14 @@ const HeroSection = () => {
       }}
     >
       <div className="dental-section">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center min-h-[500px] md:min-h-[600px]">
+        <div className="grid md:grid-cols-2 gap-12 items-center min-h-[600px]">
           {/* Content */}
-          <div className="text-black space-y-6 md:space-y-8">
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight">
+          <div className="text-black space-y-8">
+            <h1 className="text-4xl md:text-6xl font-bold leading-tight">
               Clear, discreet teeth alignment 
               <span className="text-dental-gold"> without traditional braces</span>
             </h1>
-            <p className="text-xl sm:text-2xl md:text-3xl text-black font-medium">
+            <p className="text-2xl md:text-3xl text-black font-medium">
               ...in Marylebone, London
             </p>
             
@@ -41,7 +41,7 @@ const HeroSection = () => {
             </div>
             
             <div>
-              <Button className="dental-cta text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 w-full sm:w-auto">
+              <Button className="dental-cta text-xl px-12 py-6">
                 Book Expert Consultation
               </Button>
             </div>
