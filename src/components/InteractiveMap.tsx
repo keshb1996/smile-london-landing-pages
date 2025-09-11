@@ -1,15 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { MapPin, Key } from 'lucide-react';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
 
 const InteractiveMap = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
-  const [mapboxToken, setMapboxToken] = useState('');
-  const [tokenEntered, setTokenEntered] = useState(false);
+  const [mapboxToken] = useState('pk.eyJ1Ijoia2VzaGI5NiIsImEiOiJjbWZmZ2FjdmQwZ212Mm1yOXF6dHRiMDNzIn0.YCLyo3ezwAe_OUor_Cltsw');
+  const [tokenEntered] = useState(true);
 
   // Clinic location coordinates (Harley Street area)
   const clinicLocation: [number, number] = [-0.1448, 51.5191];
@@ -65,64 +62,9 @@ const InteractiveMap = () => {
   };
 
   useEffect(() => {
-    if (tokenEntered && mapboxToken) {
-      initializeMap();
-    }
-  }, [tokenEntered, mapboxToken]);
-
-  const handleTokenSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (mapboxToken.trim()) {
-      localStorage.setItem('mapbox_token', mapboxToken);
-      setTokenEntered(true);
-    }
-  };
-
-  // Check for saved token on mount
-  useEffect(() => {
-    const savedToken = localStorage.getItem('mapbox_token');
-    if (savedToken) {
-      setMapboxToken(savedToken);
-      setTokenEntered(true);
-    }
+    initializeMap();
   }, []);
 
-  if (!tokenEntered) {
-    return (
-      <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-dental-gold/20 to-dental-gold/40 rounded-2xl">
-        <div className="text-center text-dental-black p-8 max-w-md">
-          <Key className="h-16 w-16 mx-auto mb-4" />
-          <h3 className="text-2xl font-semibold mb-4">Interactive Map Setup</h3>
-          <p className="text-lg mb-6">
-            Enter your Mapbox public token to enable the interactive map
-          </p>
-          <form onSubmit={handleTokenSubmit} className="space-y-4">
-            <Input
-              type="text"
-              placeholder="pk.eyJ1IjoieW91cnVzZXJuYW1lIiwiYSI6ImpvNmtseHcifQ..."
-              value={mapboxToken}
-              onChange={(e) => setMapboxToken(e.target.value)}
-              className="w-full"
-            />
-            <Button type="submit" className="w-full">
-              Load Map
-            </Button>
-          </form>
-          <p className="text-sm mt-4 opacity-75">
-            Get your token at{' '}
-            <a 
-              href="https://mapbox.com/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="underline hover:no-underline"
-            >
-              mapbox.com
-            </a>
-          </p>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="relative w-full h-full">
