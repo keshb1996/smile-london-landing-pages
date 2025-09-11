@@ -1,71 +1,54 @@
-import { Phone, Mail, MapPin } from 'lucide-react';
-
 const Footer = () => {
   return (
-    <footer className="bg-dental-black text-white">
-      <div className="dental-section py-16">
-        <div className="grid md:grid-cols-4 gap-12">
-          {/* Logo and description */}
-          <div className="md:col-span-2">
-            <div className="text-3xl font-bold mb-6">
-              Elite<span className="text-dental-gold">Dental</span>
-            </div>
-            <p className="text-gray-300 mb-6 leading-relaxed max-w-md">
-              London's premier Invisalign specialist clinic. We're committed to providing 
-              exceptional dental care and helping you achieve the confident smile you deserve.
+    <footer className="bg-black text-white py-16">
+      <div className="container mx-auto px-4">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          {/* Left side - Logo and description */}
+          <div className="space-y-8">
+            <img 
+              src="/lovable-uploads/a4e94840-c583-4032-9b0c-18600c1a83d6.png" 
+              alt="Smile London" 
+              className="h-12 object-contain"
+            />
+            
+            <p className="text-gray-300 leading-relaxed max-w-lg">
+              Smile London is a leading cosmetic dental practice located in the 
+              heart of London's Harley Street area. With a team of world-class 
+              dental professionals, cutting-edge technology, and dedicated 
+              patient-centric care, Smile London provides the highest standards 
+              of aesthetic dentistry.
             </p>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <Phone className="h-4 w-4 text-dental-gold" />
-                <span>020 7123 4567</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Mail className="h-4 w-4 text-dental-gold" />
-                <span>info@elitedental.london</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <MapPin className="h-4 w-4 text-dental-gold" />
-                <span>123 Harley Street, London W1G 7JU</span>
-              </div>
-            </div>
+
+            <img 
+              src="/lovable-uploads/66b23212-9510-4b5b-8cce-76957148a66c.png" 
+              alt="Registered with General Dental Council" 
+              className="h-16 object-contain"
+            />
           </div>
           
-          {/* Services */}
+          {/* Right side - Contact info */}
           <div>
-            <h3 className="text-xl font-semibold mb-6 text-dental-gold">Services</h3>
-            <ul className="space-y-3 text-gray-300">
-              <li>Invisalign Treatment</li>
-              <li>Teeth Whitening</li>
-              <li>General Dentistry</li>
-              <li>Cosmetic Dentistry</li>
-              <li>Dental Hygiene</li>
-              <li>Emergency Care</li>
-            </ul>
-          </div>
-          
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-xl font-semibold mb-6 text-dental-gold">Quick Links</h3>
-            <ul className="space-y-3 text-gray-300">
-              <li>About Us</li>
-              <li>Book Consultation</li>
-              <li>Patient Reviews</li>
-              <li>Before & After</li>
-              <li>Payment Plans</li>
-              <li>Contact Us</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-gray-400 text-sm">
-              © 2024 Elite Dental London. All rights reserved.
-            </div>
-            <div className="flex space-x-6 text-gray-400 text-sm">
-              <a href="#" className="hover:text-dental-gold transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-dental-gold transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-dental-gold transition-colors">Cookie Policy</a>
+            <h3 className="text-2xl font-light mb-8 tracking-wider">CONTACT US</h3>
+            
+            <div className="space-y-6 text-gray-300">
+              <p className="text-lg">
+                We're open Monday to Saturday from 9.00am to 6.00pm.
+              </p>
+              
+              <div className="space-y-2">
+                <p className="font-medium text-white">Smile London</p>
+                <p>38 Queen Anne Street</p>
+                <p>Marylebone</p>
+                <p>London</p>
+                <p>W1G 8HZ</p>
+                <a href="#" className="text-yellow-400 hover:underline">See Google Maps</a>
+              </div>
+              
+              <div className="space-y-2">
+                <p>Email: <span className="text-white">contact@smilelondon.co.uk</span></p>
+                <p>Tel: <span className="text-white">020 4540 1566</span></p>
+                <p>WhatsApp: <span className="text-white">07392212272</span></p>
+              </div>
             </div>
           </div>
         </div>
