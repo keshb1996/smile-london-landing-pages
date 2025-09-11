@@ -2,17 +2,17 @@ const BeforeAfterGallery = () => {
   const beforeAfterImages = [
     {
       id: 1,
-      src: "/lovable-uploads/c095f7d2-9b82-4761-acea-b064bf93cea7.png",
+      src: "/lovable-uploads/c613f4c6-8ad0-4639-bd23-02dc953bbffe.png",
       alt: "Invisalign before and after transformation case 1"
     },
     {
       id: 2,
-      src: "/lovable-uploads/89617672-6d3e-413c-97f5-350d677cb7f3.png",
+      src: "/lovable-uploads/0b2abc10-f11d-4c69-96eb-8cd7ed7f4358.png",
       alt: "Invisalign before and after transformation case 2"
     },
     {
       id: 3,
-      src: "/lovable-uploads/d3b1673e-2e49-4ebe-823d-707fab0acfd8.png",
+      src: "/lovable-uploads/1488805f-17f4-4d71-a5f0-71c40f3eddbd.png",
       alt: "Invisalign before and after transformation case 3"
     }
   ];
