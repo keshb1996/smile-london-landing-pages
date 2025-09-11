@@ -11,12 +11,8 @@ const HeroSection = () => {
   ];
 
   return (
-    <section 
-      className="relative overflow-hidden bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage: `url('/lovable-uploads/0cd9cb82-1271-48c5-825f-c273ffe34760.png')`
-      }}
-    >
+    <section className="bg-white">
+      <div className="absolute inset-0 bg-white"></div>
       <div className="dental-section">
         <div className="grid md:grid-cols-2 gap-12 items-center min-h-[600px]">
           {/* Content */}
