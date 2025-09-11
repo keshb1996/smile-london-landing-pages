@@ -49,8 +49,7 @@ const Index = () => {
         <img 
           src="/lovable-uploads/66625a79-01c3-4a44-8581-efd2809ba38c.png" 
           alt="Dental consultation" 
-          className="w-full h-auto object-cover object-right"
-          style={{ objectPosition: '100% center' }}
+          className="w-full h-auto object-cover"
         />
         <div className="dental-section">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
