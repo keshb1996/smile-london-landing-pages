@@ -59,7 +59,7 @@ const Index = () => {
       >
         <div className="dental-section">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <div className="bg-white/90 p-8 rounded-lg">
+            <div className="bg-white/70 p-8 rounded-lg">
               <ConsultationForm />
             </div>
             <div className="hidden lg:block">
