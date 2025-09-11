@@ -20,7 +20,7 @@ const GoogleReviews = () => {
       name: "Sarah Mitchell", 
       rating: 5,
       review: "Dr. Johnson and her team are absolutely fantastic. My Invisalign treatment exceeded all expectations!",
-      platform: "Trustpilot",
+      platform: "Google",
       date: "1 month ago"
     },
     {
@@ -41,7 +41,7 @@ const GoogleReviews = () => {
       name: "David Thompson",
       rating: 5,
       review: "Couldn't be happier with my new smile. The entire process was smooth and professional.",
-      platform: "Trustpilot",
+      platform: "Google",
       date: "2 months ago"
     }
   ];
@@ -104,14 +104,11 @@ const GoogleReviews = () => {
         
         <div className="text-center mt-12">
           <p className="text-muted-foreground mb-4">
-            See more reviews on Google and Trustpilot
+            See more reviews on Google
           </p>
-          <div className="flex justify-center space-x-4">
+          <div className="flex justify-center">
             <div className="bg-dental-gold text-dental-black px-6 py-2 rounded-full font-semibold">
-              Google: 4.9★
-            </div>
-            <div className="bg-dental-gold text-dental-black px-6 py-2 rounded-full font-semibold">
-              Trustpilot: 4.8★
+              Google: 4.6★
             </div>
           </div>
         </div>
