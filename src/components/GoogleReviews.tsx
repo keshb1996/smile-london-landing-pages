@@ -60,7 +60,7 @@ const GoogleReviews = () => {
               ))}
             </div>
             <span className="text-xl font-semibold">4.6/5</span>
-            <span className="text-muted-foreground">Based on 200+ reviews</span>
+            
           </div>
         </div>
         
