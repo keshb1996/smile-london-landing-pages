@@ -41,7 +41,7 @@ const Footer = () => {
                 <p>Marylebone</p>
                 <p>London</p>
                 <p>W1G 8HZ</p>
-                <a href="#" className="text-yellow-400 hover:underline">See Google Maps</a>
+                <a href="https://maps.app.goo.gl/6zgkSfpvZFuJZJ1h7" target="_blank" rel="noopener noreferrer" className="text-yellow-400 hover:underline">See Google Maps</a>
               </div>
               
               <div className="space-y-2">
