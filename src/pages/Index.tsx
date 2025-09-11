@@ -46,6 +46,11 @@ const Index = () => {
           backgroundImage: "url('/lovable-uploads/66625a79-01c3-4a44-8581-efd2809ba38c.png')"
         }}
       >
+        <img 
+          src="/lovable-uploads/66625a79-01c3-4a44-8581-efd2809ba38c.png" 
+          alt="Dental consultation" 
+          className="w-full h-auto object-cover"
+        />
         <div className="dental-section">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div className="bg-white/90 p-8 rounded-lg">
