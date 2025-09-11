@@ -20,7 +20,7 @@ const Footer = () => {
             </p>
 
             <img 
-              src="/lovable-uploads/66b23212-9510-4b5b-8cce-76957148a66c.png" 
+              src="/lovable-uploads/dea669a7-81ef-43c0-b4e3-6288b4a58ee9.png" 
               alt="Registered with General Dental Council" 
               className="h-16 object-contain"
             />
