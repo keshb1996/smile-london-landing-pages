@@ -31,8 +31,7 @@ const ContactInfo = () => {
 
   const openingHours = [
     { day: "Monday - Saturday", hours: "9:00 AM - 6:00 PM" },
-    { day: "Sunday", hours: "Closed" },
-    { day: "Bank Holidays", hours: "Closed" }
+    { day: "Sunday", hours: "Closed" }
   ];
 
   return (
