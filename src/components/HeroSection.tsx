@@ -22,7 +22,7 @@ const HeroSection = () => {
         backgroundImage: window.innerWidth >= 768 ? `url('/lovable-uploads/0cd9cb82-1271-48c5-825f-c273ffe34760.png')` : 'none'
       }}
     >
-      <div className="dental-section pt-6 md:pt-8">
+      <div className="dental-section pt-6 md:pt-8 pb-6 md:pb-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="text-black space-y-6">
