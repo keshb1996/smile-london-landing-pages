@@ -1,4 +1,11 @@
 import { Star } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const GoogleReviews = () => {
   const reviews = [
@@ -57,31 +64,43 @@ const GoogleReviews = () => {
           </div>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {reviews.map((review, index) => (
-            <div key={index} className="bg-card border border-border rounded-lg p-6 shadow-dental">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex">
-                  {[...Array(review.rating)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 text-dental-gold fill-current" />
-                  ))}
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full max-w-6xl mx-auto"
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {reviews.map((review, index) => (
+              <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                <div className="bg-card border border-border rounded-lg p-6 shadow-dental h-full">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex">
+                      {[...Array(review.rating)].map((_, i) => (
+                        <Star key={i} className="h-4 w-4 text-dental-gold fill-current" />
+                      ))}
+                    </div>
+                    <span className="text-sm text-muted-foreground">{review.platform}</span>
+                  </div>
+                  
+                  <p className="text-foreground mb-4 leading-relaxed">
+                    "{review.review}"
+                  </p>
+                  
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="font-semibold text-foreground">{review.name}</div>
+                      <div className="text-sm text-muted-foreground">{review.date}</div>
+                    </div>
+                  </div>
                 </div>
-                <span className="text-sm text-muted-foreground">{review.platform}</span>
-              </div>
-              
-              <p className="text-foreground mb-4 leading-relaxed">
-                "{review.review}"
-              </p>
-              
-              <div className="flex items-center justify-between">
-                <div>
-                  <div className="font-semibold text-foreground">{review.name}</div>
-                  <div className="text-sm text-muted-foreground">{review.date}</div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
         
         <div className="text-center mt-12">
           <p className="text-muted-foreground mb-4">
