@@ -47,6 +47,9 @@ const ContactInfo = () => {
             Conveniently located in the heart of London's medical district, 
             easily accessible by public transport with modern facilities.
           </p>
+          <p className="text-sm text-dental-gold font-medium max-w-3xl mx-auto mt-3">
+            Note: We are operating on Queen Anne Street while our Harley Street clinic is being refurbished
+          </p>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-16">
