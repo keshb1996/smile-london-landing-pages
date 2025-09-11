@@ -1,4 +1,4 @@
-import { Gift, Calendar, Shield, Award, Users, Zap } from 'lucide-react';
+import { Gift, Calendar, CreditCard, Award, Users, Zap } from 'lucide-react';
 import dentistImage from '@/assets/dentist-portrait.jpg';
 import clinicImage from '@/assets/clinic-interior.jpg';
 
@@ -12,9 +12,9 @@ const WhyChooseUs = () => {
     title: "Your Consultation Includes:",
     description: "Free X-Ray, Hygiene, Whitening, and More!"
   }, {
-    icon: Shield,
-    title: "Insurance Accepted",
-    description: "We work with most dental insurance plans"
+    icon: CreditCard,
+    title: "0% Finance Available",
+    description: "We work with tabeo to provide 0% interest-free plans"
   }, {
     icon: Award,
     title: "Expert Team",
