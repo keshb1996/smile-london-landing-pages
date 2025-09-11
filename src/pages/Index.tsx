@@ -3,8 +3,6 @@ import MobileHeroImage from '@/components/MobileHeroImage';
 import HeroSection from '@/components/HeroSection';
 import ConsultationIncludes from '@/components/ConsultationIncludes';
 import ConsultationForm from '@/components/ConsultationForm';
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
-import { Button } from '@/components/ui/button';
 import InvisalignBenefits from '@/components/InvisalignBenefits';
 import PromotionalBanner from '@/components/PromotionalBanner';
 import WhyChooseUs from '@/components/WhyChooseUs';
@@ -50,23 +48,6 @@ const Index = () => {
       <PromotionalBanner />
       <BeforeAfterGallery />
       <WhyChooseUs />
-      
-      {/* Speak To An Expert CTA Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="dental-section text-center">
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button className="dental-cta text-xl px-12 py-6">
-                Speak To An Expert
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="max-w-md bg-white">
-              <ConsultationForm />
-            </DialogContent>
-          </Dialog>
-        </div>
-      </section>
-      
       <InvisalignInfo />
       <TestimonialSection />
       <GoogleReviews />
