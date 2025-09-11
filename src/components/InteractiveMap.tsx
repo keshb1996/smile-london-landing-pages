@@ -26,6 +26,9 @@ const InteractiveMap = () => {
       trackResize: false
     });
 
+    // Prevent map canvas from taking focus on load
+    map.current.getCanvas().setAttribute('tabindex', '-1');
+
     // Add navigation controls
     map.current.addControl(
       new mapboxgl.NavigationControl({
@@ -55,8 +58,7 @@ const InteractiveMap = () => {
 
     marker.setPopup(popup);
 
-    // Show popup by default
-    marker.togglePopup();
+    // Do not auto-open popup to avoid stealing focus/scroll
 
     return () => {
       map.current?.remove();
