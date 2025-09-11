@@ -51,7 +51,7 @@ const DentalJourney = () => {
                 {/* Timeline dot */}
                 <div className="hidden md:block absolute top-16 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-dental-gold rounded-full border-4 border-white shadow-lg z-10"></div>
                 
-                <div className="bg-dental-gray rounded-2xl p-8 hover:shadow-dental-lg transition-all duration-300 h-full">
+                <div className="bg-dental-gray rounded-2xl p-8 hover:shadow-dental-lg transition-all duration-300 h-full flex flex-col items-center justify-center">
                   <div className="bg-dental-gold rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
                     <step.icon className="h-8 w-8 text-dental-black" />
                   </div>
