@@ -1,4 +1,5 @@
 import { MapPin, Phone, Mail, Clock, Navigation } from 'lucide-react';
+import InteractiveMap from './InteractiveMap';
 
 const ContactInfo = () => {
   const contactDetails = [
@@ -100,16 +101,7 @@ const ContactInfo = () => {
           {/* Map Placeholder */}
           <div className="relative">
             <div className="bg-dental-gray rounded-2xl overflow-hidden shadow-dental-lg h-full min-h-96">
-              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-dental-gold/20 to-dental-gold/40">
-                <div className="text-center text-dental-black">
-                  <MapPin className="h-16 w-16 mx-auto mb-4" />
-                  <h3 className="text-2xl font-semibold mb-2">Interactive Map</h3>
-                  <p className="text-lg">View our location on Google Maps</p>
-                  <button className="mt-4 bg-dental-gold text-dental-black px-6 py-2 rounded-lg font-semibold hover:bg-dental-gold/90 transition-colors">
-                    Open in Google Maps
-                  </button>
-                </div>
-              </div>
+              <InteractiveMap />
             </div>
             
             {/* Overlay with key location info */}
