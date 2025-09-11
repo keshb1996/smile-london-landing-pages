@@ -1,8 +1,14 @@
 import { Gift, Calendar, CreditCard, Award, Users, Zap } from 'lucide-react';
+import { useState } from 'react';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
+import ConsultationForm from './ConsultationForm';
 import dentistImage from '@/assets/dentist-portrait.jpg';
 import clinicImage from '@/assets/clinic-interior.jpg';
 
 const WhyChooseUs = () => {
+  const [dialogOpen, setDialogOpen] = useState(false);
+  
   const benefits = [{
     icon: Calendar,
     title: "Open Weekends",
@@ -92,6 +98,20 @@ const WhyChooseUs = () => {
                 We use cutting edge dental technology, which enables our dentists to give you the perfect smile.
               </p>
             </div>
+          </div>
+          
+          {/* CTA Button */}
+          <div className="text-center mt-12">
+            <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+              <DialogTrigger asChild>
+                <Button size="lg" className="bg-dental-gold text-dental-black hover:bg-dental-gold/90 font-semibold px-8 py-3">
+                  Speak To An Expert
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-md bg-white">
+                <ConsultationForm />
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </section>
