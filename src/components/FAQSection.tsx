@@ -78,7 +78,7 @@ const FAQSection = () => {
             Have more questions? We're here to help!
           </p>
           <button className="dental-cta">
-            Ask a Question
+            Call Us
           </button>
         </div>
       </div>
