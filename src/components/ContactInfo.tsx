@@ -1,7 +1,12 @@
 import { MapPin, Phone, Mail, Clock, Navigation } from 'lucide-react';
+import { useState } from 'react';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
+import ConsultationForm from './ConsultationForm';
 import InteractiveMap from './InteractiveMap';
 
 const ContactInfo = () => {
+  const [dialogOpen, setDialogOpen] = useState(false);
   const contactDetails = [
     {
       icon: MapPin,
@@ -114,6 +119,20 @@ const ContactInfo = () => {
               </div>
             </div>
           </div>
+        </div>
+        
+        {/* Book Consultation Button */}
+        <div className="text-center mt-16">
+          <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+            <DialogTrigger asChild>
+              <Button size="lg" className="bg-dental-gold text-dental-black hover:bg-dental-gold/90 font-semibold px-12 py-4 text-lg">
+                Book Consultation
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-w-md bg-white">
+              <ConsultationForm />
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
     </section>
