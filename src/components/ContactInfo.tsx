@@ -18,7 +18,7 @@ const ContactInfo = () => {
     {
       icon: Mail,
       title: "Email", 
-      info: "info@elitedental.london",
+      info: "info@smilelondon.co.uk",
       extra: "We respond within 2 hours"
     },
     {
