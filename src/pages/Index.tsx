@@ -9,7 +9,7 @@ import WhyChooseUs from '@/components/WhyChooseUs';
 import InvisalignInfo from '@/components/InvisalignInfo';
 import TestimonialSection from '@/components/TestimonialSection';
 import GoogleReviews from '@/components/GoogleReviews';
-import SmileTransformations from '@/components/SmileTransformations';
+
 import BeforeAfterGallery from '@/components/BeforeAfterGallery';
 import DentalJourney from '@/components/DentalJourney';
 import FAQSection from '@/components/FAQSection';
@@ -52,7 +52,7 @@ const Index = () => {
       <TestimonialSection />
       <GoogleReviews />
       <FinalCTA />
-      <SmileTransformations />
+      
       <DentalJourney />
       <FAQSection />
       <ContactInfo />
