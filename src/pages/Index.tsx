@@ -39,27 +39,16 @@ const Index = () => {
       <HeroSection />
       <ConsultationIncludes />
       
-      {/* Mobile-only image above consultation section */}
-      <div className="block md:hidden">
-        <img 
-          src="/lovable-uploads/e8a15ef0-8fe8-483c-b18e-c8473e899a28.png" 
-          alt="Invisalign aligners" 
-          className="w-full h-auto"
-        />
-      </div>
-
       {/* Consultation Form Section */}
       <section 
         className="bg-cover bg-center bg-no-repeat relative min-h-[600px]"
         style={{
-          backgroundImage: window.innerWidth < 768 
-            ? "url('/lovable-uploads/e8a15ef0-8fe8-483c-b18e-c8473e899a28.png')" 
-            : "url('/lovable-uploads/66625a79-01c3-4a44-8581-efd2809ba38c.png')"
+          backgroundImage: "url('/lovable-uploads/66625a79-01c3-4a44-8581-efd2809ba38c.png')"
         }}
       >
         <div className="dental-section">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <div className="bg-white/70 p-8 rounded-lg">
+            <div className="bg-white/90 p-8 rounded-lg">
               <ConsultationForm />
             </div>
             <div className="hidden lg:block">
