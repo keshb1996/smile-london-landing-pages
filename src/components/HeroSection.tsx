@@ -1,7 +1,12 @@
 import { Check, Award, Users, Shield, Camera, CreditCard } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { useState } from 'react';
+import ConsultationForm from './ConsultationForm';
 
 const HeroSection = () => {
+  const [dialogOpen, setDialogOpen] = useState(false);
+  
   const benefits = [
     "Harley Street Centre of Excellence",
     "World-Renowned Dentists",
@@ -20,7 +25,7 @@ const HeroSection = () => {
       <div className="dental-section">
         <div className="grid md:grid-cols-2 gap-12 items-center min-h-[600px]">
           {/* Content */}
-          <div className="text-black space-y-8">
+          <div className="text-black space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
               Clear, discreet teeth alignment 
               <span className="text-dental-gold"> without traditional braces</span>
@@ -41,9 +46,16 @@ const HeroSection = () => {
             </div>
             
             <div>
-              <Button className="dental-cta text-xl px-12 py-6">
-                Book Expert Consultation
-              </Button>
+              <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+                <DialogTrigger asChild>
+                  <Button className="dental-cta text-xl px-12 py-6">
+                    Book Expert Consultation
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-md bg-white">
+                  <ConsultationForm />
+                </DialogContent>
+              </Dialog>
             </div>
           </div>
           
