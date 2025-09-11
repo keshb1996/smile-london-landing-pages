@@ -39,6 +39,15 @@ const Index = () => {
       <HeroSection />
       <ConsultationIncludes />
       
+      {/* Mobile-only image above consultation section */}
+      <div className="block md:hidden">
+        <img 
+          src="/lovable-uploads/e8a15ef0-8fe8-483c-b18e-c8473e899a28.png" 
+          alt="Invisalign aligners" 
+          className="w-full h-auto"
+        />
+      </div>
+
       {/* Consultation Form Section */}
       <section 
         className="bg-cover bg-center bg-no-repeat relative min-h-[600px]"
