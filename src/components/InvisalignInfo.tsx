@@ -33,6 +33,25 @@ const InvisalignInfo = () => {
           </div>
           
           <div>
+            {/* Video Section */}
+            <div className="mb-8">
+              <div className="relative w-full aspect-[3/2] rounded-lg overflow-hidden shadow-lg">
+                <video
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source 
+                    src="https://res.cloudinary.com/dvezevabk/video/upload/v1757613705/Invisalign_Page_Gif_Image_1080_x_720_px_itc7j6.mp4" 
+                    type="video/mp4" 
+                  />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            
             <h3 className="text-2xl font-semibold mb-8 text-dental-black">
               Benefits of Invisalign Treatment
             </h3>
