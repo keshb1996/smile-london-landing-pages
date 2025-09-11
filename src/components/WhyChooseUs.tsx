@@ -22,7 +22,7 @@ const WhyChooseUs = () => {
   }, {
     icon: Users,
     title: "Patient-Focused",
-    description: "Personalized care tailored to your unique needs"
+    description: "Personalised care tailored to your unique needs"
   }, {
     icon: Zap,
     title: "Latest Technology",
