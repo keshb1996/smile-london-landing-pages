@@ -35,8 +35,9 @@ const WhyChooseUs = () => {
         <div className="dental-section">
           <div className="text-center mb-16">
             <h2 className="dental-heading text-white mb-6">Why Choose Smile London for Your Invisalign Treatment?</h2>
-            <p className="text-xl text-dental-gold max-w-3xl mx-auto">
-              Experience the difference with London's premier Invisalign provider
+            <p className="text-xl max-w-3xl mx-auto">
+              <span className="text-dental-gold">Experience the difference</span>
+              <span className="text-gray-300"> with London's premier Invisalign provider</span>
             </p>
           </div>
           
