@@ -41,6 +41,9 @@ const InvisalignBenefits = () => {
           <video 
             className="w-full max-w-4xl mx-auto rounded-lg shadow-lg"
             controls
+            muted
+            autoPlay
+            loop
             playsInline
             preload="metadata"
           >
