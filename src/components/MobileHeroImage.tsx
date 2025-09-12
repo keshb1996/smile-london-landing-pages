@@ -1,11 +1,16 @@
 const MobileHeroImage = () => {
   return (
     <div className="block md:hidden w-full">
-      <img 
-        src="/lovable-uploads/672b8e8c-f891-49e3-a5b5-d551197b55cc.png"
-        alt="Woman with clear aligners pointing to her smile"
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
         className="w-full h-auto object-cover"
-      />
+      >
+        <source src="https://res.cloudinary.com/dvezevabk/video/upload/v1757686423/Invisalign_Landing_Page_Hero_Image_wzro4j.mp4" type="video/mp4" />
+      </video>
     </div>
   );
 };
