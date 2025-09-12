@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import Invisalign from "./pages/Invisalign";
 import AllOnFour from "./pages/AllOnFour";
 import NotFound from "./pages/NotFound";
 
@@ -18,6 +19,7 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/invisalign" element={<Invisalign />} />
             <Route path="/all-on-4" element={<AllOnFour />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
