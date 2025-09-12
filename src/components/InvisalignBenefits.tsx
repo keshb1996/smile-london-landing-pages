@@ -31,7 +31,13 @@ const InvisalignBenefits = () => {
         </div>
         
         {/* Video Section */}
-        <div className="mt-12">
+        <div className="mt-16">
+          <div className="text-center mb-8">
+            <h3 className="dental-heading text-2xl mb-3">See How Easy Invisalign Really Is</h3>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Watch how simple it is to put on your invisible, discreet aligners that fit seamlessly into your daily routine.
+            </p>
+          </div>
           <video 
             className="w-full max-w-4xl mx-auto rounded-lg shadow-lg"
             controls
