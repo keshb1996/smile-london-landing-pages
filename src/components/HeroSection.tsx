@@ -16,32 +16,21 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-white">
-      {/* Video Background - All screen sizes */}
-      <div className="absolute inset-0 w-full h-full">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          className="w-full h-full object-cover"
-          poster="/lovable-uploads/0cd9cb82-1271-48c5-825f-c273ffe34760.png"
-        >
-          <source src="https://res.cloudinary.com/dvezevabk/video/upload/v1757686423/Invisalign_Landing_Page_Hero_Image_wzro4j.mp4" type="video/mp4" />
-        </video>
-        {/* Semi-transparent overlay for text readability */}
-        <div className="absolute inset-0 bg-black/40"></div>
-      </div>
-      <div className="dental-section pt-6 md:pt-8 relative z-10">
+    <section 
+      className="relative overflow-hidden bg-white md:bg-cover md:bg-center md:bg-no-repeat"
+      style={{
+        backgroundImage: window.innerWidth >= 768 ? `url('/lovable-uploads/0cd9cb82-1271-48c5-825f-c273ffe34760.png')` : 'none'
+      }}
+    >
+      <div className="dental-section pt-6 md:pt-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Content */}
-          <div className="text-white space-y-6">
+          <div className="text-black space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
               Clear, discreet teeth alignment 
               <span className="text-dental-gold"> without traditional braces</span>
             </h1>
-            <p className="text-2xl md:text-3xl text-white font-medium">
+            <p className="text-2xl md:text-3xl text-black font-medium">
               ...in Marylebone, London
             </p>
             
