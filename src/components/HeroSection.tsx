@@ -34,8 +34,8 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
       
-      {/* Light grey gradient background for mobile */}
-      <div className="block md:hidden absolute inset-0 w-full h-full bg-gradient-to-b from-gray-50 to-gray-100"></div>
+      {/* Light grey background for mobile */}
+      <div className="block md:hidden absolute inset-0 w-full h-full bg-gray-100"></div>
       <div className="dental-section pt-6 md:pt-8 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Content */}
