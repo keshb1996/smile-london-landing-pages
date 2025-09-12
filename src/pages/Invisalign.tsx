@@ -48,23 +48,6 @@ const Invisalign = () => {
       <Header />
       <MobileHeroImage />
       <HeroSection />
-      
-      {/* Mobile Video Section */}
-      <section className="block md:hidden bg-white">
-        <div className="w-full">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            className="w-full h-auto"
-          >
-            <source src="https://res.cloudinary.com/dvezevabk/video/upload/v1757687723/Invisalign_Landing_Page_Video_juf8tv.mp4" type="video/mp4" />
-          </video>
-        </div>
-      </section>
-      
       <ConsultationIncludes />
       
       {/* Consultation Form Section */}
