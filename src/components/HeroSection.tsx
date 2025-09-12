@@ -17,8 +17,8 @@ const HeroSection = () => {
 
   return (
     <section className="relative overflow-hidden bg-white">
-      {/* Video Background - Desktop and Tablet only */}
-      <div className="hidden md:block absolute inset-0 w-full h-full">
+      {/* Video Background - All screen sizes */}
+      <div className="absolute inset-0 w-full h-full">
         <video
           autoPlay
           muted
@@ -33,23 +33,15 @@ const HeroSection = () => {
         {/* Semi-transparent overlay for text readability */}
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
-      
-      {/* Static background for mobile */}
-      <div 
-        className="block md:hidden absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('/lovable-uploads/0cd9cb82-1271-48c5-825f-c273ffe34760.png')`
-        }}
-      ></div>
       <div className="dental-section pt-6 md:pt-8 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Content */}
-          <div className="text-black md:text-white space-y-6">
+          <div className="text-white space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
               Clear, discreet teeth alignment 
               <span className="text-dental-gold"> without traditional braces</span>
             </h1>
-            <p className="text-2xl md:text-3xl text-black md:text-white font-medium">
+            <p className="text-2xl md:text-3xl text-white font-medium">
               ...in Marylebone, London
             </p>
             
