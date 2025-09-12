@@ -29,6 +29,22 @@ const InvisalignBenefits = () => {
               </div>;
         })}
         </div>
+        
+        {/* Video Section */}
+        <div className="mt-12">
+          <video 
+            className="w-full max-w-4xl mx-auto rounded-lg shadow-lg"
+            controls
+            playsInline
+            preload="metadata"
+          >
+            <source 
+              src="https://res.cloudinary.com/dvezevabk/video/upload/v1757687723/Invisalign_Landing_Page_Video_juf8tv.mp4" 
+              type="video/mp4" 
+            />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
     </section>;
 };
