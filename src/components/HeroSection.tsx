@@ -16,20 +16,31 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-dental-gray">
-      {/* Desktop video background */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        className="hidden md:block absolute inset-0 w-full h-full object-cover"
-        poster="/lovable-uploads/672b8e8c-f891-49e3-a5b5-d551197b55cc.png"
-      >
-        <source src="https://res.cloudinary.com/dvezevabk/video/upload/v1757686423/Invisalign_Landing_Page_Hero_Image_wzro4j.mp4" type="video/mp4" />
-      </video>
-      <div className="absolute inset-0 bg-black/20 hidden md:block"></div>
+    <section className="relative overflow-hidden bg-white">
+      {/* Video Background - Desktop and Tablet only */}
+      <div className="hidden md:block absolute inset-0 w-full h-full">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="w-full h-full object-cover"
+          poster="/lovable-uploads/0cd9cb82-1271-48c5-825f-c273ffe34760.png"
+        >
+          <source src="https://res.cloudinary.com/dvezevabk/video/upload/v1757686423/Invisalign_Landing_Page_Hero_Image_wzro4j.mp4" type="video/mp4" />
+        </video>
+        {/* Semi-transparent overlay for text readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
+      </div>
+      
+      {/* Static background for mobile */}
+      <div 
+        className="block md:hidden absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('/lovable-uploads/0cd9cb82-1271-48c5-825f-c273ffe34760.png')`
+        }}
+      ></div>
       <div className="dental-section pt-6 md:pt-8 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Content */}
