@@ -77,6 +77,10 @@ const AllOnFourBenefits = () => {
               <p className="text-sm text-white/80">Normally £150 • Limited time offer</p>
             </div>
           </div>
+          
+          <button className="mt-8 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+            Book Consultation
+          </button>
         </div>
       </div>
     </section>
