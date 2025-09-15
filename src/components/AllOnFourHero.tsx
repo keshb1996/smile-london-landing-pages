@@ -74,16 +74,16 @@ const AllOnFourHero = () => {
             {/* Floating testimonial card */}
             <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-6 shadow-dental-lg max-w-sm">
               <div className="flex items-center gap-4">
-                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?auto=format&fit=crop&w=60&h=60&q=80" alt="Sarah M." className="w-12 h-12 rounded-full object-cover" />
+                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?auto=format&fit=crop&w=60&h=60&q=80" alt="Maria" className="w-12 h-12 rounded-full object-cover" />
                 <div>
-                  <p className="font-semibold">Sarah M.</p>
+                  <p className="font-semibold">Maria</p>
                   <div className="flex gap-1">
                     {[...Array(5)].map((_, i) => <span key={i} className="text-primary text-sm">★</span>)}
                   </div>
                 </div>
               </div>
               <p className="mt-3 text-sm text-muted-foreground">
-                "Life-changing experience! I got my confidence back in just one day."
+                "I came to Smile London and had the whole thing done in 1 day really, and I'm just really happy with it!"
               </p>
             </div>
           </div>
