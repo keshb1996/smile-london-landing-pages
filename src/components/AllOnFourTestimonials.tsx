@@ -7,40 +7,53 @@ const AllOnFourTestimonials = () => {
   
   const testimonials = [
     {
-      name: "Sarah Mitchell",
-      age: 58,
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?auto=format&fit=crop&w=150&h=150&q=80",
+      name: "James Dore",
       rating: 5,
-      text: "After years of struggling with dentures, All-on-Four changed my life completely. I can eat anything I want and smile with confidence again. The team at Smile London made the whole process comfortable and stress-free.",
-      procedure: "Upper & Lower All-on-4",
-      timeframe: "Completed in 1 day"
+      text: "Great staff who were warm and welcoming and made the kids' first trip to the dentist lovely. Dr Gupta was excellent. Very pleased that this is our new dentist surgery!",
+      platform: "Google",
+      date: "2 months ago"
     },
     {
-      name: "James Robertson", 
-      age: 62,
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&h=150&q=80",
+      name: "Millie Demachen", 
       rating: 5,
-      text: "I was amazed by how quickly the procedure was completed. Same day teeth that look and feel completely natural. The financing options made it affordable, and the 5-year guarantee gives me peace of mind.",
-      procedure: "Upper All-on-4",
-      timeframe: "Same day completion"
+      text: "Had the most amazing experience here! My teeth look unbelievable and all the staff are so kind and attentive. My teeth look exactly how i wanted them. i cant recommend this place enough!",
+      platform: "Google",
+      date: "7 months ago"
     },
     {
-      name: "Maria Gonzalez",
-      age: 54,
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&h=150&q=80", 
-      rating: 5,
-      text: "Best decision I ever made! The consultation was thorough, the treatment was painless, and the results exceeded my expectations. I look 10 years younger and feel so much more confident.",
-      procedure: "Full mouth All-on-4",
-      timeframe: "Immediate results"
+      name: "Olya Nogovitsyna",
+      rating: 5, 
+      text: "Thanks to Dr. Nhova and Smile London, I have my confidence back! My teeth look fantastic, and I am genuinely impressed with the level of care I received.",
+      platform: "Google",
+      date: "10 months ago"
     },
     {
-      name: "David Chen",
-      age: 67,
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&h=150&q=80",
+      name: "Phillip A.",
       rating: 5,
-      text: "The technology they use is incredible. 3D scans, computer-guided surgery - everything was precise and professional. Recovery was much easier than I expected, and my new teeth feel completely natural.",
-      procedure: "Lower All-on-4",
-      timeframe: "Quick recovery"
+      text: "They are the best. Very punctual, was confident and happy with the work Nikita did. It was my first time and I was very comfortable and she answered all of my questions. Thank you Smile :)",
+      platform: "Google", 
+      date: "a year ago"
+    },
+    {
+      name: "Nekel Tatt",
+      rating: 5,
+      text: "Best dental experience I have had! So professional and painless. I have already booked another consultation for composite bonding, I can't wait to start my straight teeth journey!",
+      platform: "Google",
+      date: "2 years ago"
+    },
+    {
+      name: "Amy Barrett",
+      rating: 5,
+      text: "Amazing experience from start to finish. Such an understanding and patient team that aim to reach your every expectation. Could not be happier with my experience with Smile London! I highly recommend",
+      platform: "Google",
+      date: "a year ago"
+    },
+    {
+      name: "Ruby Whish",
+      rating: 5,
+      text: "Everything was perfect ! From the consultation to the finished result I was so well taken care of and so happy with the results. I would recommend 100%",
+      platform: "Google",
+      date: "9 months ago"
     }
   ];
 
@@ -68,17 +81,17 @@ const AllOnFourTestimonials = () => {
           {/* Main testimonial */}
           <div className="bg-white rounded-2xl p-8 md:p-12 shadow-dental-lg">
             <div className="grid md:grid-cols-4 gap-8 items-center">
-              {/* Patient photo and info */}
+              {/* Patient info */}
               <div className="text-center">
-                <img 
-                  src={testimonials[currentSlide].image}
-                  alt={testimonials[currentSlide].name}
-                  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-                />
+                <div className="w-24 h-24 rounded-full mx-auto mb-4 bg-dental-gold flex items-center justify-center">
+                  <span className="text-2xl font-bold text-dental-black">
+                    {testimonials[currentSlide].name.charAt(0)}
+                  </span>
+                </div>
                 <h4 className="font-bold text-lg text-dental-gold-foreground">
                   {testimonials[currentSlide].name}
                 </h4>
-                <p className="text-muted-foreground">Age {testimonials[currentSlide].age}</p>
+                <p className="text-muted-foreground">{testimonials[currentSlide].platform} • {testimonials[currentSlide].date}</p>
                 
                 {/* Star rating */}
                 <div className="flex justify-center gap-1 mt-2">
@@ -94,15 +107,9 @@ const AllOnFourTestimonials = () => {
                   "{testimonials[currentSlide].text}"
                 </blockquote>
                 
-                <div className="grid sm:grid-cols-2 gap-4 text-sm">
-                  <div className="bg-dental-gray p-4 rounded-lg">
-                    <p className="font-semibold text-dental-gold-foreground">Treatment:</p>
-                    <p className="text-muted-foreground">{testimonials[currentSlide].procedure}</p>
-                  </div>
-                  <div className="bg-dental-gray p-4 rounded-lg">
-                    <p className="font-semibold text-dental-gold-foreground">Timeline:</p>
-                    <p className="text-muted-foreground">{testimonials[currentSlide].timeframe}</p>
-                  </div>
+                <div className="bg-dental-gray p-4 rounded-lg">
+                  <p className="font-semibold text-dental-gold-foreground">Review from:</p>
+                  <p className="text-muted-foreground">{testimonials[currentSlide].platform} • {testimonials[currentSlide].date}</p>
                 </div>
               </div>
             </div>
@@ -146,12 +153,12 @@ const AllOnFourTestimonials = () => {
         {/* Trust indicators */}
         <div className="mt-16 grid md:grid-cols-3 gap-8 text-center">
           <div>
-            <div className="text-4xl font-bold text-primary mb-2">1,000+</div>
-            <p className="text-dental-black-foreground/80">Successful Treatments</p>
+            <div className="text-4xl font-bold text-primary mb-2">4.6★</div>
+            <p className="text-dental-black-foreground/80">Google Rating</p>
           </div>
           <div>
-            <div className="text-4xl font-bold text-primary mb-2">98%</div>
-            <p className="text-dental-black-foreground/80">Patient Satisfaction</p>
+            <div className="text-4xl font-bold text-primary mb-2">100+</div>
+            <p className="text-dental-black-foreground/80">5-Star Reviews</p>
           </div>
           <div>
             <div className="text-4xl font-bold text-primary mb-2">25+</div>
