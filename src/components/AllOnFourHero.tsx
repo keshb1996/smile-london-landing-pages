@@ -15,7 +15,7 @@ const AllOnFourHero = () => {
       </video>
       
       {/* Transparent Overlay */}
-      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-background/50 backdrop-blur-sm"></div>
       
       {/* Content */}
       <div className="dental-section relative z-10">
