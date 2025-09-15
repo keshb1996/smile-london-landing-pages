@@ -4,9 +4,9 @@ const AllOnFourHero = () => {
       {/* Background Image - Desktop & Tablet */}
       <div className="absolute inset-0 w-full h-full hidden md:block">
         <img 
-          src="/src/assets/minimal-dental-background.jpg" 
-          alt="Luxurious dental clinic interior" 
-          className="w-full h-full object-cover object-[65%_center] lg:object-[75%_center]"
+          src="/src/assets/dental-gold-background.jpg" 
+          alt="Professional dental background in brand colors" 
+          className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-background/30"></div>
       </div>
