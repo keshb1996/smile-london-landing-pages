@@ -3,15 +3,26 @@ import { Button } from "@/components/ui/button";
 const AllOnFourHero = () => {
   return (
     <section className="min-h-screen relative flex items-center overflow-hidden">
-      {/* Video Background */}
+      {/* Desktop Video Background */}
       <video 
         autoPlay 
         loop 
         muted 
         playsInline
-        className="absolute inset-0 w-full h-full object-cover object-[75%_center]"
+        className="hidden md:block absolute inset-0 w-full h-full object-cover object-[75%_center]"
       >
         <source src="https://res.cloudinary.com/dvezevabk/video/upload/v1757960738/20250915_1922_Radiant_Dental_Transformation_simple_compose_01k579tw9mfxcs8qqst9ymyytq_on4t1f.mp4" type="video/mp4" />
+      </video>
+      
+      {/* Mobile Video Background */}
+      <video 
+        autoPlay 
+        loop 
+        muted 
+        playsInline
+        className="block md:hidden absolute inset-0 w-full h-full object-cover object-center"
+      >
+        <source src="https://res.cloudinary.com/dvezevabk/video/upload/v1757963742/All_on_4_Maria_Video_Smile_London_rwthzr.mp4" type="video/mp4" />
       </video>
       
       {/* Transparent Overlay */}
