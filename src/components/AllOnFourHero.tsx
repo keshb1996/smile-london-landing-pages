@@ -83,7 +83,7 @@ const AllOnFourHero = () => {
                 </div>
               </div>
               <p className="mt-3 text-sm text-muted-foreground">
-                "I came to Smile London and had the whole thing done in 1 day really, and I'm just really happy with it!"
+                "I came to Smile London and had the whole thing <span className="text-primary font-bold text-base">done in 1 day</span> really, and I'm just really happy with it!"
               </p>
             </div>
           </div>
