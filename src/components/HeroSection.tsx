@@ -77,22 +77,6 @@ const HeroSection = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
             </div>
-            
-            {/* Floating testimonial card */}
-            <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-6 shadow-dental-lg max-w-sm">
-              <div className="flex items-center gap-4">
-                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?auto=format&fit=crop&w=60&h=60&q=80" alt="Maria" className="w-12 h-12 rounded-full object-cover" />
-                <div>
-                  <p className="font-semibold">Maria</p>
-                  <div className="flex gap-1">
-                    {[...Array(5)].map((_, i) => <span key={i} className="text-dental-gold text-sm">★</span>)}
-                  </div>
-                </div>
-              </div>
-              <p className="mt-3 text-sm text-muted-foreground">
-                "I came to Smile London and had the whole thing done in 1 day really, and I'm just really happy with it!"
-              </p>
-            </div>
           </div>
         </div>
       </div>
