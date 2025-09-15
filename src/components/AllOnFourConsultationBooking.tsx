@@ -26,7 +26,7 @@ const AllOnFourConsultationBooking = () => {
   ];
 
   return (
-    <section className="bg-background py-16 lg:py-24">
+    <section className="bg-background pt-8 pb-16 lg:pt-12 lg:pb-24">
       <div className="dental-section">
         <div className="text-center mb-12">
           <h2 className="dental-heading mb-4">
