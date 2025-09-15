@@ -73,8 +73,16 @@ const HeroSection = () => {
             </div>
           </div>
           
-          {/* Empty space where image was */}
-          <div className="relative">
+          {/* Hero Image */}
+          <div className="relative hidden md:block">
+            <div className="relative rounded-2xl overflow-hidden shadow-dental-lg">
+              <img 
+                src="/src/assets/hero-dental-practice.png" 
+                alt="Professional dental practice with patient and dentist in modern clinic" 
+                className="w-full h-[600px] object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            </div>
           </div>
         </div>
       </div>
