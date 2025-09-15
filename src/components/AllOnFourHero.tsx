@@ -1,10 +1,15 @@
 import { Button } from "@/components/ui/button";
 const AllOnFourHero = () => {
   return <section className="min-h-screen relative flex items-center overflow-hidden">
-      {/* Video Background - Desktop */}
-      <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover object-[60%_center] md:object-[65%_center] lg:object-[75%_center] hidden md:block">
-        <source src="https://res.cloudinary.com/dvezevabk/video/upload/v1757960738/20250915_1922_Radiant_Dental_Transformation_simple_compose_01k579tw9mfxcs8qqst9ymyytq_on4t1f.mp4" type="video/mp4" />
-      </video>
+      {/* Background Image - Desktop & Tablet */}
+      <div className="absolute inset-0 w-full h-full hidden md:block">
+        <img 
+          src="/src/assets/luxury-dental-background.jpg" 
+          alt="Luxurious dental clinic interior" 
+          className="w-full h-full object-cover object-[65%_center] lg:object-[75%_center]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-background/30"></div>
+      </div>
       
       {/* Video Background - Mobile */}
       <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover md:hidden">
