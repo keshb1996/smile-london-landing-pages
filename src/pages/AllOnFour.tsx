@@ -10,6 +10,7 @@ import AllOnFourFinancing from '@/components/AllOnFourFinancing';
 import AllOnFourPricing from '@/components/AllOnFourPricing';
 import AllOnFourFAQ from '@/components/AllOnFourFAQ';
 import AllOnFourConsultationForm from '@/components/AllOnFourConsultationForm';
+import AllOnFourQuickConsultation from '@/components/AllOnFourQuickConsultation';
 import FinalCTA from '@/components/FinalCTA';
 import Footer from '@/components/Footer';
 
@@ -42,6 +43,7 @@ const AllOnFour = () => {
     <div className="min-h-screen">
       <Header />
       <AllOnFourHero />
+      <AllOnFourQuickConsultation />
       <AllOnFourBenefits />
       <AllOnFourBeforeAfter />
       <AllOnFourExplanation />
