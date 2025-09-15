@@ -52,30 +52,17 @@ const AllOnFourExplanation = () => {
           
           {/* Right side - Video */}
           <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-dental-lg group cursor-pointer">
-              <img 
-                src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=800&h=600&q=80"
-                alt="All-on-Four dental implant procedure explanation"
-                className="w-full h-[500px] object-cover"
-              />
-              
-              {/* Video overlay */}
-              <div className="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/40 transition-colors">
-                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                  <Play className="w-8 h-8 text-primary ml-1" />
-                </div>
-              </div>
-              
-              {/* Video info */}
-              <div className="absolute bottom-6 left-6 right-6">
-                <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4">
-                  <h4 className="font-bold text-lg mb-2">Watch: All-on-Four Procedure Explained</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Learn how our All-on-Four procedure works and what to expect during treatment
-                  </p>
-                  <div className="mt-2 text-xs text-muted-foreground">Duration: 3:45</div>
-                </div>
-              </div>
+            <div className="relative rounded-2xl overflow-hidden shadow-dental-lg">
+              <iframe
+                width="100%"
+                height="500"
+                src="https://www.youtube.com/embed/Ushnj78EvH4"
+                title="All-on-Four dental implant procedure explanation"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full h-[500px]"
+              ></iframe>
             </div>
             
             {/* Statistics */}
