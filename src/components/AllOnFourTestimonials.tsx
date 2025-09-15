@@ -158,7 +158,7 @@ const AllOnFourTestimonials = () => {
                 
                 <div className="bg-dental-gray p-4 rounded-lg">
                   <p className="font-semibold text-foreground">Review from:</p>
-                  <p className="text-muted-foreground">{testimonials[currentSlide].platform} • {testimonials[currentSlide].date}</p>
+                  <p className="text-foreground/70">{testimonials[currentSlide].platform} • {testimonials[currentSlide].date}</p>
                 </div>
               </div>
             </div>
