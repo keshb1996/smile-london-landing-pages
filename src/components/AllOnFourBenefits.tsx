@@ -39,7 +39,7 @@ const AllOnFourBenefits = () => {
       </video>
       
       {/* Overlay for content readability */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
       <div className="dental-section relative z-10">
         <div className="text-center mb-16">
           <h2 className="dental-heading mb-6 text-white">
