@@ -3,26 +3,15 @@ import { Button } from "@/components/ui/button";
 const AllOnFourHero = () => {
   return (
     <section className="min-h-screen relative flex items-center overflow-hidden">
-      {/* Desktop Video Background */}
+      {/* Video Background */}
       <video 
         autoPlay 
         loop 
         muted 
         playsInline
-        className="hidden md:block absolute inset-0 w-full h-full object-cover object-[75%_center]"
+        className="absolute inset-0 w-full h-full object-cover object-[75%_center]"
       >
         <source src="https://res.cloudinary.com/dvezevabk/video/upload/v1757960738/20250915_1922_Radiant_Dental_Transformation_simple_compose_01k579tw9mfxcs8qqst9ymyytq_on4t1f.mp4" type="video/mp4" />
-      </video>
-      
-      {/* Mobile Video Background */}
-      <video 
-        autoPlay 
-        loop 
-        muted 
-        playsInline
-        className="block md:hidden absolute inset-0 w-full h-full object-cover object-center"
-      >
-        <source src="https://res.cloudinary.com/dvezevabk/video/upload/v1757963742/All_on_4_Maria_Video_Smile_London_rwthzr.mp4" type="video/mp4" />
       </video>
       
       {/* Transparent Overlay */}
@@ -79,8 +68,8 @@ const AllOnFourHero = () => {
             </div>
           </div>
           
-          {/* Right side - Image (Desktop only) */}
-          <div className="relative hidden md:block">
+          {/* Right side - Image */}
+          <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-dental-lg">
               <img 
                 src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80"
