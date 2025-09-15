@@ -156,9 +156,17 @@ const AllOnFourTestimonials = () => {
                   "{testimonials[currentSlide].text}"
                 </blockquote>
                 
-                <div className="bg-dental-gray p-4 rounded-lg">
-                  <p className="font-semibold text-foreground">Review from:</p>
-                  <p className="text-foreground/70">{testimonials[currentSlide].platform} • {testimonials[currentSlide].date}</p>
+                <div className="flex items-center justify-center gap-3 mt-4">
+                  <div className="flex gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-6 h-6 fill-primary text-primary" />
+                    ))}
+                  </div>
+                  <img 
+                    src="/google-logo.svg" 
+                    alt="Google" 
+                    className="w-8 h-8"
+                  />
                 </div>
               </div>
             </div>
