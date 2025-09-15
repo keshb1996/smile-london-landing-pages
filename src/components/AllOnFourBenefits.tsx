@@ -1,4 +1,5 @@
 import { CreditCard, Clock, Shield, Users } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const AllOnFourBenefits = () => {
   const benefits = [
@@ -70,13 +71,20 @@ const AllOnFourBenefits = () => {
         </div>
         
         <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-4 bg-white/20 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+          <div className="inline-flex items-center gap-4 bg-white/20 backdrop-blur-sm p-6 rounded-xl border border-white/20 mb-8">
             <div className="text-4xl font-bold text-primary">£150</div>
             <div className="text-left">
               <p className="font-semibold text-white">FREE Consultation</p>
               <p className="text-sm text-white/80">Normally £150 • Limited time offer</p>
             </div>
           </div>
+          
+          <Button 
+            size="lg" 
+            className="dental-cta text-xl px-12 py-6 bg-primary hover:bg-primary/90 text-white font-bold"
+          >
+            Book Consultation
+          </Button>
         </div>
       </div>
     </section>
