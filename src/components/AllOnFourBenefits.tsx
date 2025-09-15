@@ -70,7 +70,7 @@ const AllOnFourBenefits = () => {
         </div>
         
         <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-4 bg-white/20 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+          <div className="inline-flex items-center gap-4 bg-white/20 backdrop-blur-sm p-6 rounded-xl border border-white/20 mb-8">
             <div className="text-4xl font-bold text-primary">£150</div>
             <div className="text-left">
               <p className="font-semibold text-white">FREE Consultation</p>
@@ -78,7 +78,7 @@ const AllOnFourBenefits = () => {
             </div>
           </div>
           
-          <button className="mt-8 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+          <button className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
             Book Consultation
           </button>
         </div>
