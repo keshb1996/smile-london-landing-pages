@@ -1,32 +1,24 @@
 import { Clock, Phone, MapPin, Star } from 'lucide-react';
 import ConsultationForm from './ConsultationForm';
-
 const AllOnFourConsultationBooking = () => {
-  const features = [
-    {
-      icon: Clock,
-      title: "Same Day Consultation",
-      description: "Get your assessment and treatment plan in one visit"
-    },
-    {
-      icon: Star,
-      title: "5-Year Guarantee",
-      description: "Complete peace of mind with our comprehensive warranty"
-    },
-    {
-      icon: Phone,
-      title: "Expert Team",
-      description: "Harley Street specialists with 20+ years experience"
-    },
-    {
-      icon: MapPin,
-      title: "Central London",
-      description: "Convenient location near Oxford Circus"
-    }
-  ];
-
-  return (
-    <section className="bg-background pt-8 pb-16 lg:pt-12 lg:pb-24">
+  const features = [{
+    icon: Clock,
+    title: "Same Day Consultation",
+    description: "Get your assessment and treatment plan in one visit"
+  }, {
+    icon: Star,
+    title: "5-Year Guarantee",
+    description: "Complete peace of mind with our comprehensive warranty"
+  }, {
+    icon: Phone,
+    title: "Expert Team",
+    description: "Harley Street specialists with 20+ years experience"
+  }, {
+    icon: MapPin,
+    title: "Central London",
+    description: "Convenient location near Oxford Circus"
+  }];
+  return <section className="bg-background pt-0 pb-16 lg:pt-8 lg:pb-24">
       <div className="dental-section">
         <div className="text-center mb-12">
           <h2 className="dental-heading mb-4">
@@ -43,8 +35,7 @@ const AllOnFourConsultationBooking = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div className="space-y-8">
             <div className="grid sm:grid-cols-2 gap-6">
-              {features.map((feature, index) => (
-                <div key={index} className="flex items-start space-x-4">
+              {features.map((feature, index) => <div key={index} className="flex items-start space-x-4">
                   <div className="bg-primary/10 rounded-lg p-3 flex-shrink-0">
                     <feature.icon className="h-6 w-6 text-primary" />
                   </div>
@@ -52,8 +43,7 @@ const AllOnFourConsultationBooking = () => {
                     <h3 className="font-semibold mb-2">{feature.title}</h3>
                     <p className="text-sm text-muted-foreground">{feature.description}</p>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
 
             <div className="bg-muted/50 rounded-xl p-6">
@@ -84,15 +74,10 @@ const AllOnFourConsultationBooking = () => {
           </div>
 
           <div className="bg-card rounded-2xl p-8 shadow-lg border">
-            <ConsultationForm 
-              title="Book Your FREE Consultation"
-              subtitle="Normally £150 - Limited time offer"
-            />
+            <ConsultationForm title="Book Your FREE Consultation" subtitle="Normally £150 - Limited time offer" />
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AllOnFourConsultationBooking;
