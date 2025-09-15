@@ -7,11 +7,11 @@ const AllOnFourTestimonials = () => {
   
   const testimonials = [
     {
-      name: "James Dore",
+      name: "Salman Saeed",
       rating: 5,
-      text: "Great staff who were warm and welcoming and made the kids' first trip to the dentist lovely. Dr Gupta was excellent. Very pleased that this is our new dentist surgery!",
+      text: "Had my teeth done with Dr. Tinashe. Amazing results I'm so happy with my teeth. I was very skeptical as I have never liked going to the dentist but smile London and the people working there put me at ease from start to finish. I would highly recommend as I can't stop smiling.",
       platform: "Google",
-      date: "2 months ago"
+      date: "7 months ago"
     },
     {
       name: "Millie Demachen", 
@@ -21,25 +21,32 @@ const AllOnFourTestimonials = () => {
       date: "7 months ago"
     },
     {
-      name: "Olya Nogovitsyna",
+      name: "Raul",
       rating: 5, 
+      text: "I think it is an incredible place and a pretty good technique, the staff is very friendly from the reception to the retired girl, Siobhan I think is her name is she's very professional, the dentist Tinashe is an artist, I am very satisfied, totally recommended.",
+      platform: "Google",
+      date: "7 months ago"
+    },
+    {
+      name: "Callum Leyton",
+      rating: 5,
+      text: "Love this place! The service was excellent and the staff were polite. My teeth look amazing and I highly recommend Dr Stevie when you visit this place.",
+      platform: "Google", 
+      date: "8 months ago"
+    },
+    {
+      name: "Ozan",
+      rating: 5,
+      text: "Just walked out with a new set of chompers from Smile London! Extremely happy with the result they don't stop until you get them how you want. Special shout out to Tinashe for working his magic",
+      platform: "Google",
+      date: "7 months ago"
+    },
+    {
+      name: "Olya Nogovitsyna",
+      rating: 5,
       text: "Thanks to Dr. Nhova and Smile London, I have my confidence back! My teeth look fantastic, and I am genuinely impressed with the level of care I received.",
       platform: "Google",
       date: "10 months ago"
-    },
-    {
-      name: "Phillip A.",
-      rating: 5,
-      text: "They are the best. Very punctual, was confident and happy with the work Nikita did. It was my first time and I was very comfortable and she answered all of my questions. Thank you Smile :)",
-      platform: "Google", 
-      date: "a year ago"
-    },
-    {
-      name: "Nekel Tatt",
-      rating: 5,
-      text: "Best dental experience I have had! So professional and painless. I have already booked another consultation for composite bonding, I can't wait to start my straight teeth journey!",
-      platform: "Google",
-      date: "2 years ago"
     },
     {
       name: "Amy Barrett",
@@ -53,7 +60,49 @@ const AllOnFourTestimonials = () => {
       rating: 5,
       text: "Everything was perfect ! From the consultation to the finished result I was so well taken care of and so happy with the results. I would recommend 100%",
       platform: "Google",
-      date: "9 months ago"
+      date: "10 months ago"
+    },
+    {
+      name: "GUL Cifci",
+      rating: 5,
+      text: "I had a beautiful smile as a result of very good team work. Thank you Melissa for organizing this study and Dr Kolade for creating the miracle.",
+      platform: "Google",
+      date: "a year ago"
+    },
+    {
+      name: "Tania Tuzizila",
+      rating: 5,
+      text: "Second time using their services and it's always a pleasure, staff always go the extra mile and very friendly. Very happy with my treatment thankyou so much.",
+      platform: "Google",
+      date: "a year ago"
+    },
+    {
+      name: "Zoe Coates",
+      rating: 5,
+      text: "Extremely happy with the service, staff and communication. We was made to feel comfortable by the friendly staff and was surprised how affordable the treatment was. Would highly recommend 😊",
+      platform: "Google",
+      date: "a year ago"
+    },
+    {
+      name: "GW The Producer",
+      rating: 5,
+      text: "Needed my teeth sorted out for ages! Excellent service and thanks so much to Melissa for making it happen and making the process so smooth!",
+      platform: "Google",
+      date: "a year ago"
+    },
+    {
+      name: "Bree Morris",
+      rating: 5,
+      text: "Amazing customer service. Very professional friendly staff, transparent and the prices are good. A pleasant atmosphere and the results are amazing. Highly recommended.",
+      platform: "Google",
+      date: "2 years ago"
+    },
+    {
+      name: "vishal kavri",
+      rating: 5,
+      text: "Wonderful results, fast responses via WhatsApp & great after care service. Would highly recommend",
+      platform: "Google",
+      date: "a year ago"
     }
   ];
 
