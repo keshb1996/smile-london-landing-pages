@@ -48,7 +48,7 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         // Dental brand colors
-        "dental-gold": "hsl(var(--dental-gold))",
+        "dental-gold": "hsl(42 56% 65%)",
         "dental-black": "hsl(var(--dental-black))",
         "dental-gray": "hsl(var(--dental-gray))",
       },

@@ -11,7 +11,7 @@
     --foreground: 0 0% 20%;
     
     /* Dental gold accent */
-    --dental-gold: 41 68% 63%;
+    --dental-gold: 42 56% 65%;
     --dental-gold-foreground: 0 0% 0%;
     
     /* Professional black */
@@ -28,7 +28,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 20%;
 
-    --primary: 41 68% 63%;
+    --primary: 42 56% 65%;
     --primary-foreground: 0 0% 0%;
 
     --secondary: 0 0% 97%;
@@ -37,7 +37,7 @@
     --muted: 0 0% 97%;
     --muted-foreground: 0 0% 46%;
 
-    --accent: 41 68% 63%;
+    --accent: 42 56% 65%;
     --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84% 60%;
@@ -45,7 +45,7 @@
 
     --border: 0 0% 91%;
     --input: 0 0% 91%;
-    --ring: 41 68% 63%;
+    --ring: 42 56% 65%;
 
     --radius: 0.5rem;
     
@@ -83,7 +83,7 @@
     --background: 0 0% 0%;
     --foreground: 0 0% 100%;
     
-    --dental-gold: 41 68% 63%;
+    --dental-gold: 42 56% 65%;
     --dental-gold-foreground: 0 0% 0%;
     
     --dental-black: 0 0% 0%;
@@ -98,7 +98,7 @@
     --popover: 0 0% 5%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 41 68% 63%;
+    --primary: 42 56% 65%;
     --primary-foreground: 0 0% 0%;
 
     --secondary: 0 0% 10%;
@@ -107,7 +107,7 @@
     --muted: 0 0% 10%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 41 68% 63%;
+    --accent: 42 56% 65%;
     --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84% 60%;
@@ -115,7 +115,7 @@
 
     --border: 0 0% 15%;
     --input: 0 0% 15%;
-    --ring: 41 68% 63%;
+    --ring: 42 56% 65%;
   }
 }
 
