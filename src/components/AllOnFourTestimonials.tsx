@@ -137,7 +137,7 @@ const AllOnFourTestimonials = () => {
                     {testimonials[currentSlide].name.charAt(0)}
                   </span>
                 </div>
-                <h4 className="font-bold text-lg text-dental-gold-foreground">
+                <h4 className="font-bold text-lg text-foreground">
                   {testimonials[currentSlide].name}
                 </h4>
                 <p className="text-muted-foreground">{testimonials[currentSlide].platform} • {testimonials[currentSlide].date}</p>
@@ -152,12 +152,12 @@ const AllOnFourTestimonials = () => {
               
               {/* Testimonial content */}
               <div className="md:col-span-3">
-                <blockquote className="text-xl leading-relaxed text-dental-gold-foreground mb-6">
+                <blockquote className="text-xl leading-relaxed text-foreground mb-6">
                   "{testimonials[currentSlide].text}"
                 </blockquote>
                 
                 <div className="bg-dental-gray p-4 rounded-lg">
-                  <p className="font-semibold text-dental-gold-foreground">Review from:</p>
+                  <p className="font-semibold text-foreground">Review from:</p>
                   <p className="text-muted-foreground">{testimonials[currentSlide].platform} • {testimonials[currentSlide].date}</p>
                 </div>
               </div>
@@ -170,7 +170,7 @@ const AllOnFourTestimonials = () => {
               variant="outline"
               size="icon"
               onClick={prevSlide}
-              className="rounded-full bg-white border-white text-dental-gold-foreground hover:bg-primary hover:text-primary-foreground"
+              className="rounded-full bg-white border-white text-foreground hover:bg-primary hover:text-primary-foreground"
             >
               <ChevronLeft className="w-5 h-5" />
             </Button>
@@ -192,7 +192,7 @@ const AllOnFourTestimonials = () => {
               variant="outline"
               size="icon"
               onClick={nextSlide}
-              className="rounded-full bg-white border-white text-dental-gold-foreground hover:bg-primary hover:text-primary-foreground"
+              className="rounded-full bg-white border-white text-foreground hover:bg-primary hover:text-primary-foreground"
             >
               <ChevronRight className="w-5 h-5" />
             </Button>

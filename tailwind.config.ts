@@ -48,9 +48,18 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         // Dental brand colors
-        "dental-gold": "hsl(42 56% 65%)",
-        "dental-black": "hsl(var(--dental-black))",
-        "dental-gray": "hsl(var(--dental-gray))",
+        "dental-gold": {
+          DEFAULT: "hsl(var(--dental-gold))",
+          foreground: "hsl(var(--dental-gold-foreground))",
+        },
+        "dental-black": {
+          DEFAULT: "hsl(var(--dental-black))",
+          foreground: "hsl(var(--dental-black-foreground))",
+        },
+        "dental-gray": {
+          DEFAULT: "hsl(var(--dental-gray))",
+          foreground: "hsl(var(--dental-gray-foreground))",
+        },
       },
       fontFamily: {
         sans: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
