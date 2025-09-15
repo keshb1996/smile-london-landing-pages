@@ -79,8 +79,8 @@ const AllOnFourHero = () => {
             </div>
           </div>
           
-          {/* Right side - Image */}
-          <div className="relative">
+          {/* Right side - Image (hidden on mobile) */}
+          <div className="relative hidden md:block">
             <div className="relative rounded-2xl overflow-hidden shadow-dental-lg">
               <img 
                 src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80"
