@@ -7,15 +7,21 @@ const HeroSection = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
   const benefits = ["Harley Street Centre of Excellence", "World-Renowned Dentists", "5 year guarantee", "FREE X-ray", "0% Finance Available"];
   return <section className="relative overflow-hidden bg-white">
-      {/* Gradient Background - Desktop and Tablet only */}
-      <div className="hidden md:block absolute inset-0 w-full h-full">
-        <img src="/src/assets/hero-gradient-background.jpg" alt="Luxurious gradient background" className="w-full h-full object-cover" />
-        {/* Subtle overlay for text readability */}
-        <div className="absolute inset-0 bg-black/20"></div>
+      {/* Video Background */}
+      <div className="absolute inset-0 w-full h-full">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="w-full h-full object-cover"
+        >
+          <source src="https://res.cloudinary.com/dvezevabk/video/upload/v1757686423/Invisalign_Landing_Page_Hero_Image_wzro4j.mp4" type="video/mp4" />
+        </video>
+        {/* Overlay for text readability */}
+        <div className="absolute inset-0 bg-black/30"></div>
       </div>
-      
-      {/* Light grey gradient background for mobile */}
-      <div className="block md:hidden absolute inset-0 w-full h-full bg-gradient-to-b from-gray-200 to-gray-300"></div>
       <div className="dental-section pt-6 md:pt-8 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Content */}
