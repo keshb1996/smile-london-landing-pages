@@ -67,7 +67,7 @@ const AllOnFourHero = () => {
           {/* Right side - Image (hidden on mobile) */}
           <div className="relative hidden md:block">
             <div className="relative rounded-2xl overflow-hidden shadow-dental-lg">
-              <img src="/all-on-4-maria-hero.png" alt="Happy patient with beautiful smile after All-on-Four dental implants" className="w-full h-[600px] object-cover object-top" />
+              <img src="/all-on-4-maria-hero-new.png" alt="Happy patient with beautiful smile after All-on-Four dental implants" className="w-full h-[600px] object-cover object-top" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
             </div>
             
