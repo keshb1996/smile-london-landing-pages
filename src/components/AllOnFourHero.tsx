@@ -86,17 +86,26 @@ const AllOnFourHero = () => {
                 "I came to Smile London and had the whole thing <span className="text-primary font-bold text-base relative inline-block">
                   done in 1 day
                   <svg 
-                    className="absolute -bottom-1 left-0 w-full h-3 text-primary" 
-                    viewBox="0 0 120 12" 
+                    className="absolute -bottom-1 left-0 w-full h-4 text-primary" 
+                    viewBox="0 0 100 16" 
                     fill="none" 
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path 
-                      d="M2 8C20 4, 40 10, 60 6C80 2, 100 8, 118 5" 
+                      d="M5 12C15 8, 25 14, 35 10C45 6, 55 12, 65 8C75 4, 85 10, 95 6" 
                       stroke="currentColor" 
-                      strokeWidth="2" 
+                      strokeWidth="1.5" 
                       strokeLinecap="round"
-                      className="opacity-80"
+                      fill="none"
+                      className="opacity-70"
+                    />
+                    <path 
+                      d="M8 13C18 9, 28 15, 38 11C48 7, 58 13, 68 9C78 5, 88 11, 92 7" 
+                      stroke="currentColor" 
+                      strokeWidth="0.8" 
+                      strokeLinecap="round"
+                      fill="none"
+                      className="opacity-40"
                     />
                   </svg>
                 </span> really, and I'm just really happy with it!"
