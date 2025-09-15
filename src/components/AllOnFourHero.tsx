@@ -74,7 +74,7 @@ const AllOnFourHero = () => {
             {/* Floating testimonial card */}
             <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-6 shadow-dental-lg max-w-sm">
               <div className="flex items-center gap-4">
-                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?auto=format&fit=crop&w=60&h=60&q=80" alt="Maria" className="w-12 h-12 rounded-full object-cover" />
+                <img src="/maria-testimonial.png" alt="Maria" className="w-12 h-12 rounded-full object-cover" />
                 <div>
                   <p className="font-semibold">Maria</p>
                   <div className="flex gap-1">
