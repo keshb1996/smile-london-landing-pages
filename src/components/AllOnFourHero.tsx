@@ -2,8 +2,23 @@ import { Button } from "@/components/ui/button";
 
 const AllOnFourHero = () => {
   return (
-    <section className="min-h-screen bg-gradient-to-br from-background to-dental-gray flex items-center">
-      <div className="dental-section">
+    <section className="min-h-screen relative flex items-center overflow-hidden">
+      {/* Video Background */}
+      <video 
+        autoPlay 
+        loop 
+        muted 
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="https://res.cloudinary.com/dvezevabk/video/upload/v1757960738/20250915_1922_Radiant_Dental_Transformation_simple_compose_01k579tw9mfxcs8qqst9ymyytq_on4t1f.mp4" type="video/mp4" />
+      </video>
+      
+      {/* Transparent Overlay */}
+      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm"></div>
+      
+      {/* Content */}
+      <div className="dental-section relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Text content */}
           <div className="space-y-8">
