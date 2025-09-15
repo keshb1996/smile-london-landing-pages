@@ -83,32 +83,7 @@ const AllOnFourHero = () => {
                 </div>
               </div>
               <p className="mt-3 text-sm text-muted-foreground">
-                "I came to Smile London and had the whole thing <span className="text-primary font-bold text-base relative inline-block">
-                  done in 1 day
-                  <svg 
-                    className="absolute -bottom-1 left-0 w-full h-4 text-primary" 
-                    viewBox="0 0 100 16" 
-                    fill="none" 
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path 
-                      d="M5 12C15 8, 25 14, 35 10C45 6, 55 12, 65 8C75 4, 85 10, 95 6" 
-                      stroke="currentColor" 
-                      strokeWidth="1.5" 
-                      strokeLinecap="round"
-                      fill="none"
-                      className="opacity-70"
-                    />
-                    <path 
-                      d="M8 13C18 9, 28 15, 38 11C48 7, 58 13, 68 9C78 5, 88 11, 92 7" 
-                      stroke="currentColor" 
-                      strokeWidth="0.8" 
-                      strokeLinecap="round"
-                      fill="none"
-                      className="opacity-40"
-                    />
-                  </svg>
-                </span> really, and I'm just really happy with it!"
+                "I came to Smile London and had the whole thing <span className="text-primary font-bold text-base relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-gradient-to-r after:from-primary after:via-yellow-400 after:to-primary after:shadow-lg after:rounded-full after:transform after:rotate-1">done in 1 day</span> really, and I'm just really happy with it!"
               </p>
             </div>
           </div>
