@@ -25,8 +25,22 @@ const AllOnFourBenefits = () => {
   ];
 
   return (
-    <section className="bg-white">
-      <div className="dental-section">
+    <section className="relative overflow-hidden">
+      {/* Video Background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="https://res.cloudinary.com/dvezevabk/video/upload/v1757960738/20250915_1922_Radiant_Dental_Transformation_simple_compose_01k579tw9mfxcs8qqst9ymyytq_on4t1f.mp4" type="video/mp4" />
+      </video>
+      
+      {/* Overlay for content readability */}
+      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="dental-section relative z-10">
         <div className="text-center mb-16">
           <h2 className="dental-heading mb-6">
             Why Choose All-on-Four at Smile London?
