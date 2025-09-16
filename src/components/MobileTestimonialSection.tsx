@@ -1,8 +1,27 @@
-import { Star } from 'lucide-react';
+import { Star, Play, Loader2 } from 'lucide-react';
+import { useState, useRef } from 'react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const MobileTestimonialSection = () => {
   const { ref, isVisible } = useScrollAnimation();
+  const [isWaitingToPlay, setIsWaitingToPlay] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [showCustomControls, setShowCustomControls] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handlePlayClick = () => {
+    if (!videoRef.current || isWaitingToPlay) return;
+    
+    setIsWaitingToPlay(true);
+    
+    // Brief pause before starting video
+    setTimeout(() => {
+      if (videoRef.current) {
+        videoRef.current.play();
+        setIsWaitingToPlay(false);
+      }
+    }, 400);
+  };
 
   return (
     <section 
@@ -23,14 +42,39 @@ const MobileTestimonialSection = () => {
         <div className="relative mb-6">
           <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
             <video
-              controls
+              ref={videoRef}
+              controls={!showCustomControls}
               poster="/maria-testimonial.png"
-              className="w-full h-full object-cover"
+              className={`w-full h-full object-cover transition-opacity duration-500 ease-out ${
+                isPlaying ? 'opacity-100' : 'opacity-95'
+              }`}
               preload="metadata"
+              onPlay={() => {
+                setIsPlaying(true);
+                setShowCustomControls(false);
+              }}
+              onPause={() => setIsPlaying(false)}
             >
               <source src="https://res.cloudinary.com/dvezevabk/video/upload/v1758043243/VID-20250916-WA0019_1_ks8ly4.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
+            
+            {/* Custom Play Button Overlay */}
+            {showCustomControls && (
+              <div className="absolute inset-0 flex items-center justify-center bg-black/10 backdrop-blur-[1px]">
+                <button
+                  onClick={handlePlayClick}
+                  disabled={isWaitingToPlay}
+                  className="group relative flex items-center justify-center w-16 h-16 rounded-full bg-white/90 backdrop-blur-sm shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 disabled:cursor-not-allowed disabled:scale-100"
+                >
+                  {isWaitingToPlay ? (
+                    <Loader2 className="w-6 h-6 text-primary animate-spin" />
+                  ) : (
+                    <Play className="w-6 h-6 text-primary ml-0.5 group-hover:scale-110 transition-transform duration-200" fill="currentColor" />
+                  )}
+                </button>
+              </div>
+            )}
           </div>
         </div>
         
