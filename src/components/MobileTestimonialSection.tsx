@@ -1,29 +1,8 @@
 import { Star } from 'lucide-react';
-import { useState, useRef } from 'react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const MobileTestimonialSection = () => {
   const { ref, isVisible } = useScrollAnimation();
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const handlePlay = () => {
-    setIsPlaying(true);
-    setIsLoading(false);
-  };
-
-  const handlePause = () => {
-    setIsPlaying(false);
-  };
-
-  const handleLoadStart = () => {
-    setIsLoading(true);
-  };
-
-  const handleCanPlay = () => {
-    setIsLoading(false);
-  };
 
   return (
     <section 
@@ -44,17 +23,10 @@ const MobileTestimonialSection = () => {
         <div className="relative mb-6">
           <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
             <video
-              ref={videoRef}
               controls
               poster="/maria-testimonial.png"
-              className={`w-full h-full object-cover transition-opacity duration-500 ease-out ${
-                isPlaying ? 'opacity-100' : 'opacity-30'
-              } ${isLoading ? 'opacity-50' : ''}`}
+              className="w-full h-full object-cover"
               preload="metadata"
-              onPlay={handlePlay}
-              onPause={handlePause}
-              onLoadStart={handleLoadStart}
-              onCanPlay={handleCanPlay}
             >
               <source src="https://res.cloudinary.com/dvezevabk/video/upload/v1758043243/VID-20250916-WA0019_1_ks8ly4.mp4" type="video/mp4" />
               Your browser does not support the video tag.
