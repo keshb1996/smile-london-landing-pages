@@ -1,3 +1,5 @@
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+
 const BeforeAfterGallery = () => {
   const { ref, isVisible } = useScrollAnimation();
   const beforeAfterImages = [
