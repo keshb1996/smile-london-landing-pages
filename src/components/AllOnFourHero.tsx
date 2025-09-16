@@ -15,7 +15,7 @@ const AllOnFourHero = () => {
       <div className="absolute inset-0 bg-background/50 backdrop-blur-sm"></div>
       
       {/* Content */}
-      <div className="dental-section relative z-10">
+      <div className="dental-section relative z-10 pt-6 md:pt-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Text content */}
           <div className="space-y-8">
