@@ -68,7 +68,7 @@ const AllOnFourConsultationBooking = () => {
       {/* Consultation Booking Section */}
       <section 
         ref={consultationRef}
-        className={`bg-background pt-16 pb-16 lg:pt-24 lg:pb-24 ${
+        className={`bg-background pt-8 pb-8 lg:pt-12 lg:pb-12 ${
           consultationVisible 
             ? 'animate-fade-up' 
             : 'opacity-0 translate-y-[30px]'
