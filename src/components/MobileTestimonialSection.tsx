@@ -20,7 +20,7 @@ const MobileTestimonialSection = () => {
         videoRef.current.play();
         setIsWaitingToPlay(false);
       }
-    }, 400);
+    }, 900);
   };
 
   return (
