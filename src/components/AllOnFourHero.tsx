@@ -22,7 +22,7 @@ const AllOnFourHero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Text content */}
           <div className="space-y-6 md:space-y-8">
-            <div className="space-y-3 md:space-y-6">
+            <div className="space-y-4 md:space-y-6">
               <h1 className="text-3xl md:text-6xl font-bold leading-tight text-white md:text-foreground py-[15px]">
                 Transform Your Smile in Just{" "}
                 <span className="text-primary">One Day</span> with All-on-Four Implants
@@ -56,7 +56,7 @@ const AllOnFourHero = () => {
               </div>
             </div>
             
-            <div className="space-y-3 md:space-y-4">
+            <div className="space-y-4 md:space-y-4">
               <Button size="lg" className="dental-cta text-lg md:text-xl px-8 py-4 md:px-12 md:py-6">
                 Book Your Free Consultation
               </Button>
