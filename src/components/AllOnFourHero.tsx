@@ -23,7 +23,7 @@ const AllOnFourHero = () => {
           {/* Left side - Text content */}
           <div className="space-y-6 md:space-y-8">
             <div className="space-y-3 md:space-y-6">
-              <h1 className="text-3xl md:text-6xl font-bold leading-tight text-white md:text-foreground">
+              <h1 className="text-3xl md:text-6xl font-bold leading-tight text-white md:text-foreground py-[15px]">
                 Transform Your Smile in Just{" "}
                 <span className="text-primary">One Day</span> with All-on-Four Implants
               </h1>
