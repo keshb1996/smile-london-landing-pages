@@ -59,7 +59,7 @@ const AllOnFourFAQ = () => {
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Get answers to the most common questions about All-on-Four dental implants. 
-            Can't find what you're looking for? Contact us for personalized information.
+            Can't find what you're looking for? Contact us for personalised information.
           </p>
         </div>
         
@@ -86,7 +86,7 @@ const AllOnFourFAQ = () => {
               <h3 className="text-2xl font-bold mb-4">Still Have Questions?</h3>
               <p className="text-muted-foreground mb-6">
                 Our treatment coordinators are here to help. Book a free consultation 
-                to discuss your specific situation and get personalized answers.
+                to discuss your specific situation and get personalised answers.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

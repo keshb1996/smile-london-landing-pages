@@ -80,7 +80,7 @@ const AllOnFourConsultationBooking = () => {
               Book Your FREE All-on-4 Consultation
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Take the first step towards your new smile. Our experts will assess your needs and create a personalized treatment plan.
+              Take the first step towards your new smile. Our experts will assess your needs and create a personalised treatment plan.
             </p>
             <div className="mt-4 text-lg font-semibold text-primary">
               Normally £150 - FREE for limited time
@@ -103,7 +103,7 @@ const AllOnFourConsultationBooking = () => {
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <span>Personalized treatment plan</span>
+                    <span>Personalised treatment plan</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full"></div>

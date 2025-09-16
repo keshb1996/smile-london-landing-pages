@@ -21,7 +21,7 @@ const FAQSection = () => {
     },
     {
       question: "How long does Invisalign treatment take?",
-      answer: "Treatment time varies depending on the complexity of your case, but most treatments are completed in 12-18 months. Some minor corrections can be completed in as little as 6 months, while more complex cases may take up to 24 months. We'll provide you with a personalized timeline during your consultation."
+      answer: "Treatment time varies depending on the complexity of your case, but most treatments are completed in 12-18 months. Some minor corrections can be completed in as little as 6 months, while more complex cases may take up to 24 months. We'll provide you with a personalised timeline during your consultation."
     },
     {
       question: "How much does Invisalign cost?",
@@ -50,7 +50,7 @@ const FAQSection = () => {
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Get answers to the most common questions about Invisalign treatment. 
-            Still have questions? Contact us for a personalized consultation.
+            Still have questions? Contact us for a personalised consultation.
           </p>
         </div>
         

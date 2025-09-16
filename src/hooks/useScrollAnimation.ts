@@ -24,7 +24,7 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
       },
       { 
         threshold,
-        rootMargin: '0px 0px -50px 0px' // Optimize for mobile performance
+        rootMargin: '0px 0px -50px 0px' // Optimise for mobile performance
       }
     );
 
