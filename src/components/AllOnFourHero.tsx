@@ -23,15 +23,15 @@ const AllOnFourHero = () => {
           {/* Left side - Text content */}
           <div className="space-y-4 md:space-y-8">
             <div className="space-y-3 md:space-y-6">
-              <h1 className="text-3xl md:text-6xl font-bold leading-tight">
+              <h1 className="text-3xl md:text-6xl font-bold leading-tight text-white md:text-foreground">
                 Transform Your Smile in Just{" "}
                 <span className="text-primary">One Day</span> with All-on-Four Implants
               </h1>
               
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">Experience the confidence of a complete smile with our revolutionary All-on-Four dental implants. </p>
+              <p className="text-lg md:text-xl text-white/90 md:text-muted-foreground leading-relaxed">Experience the confidence of a complete smile with our revolutionary All-on-Four dental implants. </p>
               
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-start">
-                <ul className="space-y-1 md:space-y-2 text-base md:text-lg">
+                <ul className="space-y-1 md:space-y-2 text-base md:text-lg text-white/90 md:text-foreground">
                   <li className="flex items-center gap-3">
                     <span className="w-2 h-2 bg-primary rounded-full"></span>
                     Same-day permanent teeth
@@ -56,7 +56,7 @@ const AllOnFourHero = () => {
               <Button size="lg" className="dental-cta text-lg md:text-xl px-8 py-4 md:px-12 md:py-6">
                 Book Your Free Consultation
               </Button>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-white/80 md:text-muted-foreground">
                 FREE consultation worth £150 • No obligation • Expert assessment
               </p>
             </div>
