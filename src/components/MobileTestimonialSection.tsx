@@ -28,7 +28,7 @@ const MobileTestimonialSection = () => {
               className="w-full h-full object-cover"
               preload="metadata"
             >
-              <source src="/mobile-hero-video.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/dvezevabk/video/upload/v1758040018/VID-20250916-WA0015_vcfwfp.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
