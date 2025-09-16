@@ -63,7 +63,7 @@ const Invisalign = () => {
       >
         <div className="dental-section">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <div className="bg-white/80 p-8 rounded-lg">
+            <div className="bg-white/60 p-8 rounded-lg">
               <ConsultationForm />
             </div>
             <div className="hidden lg:block">
