@@ -1,6 +1,8 @@
 import { Check } from "lucide-react";
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const AllOnFourPricing = () => {
+  const { ref, isVisible } = useScrollAnimation();
   const packageIncludes = [
     "Initial consultation and comprehensive examination",
     "Advanced 3D CBCT imaging and digital treatment planning",
@@ -17,7 +19,14 @@ const AllOnFourPricing = () => {
   ];
 
   return (
-    <section className="bg-dental-gold text-dental-gold-foreground">
+    <section 
+      ref={ref}
+      className={`bg-dental-gold text-dental-gold-foreground ${
+        isVisible 
+          ? 'animate-fade-up' 
+          : 'opacity-0 translate-y-[30px]'
+      }`}
+    >
       <div className="dental-section">
         <div className="text-center mb-16">
           <h2 className="dental-heading mb-6 text-dental-gold-foreground">

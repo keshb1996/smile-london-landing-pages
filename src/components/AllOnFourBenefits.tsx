@@ -1,6 +1,8 @@
 import { CreditCard, Clock, Shield, Users } from "lucide-react";
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const AllOnFourBenefits = () => {
+  const { ref, isVisible } = useScrollAnimation();
   const benefits = [
     {
       icon: CreditCard,
@@ -25,7 +27,14 @@ const AllOnFourBenefits = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden">
+    <section 
+      ref={ref}
+      className={`relative overflow-hidden ${
+        isVisible 
+          ? 'animate-fade-up' 
+          : 'opacity-0 translate-y-[30px]'
+      }`}
+    >
       {/* Video Background */}
       <video
         autoPlay

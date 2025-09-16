@@ -1,7 +1,16 @@
 import { Star } from 'lucide-react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import testimonialImage from '@/assets/testimonial-patient.jpg';
 const TestimonialSection = () => {
-  return <section className="bg-dental-gold">
+  const { ref, isVisible } = useScrollAnimation();
+  return <section 
+    ref={ref}
+    className={`bg-dental-gold ${
+      isVisible 
+        ? 'animate-fade-up' 
+        : 'opacity-0 translate-y-[30px]'
+    }`}
+  >
       <div className="dental-section">
         <div className="text-center max-w-4xl mx-auto">
           <div className="flex justify-center mb-6">

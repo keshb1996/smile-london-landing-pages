@@ -1,7 +1,10 @@
 import { Clock, Shield, Users, MapPin, Zap, CreditCard } from 'lucide-react';
 import ConsultationForm from './ConsultationForm';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const AllOnFourConsultationBooking = () => {
+  const { ref: whyChooseRef, isVisible: whyChooseVisible } = useScrollAnimation();
+  const { ref: consultationRef, isVisible: consultationVisible } = useScrollAnimation();
   const benefits = [{
     icon: Clock,
     title: "Same Day Treatment",
@@ -30,7 +33,14 @@ const AllOnFourConsultationBooking = () => {
   return (
     <>
       {/* Why Choose Section */}
-      <section className="bg-dental-black">
+      <section 
+        ref={whyChooseRef}
+        className={`bg-dental-black ${
+          whyChooseVisible 
+            ? 'animate-fade-up' 
+            : 'opacity-0 translate-y-[30px]'
+        }`}
+      >
         <div className="dental-section">
           <div className="text-center mb-16">
             <h2 className="dental-heading text-white mb-6">Why Choose Smile London for Your All-on-4 Treatment?</h2>
@@ -56,7 +66,14 @@ const AllOnFourConsultationBooking = () => {
       </section>
 
       {/* Consultation Booking Section */}
-      <section className="bg-background pt-16 pb-16 lg:pt-24 lg:pb-24">
+      <section 
+        ref={consultationRef}
+        className={`bg-background pt-16 pb-16 lg:pt-24 lg:pb-24 ${
+          consultationVisible 
+            ? 'animate-fade-up' 
+            : 'opacity-0 translate-y-[30px]'
+        }`}
+      >
         <div className="dental-section">
           <div className="text-center mb-12">
             <h2 className="dental-heading mb-4">

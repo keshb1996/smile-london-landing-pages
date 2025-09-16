@@ -1,34 +1,16 @@
 import { Star } from 'lucide-react';
-import { useState, useEffect, useRef } from 'react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const MobileTestimonialSection = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  const { ref, isVisible } = useScrollAnimation();
 
   return (
     <section 
-      ref={sectionRef}
-      className={`md:hidden bg-slate-50 py-10 px-5 transition-all duration-700 ${
+      ref={ref}
+      className={`md:hidden bg-slate-50 py-10 px-5 ${
         isVisible 
-          ? 'opacity-100 translate-y-0 animate-fade-in' 
-          : 'opacity-0 translate-y-4'
+          ? 'animate-fade-up' 
+          : 'opacity-0 translate-y-[30px]'
       }`}
     >
       <div className="max-w-sm mx-auto">

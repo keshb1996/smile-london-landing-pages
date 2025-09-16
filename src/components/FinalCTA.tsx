@@ -1,8 +1,17 @@
 import { Check } from 'lucide-react';
 import ConsultationForm from './ConsultationForm';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 const FinalCTA = () => {
+  const { ref, isVisible } = useScrollAnimation();
   const benefits = ["Harley Street Centre of Excellence", "World-Renowned Dentists", "5 year guarantee", "FREE X-ray", "0% Finance Available"];
-  return <section className="bg-dental-gold">
+  return <section 
+    ref={ref}
+    className={`bg-dental-gold ${
+      isVisible 
+        ? 'animate-fade-up' 
+        : 'opacity-0 translate-y-[30px]'
+    }`}
+  >
       <div className="dental-section">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="text-dental-black">

@@ -1,6 +1,8 @@
 import { Check } from 'lucide-react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const InvisalignInfo = () => {
+  const { ref, isVisible } = useScrollAnimation();
   const benefits = [
     "Nearly invisible clear aligners",
     "Removable for eating and brushing",
@@ -13,7 +15,14 @@ const InvisalignInfo = () => {
   ];
 
   return (
-    <section className="bg-white">
+    <section 
+      ref={ref}
+      className={`bg-white ${
+        isVisible 
+          ? 'animate-fade-up' 
+          : 'opacity-0 translate-y-[30px]'
+      }`}
+    >
       <div className="dental-section">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>

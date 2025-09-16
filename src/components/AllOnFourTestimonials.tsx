@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const AllOnFourTestimonials = () => {
+  const { ref, isVisible } = useScrollAnimation();
   const [currentSlide, setCurrentSlide] = useState(0);
   
   const testimonials = [
@@ -115,7 +117,14 @@ const AllOnFourTestimonials = () => {
   };
 
   return (
-    <section className="bg-dental-black text-dental-black-foreground">
+    <section 
+      ref={ref}
+      className={`bg-dental-black text-dental-black-foreground ${
+        isVisible 
+          ? 'animate-fade-up' 
+          : 'opacity-0 translate-y-[30px]'
+      }`}
+    >
       <div className="dental-section">
         <div className="text-center mb-16">
           <h2 className="dental-heading mb-6 text-dental-black-foreground">

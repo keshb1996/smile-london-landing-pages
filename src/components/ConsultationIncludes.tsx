@@ -1,5 +1,7 @@
 import { Stethoscope, Scan, Sparkles, ShieldCheck, Smile } from 'lucide-react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 const ConsultationIncludes = () => {
+  const { ref, isVisible } = useScrollAnimation();
   const benefits = [{
     icon: Stethoscope,
     title: "Personalised Treatment Plan",
@@ -21,7 +23,14 @@ const ConsultationIncludes = () => {
     title: "FREE Teeth Whitening",
     value: "worth £450"
   }];
-  return <section className="bg-dental-gold/20 py-0">
+  return <section 
+    ref={ref}
+    className={`bg-dental-gold/20 py-0 ${
+      isVisible 
+        ? 'animate-fade-up' 
+        : 'opacity-0 translate-y-[30px]'
+    }`}
+  >
       <div className="dental-section">
         <div className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">

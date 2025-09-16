@@ -5,8 +5,10 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const AllOnFourConsultationForm = () => {
+  const { ref, isVisible } = useScrollAnimation();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -38,7 +40,14 @@ const AllOnFourConsultationForm = () => {
   };
 
   return (
-    <section className="bg-dental-gold text-dental-gold-foreground">
+    <section 
+      ref={ref}
+      className={`bg-dental-gold text-dental-gold-foreground ${
+        isVisible 
+          ? 'animate-fade-up' 
+          : 'opacity-0 translate-y-[30px]'
+      }`}
+    >
       <div className="dental-section">
         <div className="text-center mb-16">
           <h2 className="dental-heading mb-6 text-dental-gold-foreground">

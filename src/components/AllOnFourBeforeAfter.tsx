@@ -1,4 +1,7 @@
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+
 const AllOnFourBeforeAfter = () => {
+  const { ref, isVisible } = useScrollAnimation();
   const transformations = [
     {
       before: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=400&h=300&q=80",
@@ -18,7 +21,14 @@ const AllOnFourBeforeAfter = () => {
   ];
 
   return (
-    <section className="bg-dental-gray">
+    <section 
+      ref={ref}
+      className={`bg-dental-gray ${
+        isVisible 
+          ? 'animate-fade-up' 
+          : 'opacity-0 translate-y-[30px]'
+      }`}
+    >
       <div className="dental-section">
         <div className="text-center mb-16">
           <h2 className="dental-heading mb-6">

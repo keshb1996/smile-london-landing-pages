@@ -1,4 +1,5 @@
 const BeforeAfterGallery = () => {
+  const { ref, isVisible } = useScrollAnimation();
   const beforeAfterImages = [
     {
       id: 1,
@@ -18,7 +19,14 @@ const BeforeAfterGallery = () => {
   ];
 
   return (
-    <section className="bg-white">
+    <section 
+      ref={ref}
+      className={`bg-white ${
+        isVisible 
+          ? 'animate-fade-up' 
+          : 'opacity-0 translate-y-[30px]'
+      }`}
+    >
       <div className="dental-section">
         <div className="text-center mb-16">
           <h2 className="dental-subheading text-dental-black mb-6">

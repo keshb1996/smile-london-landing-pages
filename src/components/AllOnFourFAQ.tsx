@@ -4,8 +4,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const AllOnFourFAQ = () => {
+  const { ref, isVisible } = useScrollAnimation();
   const faqs = [
     {
       question: "What exactly is All-on-Four dental implant treatment?",
@@ -42,7 +44,14 @@ const AllOnFourFAQ = () => {
   ];
 
   return (
-    <section className="bg-white">
+    <section 
+      ref={ref}
+      className={`bg-white ${
+        isVisible 
+          ? 'animate-fade-up' 
+          : 'opacity-0 translate-y-[30px]'
+      }`}
+    >
       <div className="dental-section">
         <div className="text-center mb-16">
           <h2 className="dental-heading mb-6">

@@ -1,8 +1,17 @@
 import { Play } from "lucide-react";
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const AllOnFourExplanation = () => {
+  const { ref, isVisible } = useScrollAnimation();
   return (
-    <section className="bg-white">
+    <section 
+      ref={ref}
+      className={`bg-white ${
+        isVisible 
+          ? 'animate-fade-up' 
+          : 'opacity-0 translate-y-[30px]'
+      }`}
+    >
       <div className="dental-section">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left side - Text content */}

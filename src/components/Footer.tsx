@@ -1,6 +1,16 @@
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+
 const Footer = () => {
+  const { ref, isVisible } = useScrollAnimation();
   return (
-    <footer className="bg-black text-white py-16">
+    <footer 
+      ref={ref}
+      className={`bg-black text-white py-16 ${
+        isVisible 
+          ? 'animate-fade-up' 
+          : 'opacity-0 translate-y-[30px]'
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left side - Logo and description */}

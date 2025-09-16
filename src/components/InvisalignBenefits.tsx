@@ -1,5 +1,7 @@
 import { EyeOff, Utensils, Heart, Clock } from 'lucide-react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 const InvisalignBenefits = () => {
+  const { ref, isVisible } = useScrollAnimation();
   const benefits = [{
     icon: EyeOff,
     text: "Invisible, with no metal brackets or wires"
@@ -13,7 +15,14 @@ const InvisalignBenefits = () => {
     icon: Clock,
     text: "Faster treatment than traditional braces"
   }];
-  return <section className="bg-gray-50 py-0">
+  return <section 
+    ref={ref}
+    className={`bg-gray-50 py-0 ${
+      isVisible 
+        ? 'animate-fade-up' 
+        : 'opacity-0 translate-y-[30px]'
+    }`}
+  >
       <div className="dental-section">
         <div className="text-center mb-12">
           <h2 className="dental-heading">Why Choose Invisalign?</h2>

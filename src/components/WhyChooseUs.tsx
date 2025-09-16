@@ -1,5 +1,6 @@
 import { Gift, Calendar, CreditCard, Award, Users, Zap } from 'lucide-react';
 import { useState } from 'react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import ConsultationForm from './ConsultationForm';
@@ -7,6 +8,7 @@ import dentistImage from '@/assets/dentist-portrait.jpg';
 import clinicImage from '@/assets/clinic-interior.jpg';
 
 const WhyChooseUs = () => {
+  const { ref, isVisible } = useScrollAnimation();
   const [dialogOpen, setDialogOpen] = useState(false);
   
   const benefits = [{

@@ -1,6 +1,9 @@
 import { CreditCard, Calculator, Clock } from "lucide-react";
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const AllOnFourFinancing = () => {
+  const { ref: mainRef, isVisible: mainVisible } = useScrollAnimation();
+  const { ref: checkRef, isVisible: checkVisible } = useScrollAnimation();
   const financingOptions = [
     {
       icon: CreditCard,
@@ -44,7 +47,15 @@ const AllOnFourFinancing = () => {
   ];
 
   return (
-    <section className="bg-white">
+    <div>
+      <section 
+        ref={mainRef}
+        className={`bg-white ${
+          mainVisible 
+            ? 'animate-fade-up' 
+            : 'opacity-0 translate-y-[30px]'
+        }`}
+      >
       <div className="dental-section">
         <div className="text-center mb-16">
           <h2 className="dental-heading mb-6">
@@ -140,6 +151,57 @@ const AllOnFourFinancing = () => {
         </div>
       </div>
     </section>
+    
+    <section 
+      ref={checkRef}
+      className={`bg-gray-50 ${
+        checkVisible 
+          ? 'animate-fade-up' 
+          : 'opacity-0 translate-y-[30px]'
+      }`}
+    >
+      <div className="dental-section">
+        <div className="bg-dental-gray rounded-2xl p-8">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 className="text-2xl font-bold mb-4">Quick Finance Check</h3>
+              <p className="text-muted-foreground mb-6">
+                Get an instant decision on your financing application. Our simple online 
+                process takes just 2 minutes with no impact on your credit score.
+              </p>
+              
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <span>Instant online decision</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <span>No impact on credit score</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <span>Secure application process</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <img 
+                src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=400&h=300&q=80"
+                alt="Finance application on mobile device"
+                className="w-full max-w-md mx-auto rounded-lg shadow-dental mb-6"
+              />
+              
+              <button className="dental-cta">
+                Check Finance Options
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
   );
 };
 
