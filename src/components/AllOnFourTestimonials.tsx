@@ -126,7 +126,7 @@ const AllOnFourTestimonials = () => {
       }`}
     >
       <div className="dental-section">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 md:mb-16 mb-5">
           <h2 className="dental-heading mb-6 text-dental-black-foreground">
             What Our <span className="text-primary">Patients Say</span>
           </h2>
