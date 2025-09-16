@@ -1,8 +1,36 @@
 import { Star } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
 
 const MobileTestimonialSection = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="md:hidden bg-slate-50 py-10 px-5">
+    <section 
+      ref={sectionRef}
+      className={`md:hidden bg-slate-50 py-10 px-5 transition-all duration-700 ${
+        isVisible 
+          ? 'opacity-100 translate-y-0 animate-fade-in' 
+          : 'opacity-0 translate-y-4'
+      }`}
+    >
       <div className="max-w-sm mx-auto">
         {/* Section Heading */}
         <h2 className="text-2xl font-bold text-center mb-8 text-foreground">
