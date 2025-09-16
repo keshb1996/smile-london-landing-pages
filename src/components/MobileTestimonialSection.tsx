@@ -1,5 +1,5 @@
 import { Star, Play, Loader2 } from 'lucide-react';
-import { useState, useRef } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const MobileTestimonialSection = () => {
@@ -7,7 +7,39 @@ const MobileTestimonialSection = () => {
   const [isWaitingToPlay, setIsWaitingToPlay] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [showCustomControls, setShowCustomControls] = useState(true);
+  const [isFadingAudio, setIsFadingAudio] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const fadeIntervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  const fadeInAudio = useCallback(() => {
+    if (!videoRef.current) return;
+    
+    const video = videoRef.current;
+    const targetVolume = 1;
+    const fadeDuration = 1500; // 1.5 seconds
+    const steps = 30; // 30 steps for smooth fade
+    const stepDuration = fadeDuration / steps;
+    const volumeStep = targetVolume / steps;
+    
+    let currentStep = 0;
+    video.volume = 0;
+    setIsFadingAudio(true);
+    
+    fadeIntervalRef.current = setInterval(() => {
+      if (!video || currentStep >= steps) {
+        if (fadeIntervalRef.current) {
+          clearInterval(fadeIntervalRef.current);
+          fadeIntervalRef.current = null;
+        }
+        setIsFadingAudio(false);
+        if (video) video.volume = targetVolume;
+        return;
+      }
+      
+      currentStep++;
+      video.volume = Math.min(volumeStep * currentStep, targetVolume);
+    }, stepDuration);
+  }, []);
 
   const handlePlayClick = () => {
     if (!videoRef.current || isWaitingToPlay) return;
@@ -19,8 +51,30 @@ const MobileTestimonialSection = () => {
       if (videoRef.current) {
         videoRef.current.play();
         setIsWaitingToPlay(false);
+        // Start audio fade-in after video begins
+        fadeInAudio();
       }
     }, 900);
+  };
+
+  // Cleanup fade interval on unmount or pause
+  useEffect(() => {
+    return () => {
+      if (fadeIntervalRef.current) {
+        clearInterval(fadeIntervalRef.current);
+        fadeIntervalRef.current = null;
+      }
+    };
+  }, []);
+
+  const handlePause = () => {
+    setIsPlaying(false);
+    // Stop audio fade if video is paused
+    if (fadeIntervalRef.current) {
+      clearInterval(fadeIntervalRef.current);
+      fadeIntervalRef.current = null;
+      setIsFadingAudio(false);
+    }
   };
 
   return (
@@ -53,7 +107,7 @@ const MobileTestimonialSection = () => {
                 setIsPlaying(true);
                 setShowCustomControls(false);
               }}
-              onPause={() => setIsPlaying(false)}
+              onPause={handlePause}
             >
               <source src="https://res.cloudinary.com/dvezevabk/video/upload/v1758043243/VID-20250916-WA0019_1_ks8ly4.mp4" type="video/mp4" />
               Your browser does not support the video tag.
