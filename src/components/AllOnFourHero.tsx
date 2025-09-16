@@ -11,6 +11,9 @@ const AllOnFourHero = () => {
         <source src="/mobile-hero-video.mp4" type="video/mp4" />
       </video>
       
+      {/* Black Overlay for Mobile Video */}
+      <div className="absolute inset-0 bg-black/40 md:hidden"></div>
+      
       {/* Transparent Overlay */}
       <div className="absolute inset-0 bg-background/50 backdrop-blur-sm"></div>
       
