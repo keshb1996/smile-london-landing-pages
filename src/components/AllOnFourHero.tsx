@@ -21,7 +21,7 @@ const AllOnFourHero = () => {
       <div className="py-4 md:py-20 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Text content */}
-          <div className="space-y-4 md:space-y-8">
+          <div className="space-y-6 md:space-y-8">
             <div className="space-y-3 md:space-y-6">
               <h1 className="text-3xl md:text-6xl font-bold leading-tight text-white md:text-foreground">
                 Transform Your Smile in Just{" "}
