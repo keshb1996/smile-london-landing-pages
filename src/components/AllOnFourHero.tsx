@@ -12,7 +12,10 @@ const AllOnFourHero = () => {
       </video>
       
       {/* Transparent Overlay */}
-      <div className="absolute inset-0 bg-background/50 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-background/50 md:bg-background/50 md:backdrop-blur-sm"></div>
+      
+      {/* Mobile Dark Overlay */}
+      <div className="absolute inset-0 bg-black/60 md:hidden"></div>
       
       {/* Content */}
       <div className="py-4 md:py-20 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto relative z-10">
