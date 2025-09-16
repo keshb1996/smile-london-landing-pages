@@ -46,7 +46,15 @@ const MobileTestimonialSection = () => {
         
         {/* Testimonial Text */}
         <blockquote className="text-center text-muted-foreground mb-4 leading-relaxed">
-          "I came to Smile London and had the whole thing done in 1 day really, and I'm just really happy with it!"
+          "I came to Smile London and had the whole thing{" "}
+          <span className="text-primary font-bold relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-primary after:via-yellow-400 after:to-primary after:shadow-sm after:scale-x-0 after:origin-left after:transition-transform after:duration-700 after:ease-out" style={{
+            '--after-scale-x': isVisible ? '1' : '0'
+          } as React.CSSProperties & { '--after-scale-x': string }}>
+            <span className={`${isVisible ? 'after:scale-x-100' : 'after:scale-x-0'} relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-primary after:via-yellow-400 after:to-primary after:shadow-sm after:origin-left after:transition-transform after:duration-700 after:ease-out after:delay-300`}>
+              done in 1 day
+            </span>
+          </span>{" "}
+          really, and I'm just really happy with it!"
         </blockquote>
         
         {/* Caption */}
