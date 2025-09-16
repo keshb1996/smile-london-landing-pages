@@ -46,7 +46,7 @@ const AllOnFourHero = () => {
                   </li>
                    <li className="flex items-center gap-3">
                      <span className="w-2 h-2 bg-primary rounded-full"></span>
-                     0% interest-free finance available - spread costs up to 5 years
+                     0% interest-free finance available
                    </li>
                   <li className="flex items-center gap-3">
                     <span className="w-2 h-2 bg-primary rounded-full"></span>
