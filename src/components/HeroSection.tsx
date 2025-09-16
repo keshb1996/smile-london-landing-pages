@@ -22,15 +22,18 @@ const HeroSection = () => {
         {/* Overlay for text readability */}
         <div className="absolute inset-0 bg-black/30"></div>
       </div>
+      {/* Mobile grey gradient background */}
+      <div className="absolute inset-0 w-full h-full md:hidden bg-gradient-to-b from-muted/90 via-muted/95 to-background/90"></div>
+      
       <div className="dental-section pt-6 md:pt-8 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Content */}
-          <div className="text-black md:text-white space-y-6">
+          <div className="text-foreground md:text-white space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
               Clear, discreet teeth alignment 
               <span className="text-dental-gold"> without traditional braces</span>
             </h1>
-            <p className="text-2xl md:text-3xl text-black md:text-white font-medium">
+            <p className="text-2xl md:text-3xl text-foreground md:text-white font-medium">
               ...in Marylebone, London
             </p>
             
