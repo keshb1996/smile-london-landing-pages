@@ -122,16 +122,16 @@ const AllOnFourConsultationForm = () => {
                 <div className="flex items-start gap-4">
                   <MapPin className="w-6 h-6 mt-1 flex-shrink-0" />
                   <div>
-                    <p className="font-semibold">Smile London Dental Clinic</p>
-                    <p className="opacity-90">123 Harley Street</p>
-                    <p className="opacity-90">London W1G 6AN</p>
+                    <p className="font-semibold">Smile London</p>
+                    <p className="opacity-90">38 Queen Anne Street</p>
+                    <p className="opacity-90">London W1G 8HZ</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center gap-4">
                   <Phone className="w-6 h-6 flex-shrink-0" />
                   <div>
-                    <p className="font-semibold">020 7183 4091</p>
+                    <p className="font-semibold">020 4540 1566</p>
                     <p className="text-sm opacity-75">Available 7 days a week</p>
                   </div>
                 </div>
@@ -149,9 +149,9 @@ const AllOnFourConsultationForm = () => {
                   <div>
                     <p className="font-semibold mb-2">Opening Hours</p>
                     <div className="space-y-1 text-sm opacity-90">
-                      <p>Monday - Friday: 8:00 AM - 8:00 PM</p>
-                      <p>Saturday: 9:00 AM - 6:00 PM</p>
-                      <p>Sunday: 10:00 AM - 4:00 PM</p>
+                      <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
+                      
+                      
                     </div>
                   </div>
                 </div>
