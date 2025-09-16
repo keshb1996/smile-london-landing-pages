@@ -6,9 +6,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-
 const AllOnFourConsultationForm = () => {
-  const { ref, isVisible } = useScrollAnimation();
+  const {
+    ref,
+    isVisible
+  } = useScrollAnimation();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -18,36 +20,24 @@ const AllOnFourConsultationForm = () => {
     preferredTime: '',
     message: ''
   });
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
-
   const handleSelectChange = (name: string, value: string) => {
     setFormData({
       ...formData,
       [name]: value
     });
   };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
     // Handle form submission logic here
   };
-
-  return (
-    <section 
-      ref={ref}
-      className={`bg-dental-gold text-dental-gold-foreground ${
-        isVisible 
-          ? 'animate-fade-up' 
-          : 'opacity-0 translate-y-[30px]'
-      }`}
-    >
+  return <section ref={ref} className={`bg-dental-gold text-dental-gold-foreground ${isVisible ? 'animate-fade-up' : 'opacity-0 translate-y-[30px]'}`}>
       <div className="dental-section">
         <div className="text-center mb-16">
           <h2 className="dental-heading mb-6 text-dental-gold-foreground">
@@ -70,28 +60,14 @@ const AllOnFourConsultationForm = () => {
                   <Label htmlFor="firstName" className="text-dental-gold-foreground font-semibold">
                     First Name *
                   </Label>
-                  <Input
-                    id="firstName"
-                    name="firstName"
-                    value={formData.firstName}
-                    onChange={handleInputChange}
-                    className="mt-2 bg-white/90 border-white/20"
-                    required
-                  />
+                  <Input id="firstName" name="firstName" value={formData.firstName} onChange={handleInputChange} className="mt-2 bg-white/90 border-white/20" required />
                 </div>
                 
                 <div>
                   <Label htmlFor="lastName" className="text-dental-gold-foreground font-semibold">
                     Last Name *
                   </Label>
-                  <Input
-                    id="lastName"
-                    name="lastName"
-                    value={formData.lastName}
-                    onChange={handleInputChange}
-                    className="mt-2 bg-white/90 border-white/20"
-                    required
-                  />
+                  <Input id="lastName" name="lastName" value={formData.lastName} onChange={handleInputChange} className="mt-2 bg-white/90 border-white/20" required />
                 </div>
               </div>
               
@@ -99,86 +75,21 @@ const AllOnFourConsultationForm = () => {
                 <Label htmlFor="email" className="text-dental-gold-foreground font-semibold">
                   Email Address *
                 </Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  className="mt-2 bg-white/90 border-white/20"
-                  required
-                />
+                <Input id="email" name="email" type="email" value={formData.email} onChange={handleInputChange} className="mt-2 bg-white/90 border-white/20" required />
               </div>
               
               <div>
                 <Label htmlFor="phone" className="text-dental-gold-foreground font-semibold">
                   Contact Number *
                 </Label>
-                <Input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  className="mt-2 bg-white/90 border-white/20"
-                  required
-                />
+                <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleInputChange} className="mt-2 bg-white/90 border-white/20" required />
               </div>
               
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <Label className="text-dental-gold-foreground font-semibold">
-                    Preferred Date
-                  </Label>
-                  <Input
-                    name="preferredDate"
-                    type="date"
-                    value={formData.preferredDate}
-                    onChange={handleInputChange}
-                    className="mt-2 bg-white/90 border-white/20"
-                  />
-                </div>
-                
-                <div>
-                  <Label className="text-dental-gold-foreground font-semibold">
-                    Preferred Time
-                  </Label>
-                  <Select onValueChange={(value) => handleSelectChange('preferredTime', value)}>
-                    <SelectTrigger className="mt-2 bg-white/90 border-white/20">
-                      <SelectValue placeholder="Select time" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="9am">9:00 AM</SelectItem>
-                      <SelectItem value="10am">10:00 AM</SelectItem>
-                      <SelectItem value="11am">11:00 AM</SelectItem>
-                      <SelectItem value="12pm">12:00 PM</SelectItem>
-                      <SelectItem value="2pm">2:00 PM</SelectItem>
-                      <SelectItem value="3pm">3:00 PM</SelectItem>
-                      <SelectItem value="4pm">4:00 PM</SelectItem>
-                      <SelectItem value="5pm">5:00 PM</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-              </div>
               
-              <div>
-                <Label htmlFor="message" className="text-dental-gold-foreground font-semibold">
-                  Tell us about your dental concerns (optional)
-                </Label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  className="mt-2 bg-white/90 border-white/20 min-h-[100px]"
-                  placeholder="Describe any specific concerns or questions you have about All-on-Four treatment..."
-                />
-              </div>
               
-              <Button 
-                type="submit"
-                className="w-full bg-white text-dental-gold-foreground py-4 text-lg font-bold hover:bg-white/90 transition-colors"
-              >
+              
+              
+              <Button type="submit" className="w-full bg-white text-dental-gold-foreground py-4 text-lg font-bold hover:bg-white/90 transition-colors">
                 Book My Free Consultation
               </Button>
               
@@ -187,12 +98,7 @@ const AllOnFourConsultationForm = () => {
                 <p className="text-sm opacity-90 mb-3 text-white">
                   Worried about cost? We offer 0% interest-free finance options through our partner Tabeo.
                 </p>
-                <a 
-                  href="https://lead.tabeo.co.uk/smile-london/finance?utm_source=landing_page&utm_medium=consultation_form&utm_campaign=all_on_4_consultation"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-2 bg-white text-dental-gold-foreground rounded-lg font-medium hover:bg-white/90 transition-colors text-sm"
-                >
+                <a href="https://lead.tabeo.co.uk/smile-london/finance?utm_source=landing_page&utm_medium=consultation_form&utm_campaign=all_on_4_consultation" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-2 bg-white text-dental-gold-foreground rounded-lg font-medium hover:bg-white/90 transition-colors text-sm">
                   Check Your Eligibility
                 </a>
                 <p className="text-xs opacity-75 mt-2 text-white">
@@ -257,11 +163,7 @@ const AllOnFourConsultationForm = () => {
               <h3 className="text-2xl font-bold mb-6">Find Us</h3>
               
               <div className="aspect-video rounded-lg overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?auto=format&fit=crop&w=800&h=450&q=80"
-                  alt="Map location of Smile London Dental Clinic"
-                  className="w-full h-full object-cover"
-                />
+                <img src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?auto=format&fit=crop&w=800&h=450&q=80" alt="Map location of Smile London Dental Clinic" className="w-full h-full object-cover" />
               </div>
               
               <div className="mt-4 text-sm opacity-90">
@@ -283,8 +185,6 @@ const AllOnFourConsultationForm = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AllOnFourConsultationForm;
