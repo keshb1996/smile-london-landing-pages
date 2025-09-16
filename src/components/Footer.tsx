@@ -62,6 +62,13 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        
+        <div className="border-t border-gray-800 pt-8 mt-12 text-center text-gray-400 space-y-2">
+          <p className="text-xs">
+            Finance provided by Tabeo Financial Services. 0% APR representative. Credit subject to status. Terms and conditions apply. Smile London is an Introducer Appointed Representative of Tabeo.
+          </p>
+          <p>&copy; 2024 Smile London. All rights reserved.</p>
+        </div>
       </div>
     </footer>
   );

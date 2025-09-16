@@ -5,7 +5,7 @@ import { useState } from 'react';
 import ConsultationForm from './ConsultationForm';
 const HeroSection = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
-  const benefits = ["Harley Street Centre of Excellence", "World-Renowned Dentists", "5 year guarantee", "FREE X-ray", "0% Finance Available"];
+  const benefits = ["Harley Street Centre of Excellence", "World-Renowned Dentists", "5 year guarantee", "FREE X-ray", "0% interest-free finance available"];
   return <section className="relative overflow-hidden bg-white">
       {/* Video Background */}
       <div className="absolute inset-0 w-full h-full">

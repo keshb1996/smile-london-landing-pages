@@ -8,6 +8,8 @@ import AllOnFourExplanation from '@/components/AllOnFourExplanation';
 import AllOnFourIncludes from '@/components/AllOnFourIncludes';
 import AllOnFourTestimonials from '@/components/AllOnFourTestimonials';
 import AllOnFourFinancing from '@/components/AllOnFourFinancing';
+import TabeoFinanceSection from '@/components/TabeoFinanceSection';
+import FinanceFAQ from '@/components/FinanceFAQ';
 import AllOnFourPricing from '@/components/AllOnFourPricing';
 import AllOnFourFAQ from '@/components/AllOnFourFAQ';
 import AllOnFourConsultationForm from '@/components/AllOnFourConsultationForm';
@@ -47,12 +49,14 @@ const AllOnFour = () => {
       <MobileTestimonialSection />
       <AllOnFourConsultationBooking />
       <AllOnFourBenefits />
+      <TabeoFinanceSection />
       <AllOnFourBeforeAfter />
       <AllOnFourExplanation />
       <AllOnFourIncludes />
       <AllOnFourTestimonials />
       <AllOnFourFinancing />
       <AllOnFourPricing />
+      <FinanceFAQ />
       <AllOnFourFAQ />
       <AllOnFourConsultationForm />
       <FinalCTA />

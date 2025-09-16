@@ -23,7 +23,7 @@ const AllOnFourFAQ = () => {
     },
     {
       question: "How much does All-on-Four treatment cost?",
-      answer: "Our All-on-Four treatment is currently priced at £12,995 per arch (normally £18,000). We offer various financing options including 0% interest plans from £89/month. This price includes everything: consultation, surgery, immediate temporary teeth, final permanent teeth, and our 5-year comprehensive warranty."
+      answer: "Our All-on-Four treatment is currently priced at £12,995 per arch (normally £18,000). We offer 0% interest-free finance through Tabeo with monthly payments from £237/month over 36 months. This price includes everything: consultation, surgery, immediate temporary teeth, final permanent teeth, and our 5-year comprehensive warranty."
     },
     {
       question: "What is the success rate of All-on-Four implants?",

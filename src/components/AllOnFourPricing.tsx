@@ -61,14 +61,14 @@ const AllOnFourPricing = () => {
               </div>
               
               <div className="space-y-4 mb-8">
-                <div className="text-lg font-semibold">Financing Options:</div>
+                <div className="text-lg font-semibold">Tabeo 0% Finance Options:</div>
                 <div className="space-y-2">
                   <div className="bg-white/10 rounded-lg p-3">
-                    <div className="font-bold">From £89/month</div>
-                    <div className="text-sm opacity-75">0% interest • 36 months</div>
+                    <div className="font-bold">From £237/month</div>
+                    <div className="text-sm opacity-75">0% APR • 36 months</div>
                   </div>
                   <div className="bg-white/10 rounded-lg p-3">
-                    <div className="font-bold">From £149/month</div>
+                    <div className="font-bold">From £171/month</div>
                     <div className="text-sm opacity-75">Extended terms • 60 months</div>
                   </div>
                 </div>
@@ -114,7 +114,7 @@ const AllOnFourPricing = () => {
               <h3 className="text-2xl font-bold mb-4">Ready to Get Started?</h3>
               <p className="text-lg mb-8 opacity-90">
                 Take advantage of our limited-time offer and transform your smile today. 
-                Book your FREE consultation to discuss your treatment plan and financing options.
+                Book your FREE consultation to discuss your treatment plan and 0% finance eligibility through Tabeo.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

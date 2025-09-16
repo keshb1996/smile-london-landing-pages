@@ -9,7 +9,7 @@ const AllOnFourIncludes = () => {
     "Digital impressions using the latest intraoral scanners",
     "Detailed treatment plan with all costs clearly outlined",
     "Virtual smile design to preview your new smile",
-    "Discussion of financing options and payment plans",
+    "0% finance eligibility check through Tabeo",
     "Meet your dedicated implant specialist",
     "No obligation - complete transparency about your options"
   ];

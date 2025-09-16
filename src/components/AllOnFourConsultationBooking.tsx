@@ -27,8 +27,8 @@ const AllOnFourConsultationBooking = () => {
     description: "State-of-the-art imaging and surgical equipment"
   }, {
     icon: CreditCard,
-    title: "0% Finance Available",
-    description: "Flexible payment plans to suit your budget"
+    title: "0% Interest-Free Finance",
+    description: "Spread costs over 12-60 months with Tabeo"
   }];
   return (
     <>
@@ -107,7 +107,7 @@ const AllOnFourConsultationBooking = () => {
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <span>Finance options discussion</span>
+                    <span>0% finance eligibility check</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full"></div>

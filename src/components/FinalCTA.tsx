@@ -3,7 +3,7 @@ import ConsultationForm from './ConsultationForm';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 const FinalCTA = () => {
   const { ref, isVisible } = useScrollAnimation();
-  const benefits = ["Harley Street Centre of Excellence", "World-Renowned Dentists", "5 year guarantee", "FREE X-ray", "0% Finance Available"];
+  const benefits = ["Harley Street Centre of Excellence", "World-Renowned Dentists", "5 year guarantee", "FREE X-ray", "0% interest-free finance available"];
   return <section 
     ref={ref}
     className={`bg-dental-gold ${

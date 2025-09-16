@@ -182,6 +182,24 @@ const AllOnFourConsultationForm = () => {
                 Book My Free Consultation
               </Button>
               
+              <div className="mt-6 p-4 bg-white/20 rounded-lg border border-white/30">
+                <h4 className="font-semibold mb-2 text-white">Flexible Payment Plans Available</h4>
+                <p className="text-sm opacity-90 mb-3 text-white">
+                  Worried about cost? We offer 0% interest-free finance options through our partner Tabeo.
+                </p>
+                <a 
+                  href="https://lead.tabeo.co.uk/smile-london/finance?utm_source=landing_page&utm_medium=consultation_form&utm_campaign=all_on_4_consultation"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-6 py-2 bg-white text-dental-gold-foreground rounded-lg font-medium hover:bg-white/90 transition-colors text-sm"
+                >
+                  Check Your Eligibility
+                </a>
+                <p className="text-xs opacity-75 mt-2 text-white">
+                  No impact on your credit score for eligibility check
+                </p>
+              </div>
+              
               <p className="text-center text-sm opacity-75">
                 By submitting this form, you consent to be contacted about our services.
               </p>

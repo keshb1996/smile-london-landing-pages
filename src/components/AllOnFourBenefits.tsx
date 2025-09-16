@@ -6,8 +6,8 @@ const AllOnFourBenefits = () => {
   const benefits = [
     {
       icon: CreditCard,
-      title: "Affordable Financing",
-      description: "Flexible payment plans from £89/month with 0% interest options available"
+      title: "0% Interest-Free Finance",
+      description: "Spread the cost interest-free up to 5 years through our Tabeo partnership"
     },
     {
       icon: Clock,

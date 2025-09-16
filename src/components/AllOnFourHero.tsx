@@ -44,10 +44,10 @@ const AllOnFourHero = () => {
                     <span className="w-2 h-2 bg-primary rounded-full"></span>
                     5-year guarantee included
                   </li>
-                  <li className="flex items-center gap-3">
-                    <span className="w-2 h-2 bg-primary rounded-full"></span>
-                    Flexible financing from £89/month
-                  </li>
+                   <li className="flex items-center gap-3">
+                     <span className="w-2 h-2 bg-primary rounded-full"></span>
+                     0% interest-free finance available - spread costs up to 5 years
+                   </li>
                   <li className="flex items-center gap-3">
                     <span className="w-2 h-2 bg-primary rounded-full"></span>
                     Trusted by 1,000+ patients

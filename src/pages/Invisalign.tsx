@@ -7,6 +7,7 @@ import ConsultationForm from '@/components/ConsultationForm';
 import InvisalignBenefits from '@/components/InvisalignBenefits';
 import PromotionalBanner from '@/components/PromotionalBanner';
 import WhyChooseUs from '@/components/WhyChooseUs';
+import TabeoFinanceSection from '@/components/TabeoFinanceSection';
 import InvisalignInfo from '@/components/InvisalignInfo';
 import TestimonialSection from '@/components/TestimonialSection';
 import GoogleReviews from '@/components/GoogleReviews';
@@ -14,6 +15,7 @@ import GoogleReviews from '@/components/GoogleReviews';
 import BeforeAfterGallery from '@/components/BeforeAfterGallery';
 import DentalJourney from '@/components/DentalJourney';
 import FAQSection from '@/components/FAQSection';
+import FinanceFAQ from '@/components/FinanceFAQ';
 import FinalCTA from '@/components/FinalCTA';
 import ContactInfo from '@/components/ContactInfo';
 import Footer from '@/components/Footer';
@@ -77,6 +79,7 @@ const Invisalign = () => {
       <PromotionalBanner />
       <BeforeAfterGallery />
       <WhyChooseUs />
+      <TabeoFinanceSection />
       <InvisalignInfo />
       <TestimonialSection />
       <GoogleReviews />
@@ -84,6 +87,7 @@ const Invisalign = () => {
       
       <DentalJourney />
       <FAQSection />
+      <FinanceFAQ />
       <ContactInfo />
       <Footer />
     </div>

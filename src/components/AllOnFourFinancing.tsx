@@ -12,16 +12,16 @@ const AllOnFourFinancing = () => {
   const financingOptions = [{
     icon: CreditCard,
     title: "0% Interest Finance",
-    monthly: "From £89",
+    monthly: "From £237",
     period: "36 months",
-    features: ["No interest charges", "Fixed monthly payments", "Quick approval process", "No early payment fees"],
+    features: ["0% APR - No interest charges", "Fixed monthly payments", "Instant online decision", "No early payment fees"],
     highlight: "Most Popular"
   }, {
     icon: Calculator,
     title: "Extended Payment Plans",
-    monthly: "From £149",
+    monthly: "From £171",
     period: "60 months",
-    features: ["Longer repayment terms", "Lower monthly payments", "Flexible deposit options", "Budget-friendly solution"],
+    features: ["Longer repayment terms", "Lower monthly payments", "Up to £25,000 available", "Flexible deposit options"],
     highlight: "Lowest Monthly"
   }, {
     icon: Clock,
@@ -73,9 +73,14 @@ const AllOnFourFinancing = () => {
                   </div>)}
               </div>
               
-              <button className="w-full bg-primary text-primary-foreground py-4 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
-                Learn More
-              </button>
+              <a 
+                href="https://lead.tabeo.co.uk/smile-london/finance?utm_source=landing_page&utm_medium=cta&utm_campaign=all_on_4_finance"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center border border-primary bg-transparent text-primary py-4 rounded-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-colors"
+              >
+                Check Finance Options
+              </a>
             </div>)}
         </div>
         
@@ -107,9 +112,14 @@ const AllOnFourFinancing = () => {
             <div className="text-center">
               <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=400&h=300&q=80" alt="Finance application on mobile device" className="w-full max-w-md mx-auto rounded-lg shadow-dental mb-6" />
               
-              <button className="dental-cta">
+              <a 
+                href="https://lead.tabeo.co.uk/smile-london/finance?utm_source=landing_page&utm_medium=cta&utm_campaign=finance_check"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="dental-cta"
+              >
                 Check Finance Options
-              </button>
+              </a>
             </div>
           </div>
         </div>
