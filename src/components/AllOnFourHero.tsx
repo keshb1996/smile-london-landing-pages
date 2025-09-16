@@ -1,14 +1,9 @@
 import { Button } from "@/components/ui/button";
 const AllOnFourHero = () => {
   return <section className="min-h-screen relative flex items-center overflow-hidden">
-      {/* Background Image - Desktop & Tablet */}
-      <div className="absolute inset-0 w-full h-full hidden md:block">
-        <img 
-          src="/src/assets/dental-gold-background.jpg" 
-          alt="Professional dental background in brand colors" 
-          className="w-full h-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-background/30"></div>
+      {/* Gradient Background - Desktop & Tablet */}
+      <div className="absolute inset-0 w-full h-full hidden md:block bg-gradient-to-br from-slate-100 via-gray-50 to-slate-200">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-slate-50/50 to-primary/5"></div>
       </div>
       
       {/* Video Background - Mobile */}
