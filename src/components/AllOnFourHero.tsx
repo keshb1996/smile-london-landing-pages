@@ -28,10 +28,14 @@ const AllOnFourHero = () => {
                 <span className="text-primary">One Day</span> with All-on-Four Implants
               </h1>
               
-              <p className="text-lg md:text-xl text-white/90 md:text-muted-foreground leading-relaxed">Experience the confidence of a complete smile with our revolutionary All-on-Four dental implants. </p>
+              
               
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-start">
                 <ul className="space-y-1 md:space-y-2 text-base md:text-lg text-white/70 md:text-foreground">
+                  <li className="flex items-center gap-3">
+                    <span className="w-2 h-2 bg-primary rounded-full"></span>
+                    Revolutionary All-on-Four Technology
+                  </li>
                   <li className="flex items-center gap-3">
                     <span className="w-2 h-2 bg-primary rounded-full"></span>
                     Same-day permanent teeth
