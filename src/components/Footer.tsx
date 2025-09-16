@@ -55,7 +55,7 @@ const Footer = () => {
               </div>
               
               <div className="space-y-2">
-                <p>Email: <span className="text-white">contact@smilelondon.co.uk</span></p>
+                <p>Email: <span className="text-white">info@smilelondon.co.uk</span></p>
                 <p>Tel: <a href="tel:02045401566" className="text-yellow-400 hover:underline">020 4540 1566</a></p>
                 <p>WhatsApp: <span className="text-white">07392212272</span></p>
               </div>

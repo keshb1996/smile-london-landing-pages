@@ -1,190 +1,209 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { useState } from 'react';
+import { Check, MapPin, Phone, Mail, Clock, Navigation } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import ConsultationForm from './ConsultationForm';
+import InteractiveMap from './InteractiveMap';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+
 const AllOnFourConsultationForm = () => {
-  const {
-    ref,
-    isVisible
-  } = useScrollAnimation();
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    preferredDate: '',
-    preferredTime: '',
-    message: ''
-  });
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-  const handleSelectChange = (name: string, value: string) => {
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission logic here
-  };
-  return <section ref={ref} className={`bg-dental-gold text-dental-gold-foreground ${isVisible ? 'animate-fade-up' : 'opacity-0 translate-y-[30px]'}`}>
-      <div className="dental-section">
-        <div className="text-center mb-16">
-          <h2 className="dental-heading mb-6 text-dental-gold-foreground">
-            Book Your Free Consultation Today
-          </h2>
-          <p className="text-xl max-w-3xl mx-auto opacity-90">
-            Take the first step towards your new smile. Our comprehensive consultation 
-            includes 3D imaging, treatment planning, and a complete assessment worth £150 - absolutely free.
-          </p>
-        </div>
-        
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* Contact Form */}
-          <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-8">
-            <h3 className="text-2xl font-bold mb-8 text-center">Schedule Your Appointment</h3>
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="firstName" className="text-dental-gold-foreground font-semibold">
-                    First Name *
-                  </Label>
-                  <Input id="firstName" name="firstName" value={formData.firstName} onChange={handleInputChange} className="mt-2 bg-white/90 border-white/20" required />
-                </div>
-                
-                <div>
-                  <Label htmlFor="lastName" className="text-dental-gold-foreground font-semibold">
-                    Last Name *
-                  </Label>
-                  <Input id="lastName" name="lastName" value={formData.lastName} onChange={handleInputChange} className="mt-2 bg-white/90 border-white/20" required />
-                </div>
-              </div>
-              
-              <div>
-                <Label htmlFor="email" className="text-dental-gold-foreground font-semibold">
-                  Email Address *
-                </Label>
-                <Input id="email" name="email" type="email" value={formData.email} onChange={handleInputChange} className="mt-2 bg-white/90 border-white/20" required />
-              </div>
-              
-              <div>
-                <Label htmlFor="phone" className="text-dental-gold-foreground font-semibold">
-                  Contact Number *
-                </Label>
-                <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleInputChange} className="mt-2 bg-white/90 border-white/20" required />
-              </div>
-              
-              
-              
-              
-              
-              <Button type="submit" className="w-full bg-white text-dental-gold-foreground py-4 text-lg font-bold hover:bg-white/90 transition-colors">
-                Book My Free Consultation
-              </Button>
-              
-              <div className="mt-6 p-4 bg-white/20 rounded-lg border border-white/30">
-                <h4 className="font-semibold mb-2 text-white">Flexible Payment Plans Available</h4>
-                <p className="text-sm opacity-90 mb-3 text-white">
-                  Worried about cost? We offer 0% interest-free finance options through our partner Tabeo.
-                </p>
-                <a href="https://lead.tabeo.co.uk/smile-london/finance?utm_source=landing_page&utm_medium=consultation_form&utm_campaign=all_on_4_consultation" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-2 bg-white text-dental-gold-foreground rounded-lg font-medium hover:bg-white/90 transition-colors text-sm">
-                  Check Your Eligibility
-                </a>
-                <p className="text-xs opacity-75 mt-2 text-white">
-                  No impact on your credit score for eligibility check
-                </p>
-              </div>
-              
-              <p className="text-center text-sm opacity-75">
-                By submitting this form, you consent to be contacted about our services.
+  const { ref: goldSectionRef, isVisible: goldSectionVisible } = useScrollAnimation();
+  const { ref: clinicSectionRef, isVisible: clinicSectionVisible } = useScrollAnimation();
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const benefits = [
+    "Harley Street Centre of Excellence",
+    "World-Renowned Dentists", 
+    "5 year guarantee",
+    "FREE X-ray",
+    "0% interest-free finance available"
+  ];
+
+  const contactDetails = [
+    {
+      icon: MapPin,
+      title: "Address",
+      info: ["Smile London", "38 Queen Anne Street", "Marylebone", "London W1G 8HZ"]
+    },
+    {
+      icon: Phone,
+      title: "Phone",
+      info: ["020 4540 1566"]
+    },
+    {
+      icon: Mail,
+      title: "Email",
+      info: ["info@smilelondon.co.uk"]
+    },
+    {
+      icon: Navigation,
+      title: "Transport",
+      info: ["Oxford Circus Station", "(2 min walk)"]
+    }
+  ];
+
+  const openingHours = [
+    { day: "Monday - Friday", hours: "9:00 AM - 6:00 PM" },
+    { day: "Saturday", hours: "9:00 AM - 5:00 PM" },
+    { day: "Sunday", hours: "Closed" }
+  ];
+
+  return (
+    <>
+      {/* Golden Consultation Section */}
+      <section 
+        ref={goldSectionRef}
+        className={`bg-dental-gold ${
+          goldSectionVisible 
+            ? 'animate-fade-up' 
+            : 'opacity-0 translate-y-[30px]'
+        }`}
+      >
+        <div className="dental-section">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="text-dental-black">
+              <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
+                Book Your Expert Consultation Today
+              </h2>
+              <p className="text-xl mb-8 opacity-90">
+                Take the first step towards your perfect smile. Our expert team will assess your needs and create a personalised treatment plan just for you.
               </p>
-            </form>
-          </div>
-          
-          {/* Contact Information & Map */}
-          <div className="space-y-8">
-            {/* Contact Details */}
-            <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-8">
-              <h3 className="text-2xl font-bold mb-6">Visit Our Clinic</h3>
               
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <MapPin className="w-6 h-6 mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="font-semibold">Smile London</p>
-                    <p className="opacity-90">38 Queen Anne Street</p>
-                    <p className="opacity-90">London W1G 8HZ</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-4">
-                  <Phone className="w-6 h-6 flex-shrink-0" />
-                  <div>
-                    <p className="font-semibold">020 4540 1566</p>
-                    <p className="text-sm opacity-75">Available 7 days a week</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-4">
-                  <Mail className="w-6 h-6 flex-shrink-0" />
-                  <div>
-                    <p className="font-semibold">info@smilelondon.co.uk</p>
-                    <p className="text-sm opacity-75">We respond within 2 hours</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <Clock className="w-6 h-6 mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="font-semibold mb-2">Opening Hours</p>
-                    <div className="space-y-1 text-sm opacity-90">
-                      <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
-                      
-                      
+              <div className="space-y-4 mb-8">
+                {benefits.map((benefit, index) => (
+                  <div key={index} className="flex items-center space-x-3">
+                    <div className="bg-dental-black rounded-full p-1">
+                      <Check className="h-4 w-4 text-dental-gold" />
                     </div>
+                    <span className="text-lg font-medium">{benefit}</span>
                   </div>
-                </div>
+                ))}
               </div>
             </div>
             
-            {/* Map */}
-            <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-8">
-              <h3 className="text-2xl font-bold mb-6">Find Us</h3>
-              
-              <div className="aspect-video rounded-lg overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?auto=format&fit=crop&w=800&h=450&q=80" alt="Map location of Smile London Dental Clinic" className="w-full h-full object-cover" />
-              </div>
-              
-              <div className="mt-4 text-sm opacity-90">
-                <p>Conveniently located in the heart of Marylebone, just 2 minutes walk from Bond Street Station.</p>
-                <p className="mt-2">Free parking available on Sundays and after 6:30 PM on weekdays.</p>
-              </div>
-            </div>
-            
-            {/* Emergency Contact */}
-            <div className="bg-white/20 backdrop-blur-sm rounded-xl p-6">
-              <h4 className="font-bold mb-3">24/7 Emergency Support</h4>
-              <p className="text-sm opacity-90 mb-3">
-                We provide round-the-clock support during your treatment and recovery period.
-              </p>
-              <button className="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg font-semibold transition-colors">
-                Emergency Contact: 07700 123456
-              </button>
+            <div className="bg-white rounded-2xl p-8 shadow-dental-lg">
+              <ConsultationForm 
+                title="Book Your Expert Consultation" 
+                subtitle="Normally £150 - Limited time offer" 
+              />
             </div>
           </div>
         </div>
-      </div>
-    </section>;
+      </section>
+
+      {/* White Clinic Visit Section */}
+      <section 
+        ref={clinicSectionRef}
+        className={`bg-white ${
+          clinicSectionVisible 
+            ? 'animate-fade-up' 
+            : 'opacity-0 translate-y-[30px]'
+        }`}
+      >
+        <div className="dental-section">
+          <div className="text-center mb-16">
+            <h2 className="dental-heading mb-6">
+              VISIT OUR LONDON CLINIC
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-4">
+              Located in the prestigious Harley Street medical district
+            </p>
+            <p className="text-lg text-muted-foreground">
+              Our Queen Anne Street practice combines cutting-edge technology with luxurious comfort
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16">
+            {/* Left Column - Contact Details */}
+            <div className="space-y-12">
+              {/* Contact Information Grid */}
+              <div className="grid md:grid-cols-2 gap-8">
+                {contactDetails.map((detail, index) => (
+                  <div key={index} className="text-center">
+                    <div className="bg-primary rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
+                      <detail.icon className="h-6 w-6 text-white" />
+                    </div>
+                    <h3 className="font-semibold mb-2">{detail.title}</h3>
+                    {detail.info.map((line, i) => (
+                      <p key={i} className="text-muted-foreground text-sm">
+                        {line}
+                      </p>
+                    ))}
+                  </div>
+                ))}
+              </div>
+
+              {/* Opening Hours */}
+              <div className="bg-muted/50 rounded-xl p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <Clock className="h-5 w-5 text-primary" />
+                  <h3 className="font-semibold">Opening Hours</h3>
+                </div>
+                <div className="space-y-2">
+                  {openingHours.map((schedule, index) => (
+                    <div key={index} className="flex justify-between">
+                      <span className="text-muted-foreground">{schedule.day}</span>
+                      <span className="font-medium">{schedule.hours}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Getting Here */}
+              <div>
+                <h3 className="font-semibold mb-4">Getting Here</h3>
+                <div className="space-y-3 text-sm text-muted-foreground">
+                  <p>
+                    <strong>By Underground:</strong> Oxford Circus Station (Central, Northern, Bakerloo & Elizabeth lines) - 2 minute walk
+                  </p>
+                  <p>
+                    <strong>By Bus:</strong> Multiple bus routes stop nearby on Oxford Street and Regent Street
+                  </p>
+                  <p>
+                    <strong>By Car:</strong> Limited street parking available. Nearest car parks: Q-Park Oxford Street and NCP Cavendish Square
+                  </p>
+                </div>
+              </div>
+
+              {/* Book Consultation Button */}
+              <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+                <DialogTrigger asChild>
+                  <Button size="lg" className="w-full">
+                    Book Your Consultation
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-md">
+                  <ConsultationForm 
+                    title="Book Your Consultation" 
+                    subtitle="Free initial consultation worth £150"
+                  />
+                </DialogContent>
+              </Dialog>
+            </div>
+
+            {/* Right Column - Map */}
+            <div className="relative">
+              <div className="bg-muted rounded-2xl overflow-hidden shadow-lg">
+                <InteractiveMap />
+                
+                {/* Map Overlay */}
+                <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg max-w-xs">
+                  <h4 className="font-semibold mb-2">Smile London</h4>
+                  <p className="text-sm text-muted-foreground mb-2">
+                    38 Queen Anne Street<br />
+                    Marylebone, London W1G 8HZ
+                  </p>
+                  <p className="text-xs text-primary font-medium">
+                    2 minutes from Oxford Circus
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
 };
+
 export default AllOnFourConsultationForm;
