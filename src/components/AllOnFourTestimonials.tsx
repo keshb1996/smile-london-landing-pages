@@ -165,7 +165,7 @@ const AllOnFourTestimonials = () => {
                   "{testimonials[currentSlide].text}"
                 </blockquote>
                 
-                <div className="flex items-center justify-center gap-3 mt-4">
+                <div className="flex items-center justify-center gap-6 mt-4">
                   <div className="flex gap-1">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-6 h-6 fill-primary text-primary" />
