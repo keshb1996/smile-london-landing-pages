@@ -14,7 +14,54 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      form_submissions: {
+        Row: {
+          created_at: string | null
+          email: string
+          full_name: string
+          id: string
+          lead_source: string | null
+          notes: string | null
+          page_path: string | null
+          phone: string
+          referrer: string | null
+          treatment_type: string | null
+          user_agent: string | null
+          utm_params: Json | null
+          webhook_sent: boolean | null
+        }
+        Insert: {
+          created_at?: string | null
+          email: string
+          full_name: string
+          id?: string
+          lead_source?: string | null
+          notes?: string | null
+          page_path?: string | null
+          phone: string
+          referrer?: string | null
+          treatment_type?: string | null
+          user_agent?: string | null
+          utm_params?: Json | null
+          webhook_sent?: boolean | null
+        }
+        Update: {
+          created_at?: string | null
+          email?: string
+          full_name?: string
+          id?: string
+          lead_source?: string | null
+          notes?: string | null
+          page_path?: string | null
+          phone?: string
+          referrer?: string | null
+          treatment_type?: string | null
+          user_agent?: string | null
+          utm_params?: Json | null
+          webhook_sent?: boolean | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

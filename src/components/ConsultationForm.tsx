@@ -12,6 +12,7 @@ import {
   FormItem,
   FormMessage,
 } from '@/components/ui/form';
+import { supabase } from '@/integrations/supabase/client';
 
 // Webhook URL for form submissions
 const WEBHOOK_URL = import.meta.env.VITE_WEBHOOK_URL || "https://your-n8n-webhook-url.com/webhook/consultation";
@@ -59,37 +60,59 @@ const ConsultationForm = ({
 
   const handleSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      const webhookData = {
-        // Form data
-        fullName: values.fullName,
+      const submissionData = {
+        full_name: values.fullName,
         email: values.email,
         phone: values.phone,
-        
-        // Treatment and page context
-        treatmentType: treatmentType,
-        pagePath: window.location.pathname,
-        leadSource: "Lovable Landing Page",
-        
-        // Tracking data
-        timestamp: new Date().toISOString(),
-        utmParams: extractUtmParams(),
-        
-        // Additional context
+        treatment_type: treatmentType,
+        page_path: window.location.pathname,
+        lead_source: "Lovable Landing Page",
+        utm_params: extractUtmParams(),
         referrer: document.referrer || '',
-        userAgent: navigator.userAgent
+        user_agent: navigator.userAgent
       };
 
-      console.log('Sending webhook data:', webhookData);
+      // Save to Supabase first (primary storage)
+      const { data: savedSubmission, error: supabaseError } = await supabase
+        .from('form_submissions')
+        .insert([submissionData])
+        .select()
+        .single();
 
-      // Send to webhook
-      await fetch(WEBHOOK_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        mode: "no-cors", // Handle CORS issues
-        body: JSON.stringify(webhookData),
-      });
+      if (supabaseError) {
+        console.error('Supabase error:', supabaseError);
+        throw new Error('Failed to save submission');
+      }
+
+      console.log('Saved to Supabase:', savedSubmission);
+
+      // Send to webhook (secondary notification)
+      try {
+        const webhookData = {
+          ...submissionData,
+          submissionId: savedSubmission.id,
+          timestamp: savedSubmission.created_at
+        };
+
+        await fetch(WEBHOOK_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          mode: "no-cors",
+          body: JSON.stringify(webhookData),
+        });
+
+        // Mark webhook as sent
+        await supabase
+          .from('form_submissions')
+          .update({ webhook_sent: true })
+          .eq('id', savedSubmission.id);
+
+      } catch (webhookError) {
+        console.error('Webhook error (non-critical):', webhookError);
+        // Don't throw - data is already saved in Supabase
+      }
 
       // Show success message
       toast({
@@ -103,14 +126,11 @@ const ConsultationForm = ({
     } catch (error) {
       console.error("Error submitting form:", error);
       
-      // Still show success to user (webhook might have worked despite error)
       toast({
-        title: "Request Submitted Successfully!",
-        description: "We'll contact you within 24 hours to schedule your consultation.",
+        title: "Submission Error",
+        description: "Please try again or call us directly at 020 4540 1566.",
+        variant: "destructive"
       });
-      
-      // Reset form
-      form.reset();
     }
   };
   return <div className={`max-w-md mx-auto ${className}`}>
