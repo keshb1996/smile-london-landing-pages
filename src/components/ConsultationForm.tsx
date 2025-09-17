@@ -71,18 +71,21 @@ const ConsultationForm = ({
       };
 
       // Save to Supabase (Supabase webhook will handle n8n notification)
-      const { data: savedSubmission, error: supabaseError } = await supabase
+      const { error: supabaseError } = await supabase
         .from('form_submissions')
-        .insert([submissionData])
-        .select()
-        .single();
+        .insert([submissionData]);
 
       if (supabaseError) {
-        console.error('Supabase error:', supabaseError);
+        console.error('Supabase error details:', {
+          message: supabaseError.message,
+          code: supabaseError.code,
+          details: supabaseError.details,
+          hint: supabaseError.hint
+        });
         throw new Error('Failed to save submission');
       }
 
-      console.log('Saved to Supabase:', savedSubmission);
+      console.log('Form submission saved successfully to Supabase');
 
       // Show success message
       toast({
