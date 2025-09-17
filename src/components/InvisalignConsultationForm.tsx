@@ -38,7 +38,7 @@ const InvisalignConsultationForm = () => {
     {
       icon: Navigation,
       title: "Transport",
-      info: ["Oxford Circus Station", "(2 min walk)"]
+      info: ["Oxford Circus Station", "(5 min walk)"]
     }
   ];
 
@@ -155,7 +155,7 @@ const InvisalignConsultationForm = () => {
                 <h3 className="font-semibold mb-4">Getting Here</h3>
                 <div className="space-y-3 text-sm text-muted-foreground">
                   <p>
-                    <strong>By Underground:</strong> Bond Street, Oxford Circus, Regent's Park & Baker Street (Central, Bakerloo, Victoria, Hammersmith & City, Central and Jubilee line) - 2 minute walk
+                    <strong>By Underground:</strong> Bond Street, Oxford Circus, Regent's Park & Baker Street (Central, Bakerloo, Victoria, Hammersmith & City, Central and Jubilee line) - 5 minute walk
                   </p>
                   <p>
                     <strong>By Bus:</strong> Routes 7, 94, 98, 113, 139, 159, 390, 88 and 453
@@ -196,7 +196,7 @@ const InvisalignConsultationForm = () => {
                     Marylebone, London W1G 8HZ
                   </p>
                   <p className="text-xs text-primary font-medium">
-                    2 minutes from Oxford Circus
+                    5 minutes from Oxford Circus
                   </p>
                 </div>
               </div>

@@ -96,7 +96,7 @@ const ContactInfo = ({ treatmentType }: { treatmentType?: string }) => {
             <div className="bg-dental-gold/10 rounded-2xl p-8">
               <h3 className="text-xl font-semibold text-dental-black mb-4">Getting Here</h3>
               <div className="space-y-3 text-muted-foreground">
-                <p><strong>By Tube:</strong> Oxford Circus Station - 2 minutes walk</p>
+                <p><strong>By Tube:</strong> Oxford Circus Station - 5 minutes walk</p>
                 <p><strong>By Bus:</strong> Routes 7, 94, 98, 113, 139, 159, 390, 88 and 453</p>
                 <p><strong>By Car:</strong> Limited street parking, public car parks nearby</p>
                 <p><strong>Accessibility:</strong> Wheelchair accessible with lift access</p>
@@ -115,7 +115,7 @@ const ContactInfo = ({ treatmentType }: { treatmentType?: string }) => {
               <div className="text-sm">
                 <div className="font-semibold text-dental-black">Smile London</div>
                 <div className="text-muted-foreground">38 Queen Anne Street</div>
-                <div className="text-dental-gold font-medium">2 min from Oxford Circus</div>
+                <div className="text-dental-gold font-medium">5 min from Oxford Circus</div>
               </div>
             </div>
           </div>
