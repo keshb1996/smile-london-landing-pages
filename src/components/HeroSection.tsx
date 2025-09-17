@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { useState } from 'react';
 import ConsultationForm from './ConsultationForm';
-const HeroSection = () => {
+const HeroSection = ({ treatmentType }: { treatmentType?: string }) => {
   const [dialogOpen, setDialogOpen] = useState(false);
   const benefits = ["Harley Street Centre of Excellence", "World-Renowned Dentists", "5 year guarantee", "FREE X-ray", "0% interest-free finance available"];
   return <section className="relative overflow-hidden bg-white">
@@ -54,7 +54,7 @@ const HeroSection = () => {
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="max-w-md bg-white">
-                  <ConsultationForm />
+                  <ConsultationForm treatmentType={treatmentType} />
                 </DialogContent>
               </Dialog>
             </div>

@@ -1,7 +1,7 @@
 import { Check } from 'lucide-react';
 import ConsultationForm from './ConsultationForm';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-const FinalCTA = () => {
+const FinalCTA = ({ treatmentType }: { treatmentType?: string }) => {
   const { ref, isVisible } = useScrollAnimation();
   const benefits = ["Harley Street Centre of Excellence", "World-Renowned Dentists", "5 year guarantee", "FREE X-ray", "0% interest-free finance available"];
   return <section 
@@ -33,7 +33,7 @@ const FinalCTA = () => {
           </div>
           
           <div className="bg-white rounded-2xl p-8 shadow-dental-lg">
-            <ConsultationForm title="Book Your Expert Consultation" subtitle="Normally £150 - Limited time offer" />
+            <ConsultationForm title="Book Your Expert Consultation" subtitle="Normally £150 - Limited time offer" treatmentType={treatmentType} />
           </div>
         </div>
       </div>

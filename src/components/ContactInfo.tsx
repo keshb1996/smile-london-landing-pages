@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import ConsultationForm from './ConsultationForm';
 import InteractiveMap from './InteractiveMap';
 
-const ContactInfo = () => {
+const ContactInfo = ({ treatmentType }: { treatmentType?: string }) => {
   const [dialogOpen, setDialogOpen] = useState(false);
   const contactDetails = [
     {
@@ -130,7 +130,7 @@ const ContactInfo = () => {
               </Button>
             </DialogTrigger>
             <DialogContent className="max-w-md bg-white">
-              <ConsultationForm />
+              <ConsultationForm treatmentType={treatmentType} />
             </DialogContent>
           </Dialog>
         </div>

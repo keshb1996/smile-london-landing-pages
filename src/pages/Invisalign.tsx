@@ -50,23 +50,23 @@ const Invisalign = () => {
     <div className="min-h-screen">
       <Header />
       <MobileHeroImage />
-      <HeroSection />
+      <HeroSection treatmentType="Invisalign" />
       <ConsultationIncludes />
       <InvisalignConsultationForm />
       
       <InvisalignBenefits />
       <PromotionalBanner />
       <BeforeAfterGallery />
-      <WhyChooseUs />
+      <WhyChooseUs treatmentType="Invisalign" />
       <InvisalignInfo />
       <TestimonialSection />
       <GoogleReviews />
-      <FinalCTA />
+      <FinalCTA treatmentType="Invisalign" />
       
       <DentalJourney />
       <FAQSection />
       
-      <ContactInfo />
+      <ContactInfo treatmentType="Invisalign" />
       <Footer />
     </div>
   );
