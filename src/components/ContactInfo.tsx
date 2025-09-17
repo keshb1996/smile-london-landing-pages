@@ -17,7 +17,7 @@ const ContactInfo = ({ treatmentType }: { treatmentType?: string }) => {
     {
       icon: Phone,
       title: "Phone",
-      info: "020 7123 4567",
+      info: "020 4540 1566",
       extra: "Available 24/7 for emergencies"
     },
     {
