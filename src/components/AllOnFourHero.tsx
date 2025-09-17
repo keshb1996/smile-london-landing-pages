@@ -1,5 +1,9 @@
+import { useState } from 'react';
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import ConsultationForm from './ConsultationForm';
 const AllOnFourHero = () => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   return <section className="min-h-[75vh] md:min-h-screen relative flex items-center overflow-hidden">
       {/* Gradient Background - Desktop & Tablet */}
       <div className="absolute inset-0 w-full h-full hidden md:block bg-gradient-to-br from-slate-100 via-gray-50 to-slate-200">
@@ -57,9 +61,19 @@ const AllOnFourHero = () => {
             </div>
             
             <div className="space-y-4 md:space-y-4">
-              <Button size="lg" className="dental-cta text-lg md:text-xl px-8 py-4 md:px-12 md:py-6">
-                Book Your Free Consultation
-              </Button>
+              <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+                <DialogTrigger asChild>
+                  <Button size="lg" className="dental-cta text-lg md:text-xl px-8 py-4 md:px-12 md:py-6">
+                    Book Your Free Consultation
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-md">
+                  <ConsultationForm 
+                    title="Book Your Free Consultation" 
+                    subtitle="Free consultation worth £150"
+                  />
+                </DialogContent>
+              </Dialog>
               <p className="text-sm text-white/60 md:text-muted-foreground">
                 FREE consultation worth £150 • No obligation • Expert assessment
               </p>

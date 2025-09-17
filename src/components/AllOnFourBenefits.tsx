@@ -1,7 +1,12 @@
+import { useState } from 'react';
 import { CreditCard, Clock, Shield, Users } from "lucide-react";
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
+import ConsultationForm from './ConsultationForm';
 
 const AllOnFourBenefits = () => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const { ref, isVisible } = useScrollAnimation();
   const benefits = [
     {
@@ -89,9 +94,19 @@ const AllOnFourBenefits = () => {
         </div>
         
         <div className="mt-8 text-center">
-          <button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-            Book Consultation
-          </button>
+          <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+            <DialogTrigger asChild>
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+                Book Consultation
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-md">
+              <ConsultationForm 
+                title="Book Your Consultation" 
+                subtitle="Free consultation worth £150"
+              />
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
     </section>

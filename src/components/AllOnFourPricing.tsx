@@ -1,7 +1,12 @@
+import { useState } from 'react';
 import { Check } from "lucide-react";
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
+import ConsultationForm from './ConsultationForm';
 
 const AllOnFourPricing = () => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const { ref, isVisible } = useScrollAnimation();
   const packageIncludes = [
     "Initial consultation and comprehensive examination",
@@ -74,9 +79,19 @@ const AllOnFourPricing = () => {
                 </div>
               </div>
               
-              <button className="w-full bg-white text-dental-gold-foreground py-4 rounded-lg font-bold text-xl hover:bg-white/90 transition-colors shadow-lg">
-                Book Free Consultation
-              </button>
+              <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+                <DialogTrigger asChild>
+                  <Button className="w-full bg-white text-dental-gold-foreground py-4 rounded-lg font-bold text-xl hover:bg-white/90 transition-colors shadow-lg">
+                    Book Free Consultation
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-md">
+                  <ConsultationForm 
+                    title="Book Free Consultation" 
+                    subtitle="Free consultation worth £150"
+                  />
+                </DialogContent>
+              </Dialog>
               
               <p className="text-sm opacity-75 mt-4">
                 FREE consultation worth £150 • No obligation
@@ -118,9 +133,19 @@ const AllOnFourPricing = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <button className="bg-white text-dental-gold-foreground px-12 py-4 rounded-lg font-bold text-xl hover:bg-white/90 transition-all duration-300 shadow-lg">
-                  Schedule Consultation
-                </button>
+                <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+                  <DialogTrigger asChild>
+                    <Button className="bg-white text-dental-gold-foreground px-12 py-4 rounded-lg font-bold text-xl hover:bg-white/90 transition-all duration-300 shadow-lg">
+                      Schedule Consultation
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-md">
+                    <ConsultationForm 
+                      title="Schedule Consultation" 
+                      subtitle="Free consultation worth £150"
+                    />
+                  </DialogContent>
+                </Dialog>
                 
                 <div className="text-center">
                   <p className="text-lg font-semibold">Call: 020 7183 4091</p>

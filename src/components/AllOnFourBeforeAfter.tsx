@@ -1,5 +1,10 @@
+import { useState } from 'react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
+import ConsultationForm from './ConsultationForm';
 const AllOnFourBeforeAfter = () => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const {
     ref,
     isVisible
@@ -64,9 +69,19 @@ const AllOnFourBeforeAfter = () => {
           <p className="text-muted-foreground mb-6">
             * Individual results may vary. Treatment outcomes depend on individual case complexity and healing.
           </p>
-          <button className="dental-cta">
-            Book Your All-on-4 Consultation
-          </button>
+          <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+            <DialogTrigger asChild>
+              <Button className="dental-cta">
+                Book Your All-on-4 Consultation
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-md">
+              <ConsultationForm 
+                title="Book Your All-on-4 Consultation" 
+                subtitle="Free consultation worth £150"
+              />
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
     </section>
