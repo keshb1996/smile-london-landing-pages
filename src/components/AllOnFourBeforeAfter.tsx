@@ -79,6 +79,7 @@ const AllOnFourBeforeAfter = () => {
               <ConsultationForm 
                 title="Book Your All-on-4 Consultation" 
                 subtitle="Free consultation worth £150"
+                treatmentType="All-on-4"
               />
             </DialogContent>
           </Dialog>

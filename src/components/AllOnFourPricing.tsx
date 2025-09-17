@@ -89,6 +89,7 @@ const AllOnFourPricing = () => {
                   <ConsultationForm 
                     title="Book Free Consultation" 
                     subtitle="Free consultation worth £150"
+                    treatmentType="All-on-4"
                   />
                 </DialogContent>
               </Dialog>
@@ -143,6 +144,7 @@ const AllOnFourPricing = () => {
                     <ConsultationForm 
                       title="Schedule Consultation" 
                       subtitle="Free consultation worth £150"
+                      treatmentType="All-on-4"
                     />
                   </DialogContent>
                 </Dialog>

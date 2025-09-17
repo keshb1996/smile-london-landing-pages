@@ -105,6 +105,7 @@ const AllOnFourFAQ = () => {
                     <ConsultationForm 
                       title="Book Free Consultation" 
                       subtitle="Free consultation worth £150"
+                      treatmentType="All-on-4"
                     />
                   </DialogContent>
                 </Dialog>
