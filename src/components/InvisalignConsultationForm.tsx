@@ -155,10 +155,10 @@ const InvisalignConsultationForm = () => {
                 <h3 className="font-semibold mb-4">Getting Here</h3>
                 <div className="space-y-3 text-sm text-muted-foreground">
                   <p>
-                    <strong>By Underground:</strong> Oxford Circus Station (Central, Northern, Bakerloo & Elizabeth lines) - 2 minute walk
+                    <strong>By Underground:</strong> Bond Street, Oxford Circus, Regent's Park & Baker Street (Central, Bakerloo, Victoria, Hammersmith & City, Central and Jubilee line) - 2 minute walk
                   </p>
                   <p>
-                    <strong>By Bus:</strong> Multiple bus routes stop nearby on Oxford Street and Regent Street
+                    <strong>By Bus:</strong> Routes 7, 94, 98, 113, 139, 159, 390, 88 and 453
                   </p>
                   <p>
                     <strong>By Car:</strong> Limited street parking available. Nearest car parks: Q-Park Oxford Street and NCP Cavendish Square

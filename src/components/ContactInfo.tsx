@@ -29,8 +29,8 @@ const ContactInfo = ({ treatmentType }: { treatmentType?: string }) => {
     {
       icon: Navigation,
       title: "Transport",
-      info: "Oxford Circus Station (2 min walk)",
-      extra: "Central, Circle, Elizabeth, Northern lines"
+      info: "Bond Street, Oxford Circus, Regent's Park & Baker Street",
+      extra: "Central, Bakerloo, Victoria, Hammersmith & City, Central and Jubilee line"
     }
   ];
 
@@ -97,7 +97,7 @@ const ContactInfo = ({ treatmentType }: { treatmentType?: string }) => {
               <h3 className="text-xl font-semibold text-dental-black mb-4">Getting Here</h3>
               <div className="space-y-3 text-muted-foreground">
                 <p><strong>By Tube:</strong> Oxford Circus Station - 2 minutes walk</p>
-                <p><strong>By Bus:</strong> Routes 6, 7, 10, 25, 55, 98, 139, 189</p>
+                <p><strong>By Bus:</strong> Routes 7, 94, 98, 113, 139, 159, 390, 88 and 453</p>
                 <p><strong>By Car:</strong> Limited street parking, public car parks nearby</p>
                 <p><strong>Accessibility:</strong> Wheelchair accessible with lift access</p>
               </div>
