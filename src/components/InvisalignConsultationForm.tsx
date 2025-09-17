@@ -185,7 +185,7 @@ const InvisalignConsultationForm = () => {
 
             {/* Right Column - Map */}
             <div className="relative">
-              <div className="bg-muted rounded-2xl overflow-hidden shadow-lg">
+              <div className="bg-muted rounded-2xl overflow-hidden shadow-lg h-96 min-h-96">
                 <InteractiveMap />
                 
                 {/* Map Overlay */}
