@@ -185,7 +185,7 @@ const AllOnFourConsultationForm = () => {
 
             {/* Right Column - Map */}
             <div className="relative">
-              <div className="bg-muted rounded-2xl overflow-hidden shadow-lg">
+              <div className="bg-muted rounded-2xl overflow-hidden shadow-lg h-full min-h-96">
                 <InteractiveMap />
                 
                 {/* Map Overlay */}
