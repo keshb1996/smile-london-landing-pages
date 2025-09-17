@@ -2,7 +2,7 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 
 const Header = () => {
   return (
-    <header className="bg-black text-white sticky top-0 z-50">
+    <header className="bg-black text-white sticky top-0 z-50" role="banner">
       <div className="container mx-auto px-4 py-6">
         <div className="flex items-center justify-center md:justify-between">
           {/* Logo and location */}

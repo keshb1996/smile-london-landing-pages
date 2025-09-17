@@ -10,6 +10,7 @@ const Footer = () => {
           ? 'animate-fade-up' 
           : 'opacity-0 translate-y-[30px]'
       }`}
+      role="contentinfo"
     >
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-start">

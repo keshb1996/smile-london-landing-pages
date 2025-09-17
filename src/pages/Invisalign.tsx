@@ -25,10 +25,11 @@ const Invisalign = () => {
   // Ensure page loads at the top, especially important for mobile
   useEffect(() => {
     window.scrollTo(0, 0);
-    // Set page title for SEO
+    
+    // Set page title and meta tags for SEO
     document.title = "Invisalign London | Clear Aligners Treatment | Smile London";
     
-    // Set meta description
+    // Meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', 'Expert Invisalign treatment in London. Clear, removable aligners for a perfect smile. FREE consultation worth £150. Harley Street clinic.');
@@ -37,6 +38,37 @@ const Invisalign = () => {
       newMetaDescription.name = 'description';
       newMetaDescription.content = 'Expert Invisalign treatment in London. Clear, removable aligners for a perfect smile. FREE consultation worth £150. Harley Street clinic.';
       document.head.appendChild(newMetaDescription);
+    }
+    
+    // Robots meta tag
+    const robotsMeta = document.querySelector('meta[name="robots"]') || document.createElement('meta');
+    robotsMeta.setAttribute('name', 'robots');
+    robotsMeta.setAttribute('content', 'noindex, nofollow, noarchive');
+    if (!document.querySelector('meta[name="robots"]')) {
+      document.head.appendChild(robotsMeta);
+    }
+    
+    // Canonical URL
+    const canonicalLink = document.querySelector('link[rel="canonical"]') || document.createElement('link');
+    canonicalLink.setAttribute('rel', 'canonical');
+    canonicalLink.setAttribute('href', 'https://smilelondon.co.uk/invisalign');
+    if (!document.querySelector('link[rel="canonical"]')) {
+      document.head.appendChild(canonicalLink);
+    }
+    
+    // Open Graph tags
+    const ogTitle = document.querySelector('meta[property="og:title"]') || document.createElement('meta');
+    ogTitle.setAttribute('property', 'og:title');
+    ogTitle.setAttribute('content', 'Invisalign London | Clear Aligners Treatment | Smile London');
+    if (!document.querySelector('meta[property="og:title"]')) {
+      document.head.appendChild(ogTitle);
+    }
+    
+    const ogUrl = document.querySelector('meta[property="og:url"]') || document.createElement('meta');
+    ogUrl.setAttribute('property', 'og:url');
+    ogUrl.setAttribute('content', 'https://smilelondon.co.uk/invisalign');
+    if (!document.querySelector('meta[property="og:url"]')) {
+      document.head.appendChild(ogUrl);
     }
     
     const timer = setTimeout(() => {
@@ -49,9 +81,10 @@ const Invisalign = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <MobileHeroImage />
-      <HeroSection />
-      <ConsultationIncludes />
+      <main id="main-content">
+        <MobileHeroImage />
+        <HeroSection />
+        <ConsultationIncludes />
       
       {/* Consultation Form Section */}
       <section 
@@ -87,6 +120,7 @@ const Invisalign = () => {
       <FAQSection />
       <FinanceFAQ />
       <ContactInfo />
+      </main>
       <Footer />
     </div>
   );

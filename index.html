@@ -3,29 +3,153 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO & Crawler Control -->
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="bingbot" content="noindex, nofollow">
+    
     <title>Smile London | Cosmetic and Aesthetic Specialists | Harley Street, Marylebone</title>
     <meta name="description" content="Transform your smile with Invisalign at Smile London. Clear, comfortable teeth straightening by certified specialists. Book your expert consultation today!">
-    <meta name="author" content="Elite Dental London" />
-    <meta name="keywords" content="Invisalign London, clear braces, teeth straightening, dental treatment, orthodontics, smile makeover">
+    <meta name="author" content="Smile London" />
+    <meta name="keywords" content="Invisalign London, clear braces, teeth straightening, dental treatment, orthodontics, smile makeover, All-on-4, dental implants">
     
-    <!-- Poppins Font -->
+    <!-- Canonical URLs -->
+    <link rel="canonical" href="https://smilelondon.co.uk/" />
+    
+    <!-- Prerender hints for performance -->
+    <link rel="prerender" href="/invisalign" />
+    <link rel="prerender" href="/all-on-4" />
+    
+    <!-- Performance optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <meta property="og:title" content="Elite Dental London | Invisalign Clear Teeth Straightening" />
-    <meta property="og:description" content="Professional Invisalign treatment in London's Harley Street. Clear, comfortable aligners from certified specialists. Free consultation available." />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="Smile London | Premium Dental Care in Harley Street" />
+    <meta property="og:description" content="Professional Invisalign and All-on-4 treatments in London's Harley Street. Clear aligners and dental implants from certified specialists." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/hero-invisalign.jpg" />
+    <meta property="og:url" content="https://smilelondon.co.uk/" />
+    <meta property="og:image" content="https://smilelondon.co.uk/hero-invisalign.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Smile London" />
+    <meta property="og:locale" content="en_GB" />
 
+    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Elite Dental London | Invisalign Specialists" />
-    <meta name="twitter:description" content="Transform your smile with clear Invisalign aligners. Professional treatment in London's premier dental clinic." />
-    <meta name="twitter:image" content="/hero-invisalign.jpg" />
+    <meta name="twitter:title" content="Smile London | Premium Dental Care" />
+    <meta name="twitter:description" content="Transform your smile with clear Invisalign aligners and All-on-4 implants. Professional treatment in London's premier dental clinic." />
+    <meta name="twitter:image" content="https://smilelondon.co.uk/hero-invisalign.jpg" />
+    <meta name="twitter:site" content="@smilelondon" />
+    
+    <!-- Structured Data for Medical Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Dentist",
+      "name": "Smile London",
+      "image": "https://smilelondon.co.uk/hero-invisalign.jpg",
+      "description": "Premium cosmetic dental practice specializing in Invisalign and All-on-4 treatments in London's Harley Street.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "38 Queen Anne Street",
+        "addressLocality": "Marylebone",
+        "addressRegion": "London",
+        "postalCode": "W1G 8HZ",
+        "addressCountry": "GB"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "51.5174",
+        "longitude": "-0.1469"
+      },
+      "telephone": "+442045401566",
+      "email": "info@smilelondon.co.uk",
+      "url": "https://smilelondon.co.uk",
+      "openingHours": ["Mo-Sa 09:00-18:00"],
+      "priceRange": "£££",
+      "medicalSpecialty": ["Cosmetic Dentistry", "Orthodontics", "Dental Implants"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Dental Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "MedicalProcedure",
+              "name": "Invisalign Treatment",
+              "description": "Clear aligner orthodontic treatment"
+            }
+          },
+          {
+            "@type": "Offer", 
+            "itemOffered": {
+              "@type": "MedicalProcedure",
+              "name": "All-on-4 Dental Implants",
+              "description": "Full mouth restoration with four dental implants"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+    
     <link rel="icon" type="image/png" href="/favicon.png">
 </head>
 
   <body>
+    <!-- Skip navigation for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 bg-primary text-primary-foreground px-4 py-2 z-50">
+      Skip to main content
+    </a>
+    
+    <!-- Fallback content for crawlers and no-JS users -->
+    <noscript>
+      <header>
+        <h1>Smile London - Premium Dental Care in Harley Street</h1>
+        <p>Contact: 020 4540 1566 | info@smilelondon.co.uk</p>
+        <p>Address: 38 Queen Anne Street, Marylebone, London W1G 8HZ</p>
+      </header>
+      <main>
+        <section>
+          <h2>Invisalign Clear Aligners</h2>
+          <p>Transform your smile with virtually invisible Invisalign aligners. Professional treatment from certified specialists in London's prestigious Harley Street.</p>
+          <ul>
+            <li>Clear, removable aligners</li>
+            <li>Comfortable treatment process</li>
+            <li>Free consultation worth £150</li>
+            <li>Certified Invisalign providers</li>
+          </ul>
+        </section>
+        <section>
+          <h2>All-on-4 Dental Implants</h2>
+          <p>Complete smile transformation with All-on-4 dental implants. Full mouth restoration using just four strategically placed implants.</p>
+          <ul>
+            <li>Same-day teeth replacement</li>
+            <li>Permanent solution</li>
+            <li>Natural-looking results</li>
+            <li>Advanced 3D planning</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Why Choose Smile London</h2>
+          <ul>
+            <li>Located in prestigious Harley Street</li>
+            <li>Certified dental specialists</li>
+            <li>State-of-the-art technology</li>
+            <li>Comprehensive aftercare</li>
+            <li>Flexible payment options</li>
+          </ul>
+        </section>
+      </main>
+      <footer>
+        <p>&copy; 2024 Smile London. All rights reserved.</p>
+      </footer>
+    </noscript>
+    
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
