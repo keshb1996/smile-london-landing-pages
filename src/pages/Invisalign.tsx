@@ -3,7 +3,7 @@ import Header from '@/components/Header';
 import MobileHeroImage from '@/components/MobileHeroImage';
 import HeroSection from '@/components/HeroSection';
 import ConsultationIncludes from '@/components/ConsultationIncludes';
-import ConsultationForm from '@/components/ConsultationForm';
+import InvisalignConsultationForm from '@/components/InvisalignConsultationForm';
 import InvisalignBenefits from '@/components/InvisalignBenefits';
 import PromotionalBanner from '@/components/PromotionalBanner';
 import WhyChooseUs from '@/components/WhyChooseUs';
@@ -52,27 +52,7 @@ const Invisalign = () => {
       <MobileHeroImage />
       <HeroSection />
       <ConsultationIncludes />
-      
-      {/* Consultation Form Section */}
-      <section 
-        ref={consultationFormRef}
-        className={`bg-cover bg-center bg-no-repeat relative min-h-[600px] md:bg-[url('/lovable-uploads/66625a79-01c3-4a44-8581-efd2809ba38c.png')] bg-[url('/lovable-uploads/20b5cbf2-8d51-4d9b-aaea-63c02baa661c.png')] ${
-          consultationFormVisible 
-            ? 'animate-fade-up' 
-            : 'opacity-0 translate-y-[30px]'
-        }`}
-      >
-        <div className="dental-section">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <div className="bg-white/60 p-8 rounded-lg">
-              <ConsultationForm />
-            </div>
-            <div className="hidden lg:block">
-              {/* Empty space to show background image */}
-            </div>
-          </div>
-        </div>
-      </section>
+      <InvisalignConsultationForm />
       
       <InvisalignBenefits />
       <PromotionalBanner />

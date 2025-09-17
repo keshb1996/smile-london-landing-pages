@@ -6,7 +6,7 @@ import ConsultationForm from './ConsultationForm';
 import InteractiveMap from './InteractiveMap';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
-const AllOnFourConsultationForm = () => {
+const InvisalignConsultationForm = () => {
   const { ref: goldSectionRef, isVisible: goldSectionVisible } = useScrollAnimation();
   const { ref: clinicSectionRef, isVisible: clinicSectionVisible } = useScrollAnimation();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -14,8 +14,8 @@ const AllOnFourConsultationForm = () => {
   const benefits = [
     "Harley Street Centre of Excellence",
     "World-Renowned Dentists", 
-    "5 year guarantee",
-    "FREE X-ray",
+    "Clear, removable aligners",
+    "FREE consultation & scan",
     "0% interest-free finance available"
   ];
 
@@ -63,10 +63,10 @@ const AllOnFourConsultationForm = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="text-dental-black">
               <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
-                Book Your Expert Consultation Today
+                Book Your Expert Invisalign Consultation
               </h2>
               <p className="text-xl mb-8 opacity-90">
-                Take the first step towards your perfect smile. Our expert team will assess your needs and create a personalised treatment plan just for you.
+                Discover if Invisalign is right for you. Our expert team will assess your teeth and create a personalized clear aligner treatment plan.
               </p>
               
               <div className="space-y-4 mb-8">
@@ -83,9 +83,9 @@ const AllOnFourConsultationForm = () => {
             
             <div className="bg-white rounded-2xl p-8 shadow-dental-lg">
               <ConsultationForm 
-                title="Book Your Expert Consultation" 
+                title="Book Your Invisalign Consultation" 
                 subtitle="Normally £150 - Limited time offer"
-                treatmentType="All-on-4"
+                treatmentType="Invisalign"
               />
             </div>
           </div>
@@ -170,14 +170,14 @@ const AllOnFourConsultationForm = () => {
               <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                 <DialogTrigger asChild>
                   <Button size="lg" className="w-full">
-                    Book Your Consultation
+                    Book Your Invisalign Consultation
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-md">
                   <ConsultationForm 
                     title="Book Your Consultation" 
-                    subtitle="Free initial consultation worth £150"
-                    treatmentType="All-on-4"
+                    subtitle="Free Invisalign consultation worth £150"
+                    treatmentType="Invisalign"
                   />
                 </DialogContent>
               </Dialog>
@@ -208,4 +208,4 @@ const AllOnFourConsultationForm = () => {
   );
 };
 
-export default AllOnFourConsultationForm;
+export default InvisalignConsultationForm;

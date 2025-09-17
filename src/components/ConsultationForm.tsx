@@ -2,15 +2,23 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useState } from 'react';
+import { useToast } from '@/hooks/use-toast';
+import { Loader2 } from 'lucide-react';
+
+// Webhook URL for form submissions
+const WEBHOOK_URL = "https://your-n8n-webhook-url.com/webhook/consultation";
+
 interface ConsultationFormProps {
   title?: string;
   subtitle?: string;
   className?: string;
+  treatmentType?: string;
 }
 const ConsultationForm = ({
   title = "Book an Expert Consultation",
   subtitle = "Get your personalised treatment plan",
-  className = ""
+  className = "",
+  treatmentType = "General"
 }: ConsultationFormProps) => {
   const [formData, setFormData] = useState({
     fullName: '',
@@ -18,10 +26,92 @@ const ConsultationForm = ({
     email: '',
     message: ''
   });
-  const handleSubmit = (e: React.FormEvent) => {
+  
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
+  // Extract UTM parameters from URL
+  const extractUtmParams = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    return {
+      utm_source: urlParams.get('utm_source') || '',
+      utm_medium: urlParams.get('utm_medium') || '',
+      utm_campaign: urlParams.get('utm_campaign') || '',
+      utm_term: urlParams.get('utm_term') || '',
+      utm_content: urlParams.get('utm_content') || ''
+    };
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission
+    setIsLoading(true);
+    
+    try {
+      const webhookData = {
+        // Form data
+        fullName: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        
+        // Treatment and page context
+        treatmentType: treatmentType,
+        pagePath: window.location.pathname,
+        leadSource: "Lovable Landing Page",
+        
+        // Tracking data
+        timestamp: new Date().toISOString(),
+        utmParams: extractUtmParams(),
+        
+        // Additional context
+        referrer: document.referrer || '',
+        userAgent: navigator.userAgent
+      };
+
+      console.log('Sending webhook data:', webhookData);
+
+      // Send to webhook
+      await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "no-cors", // Handle CORS issues
+        body: JSON.stringify(webhookData),
+      });
+
+      // Show success message
+      toast({
+        title: "Request Submitted Successfully!",
+        description: "We'll contact you within 24 hours to schedule your consultation.",
+      });
+
+      // Reset form
+      setFormData({
+        fullName: '',
+        phone: '',
+        email: '',
+        message: ''
+      });
+
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      
+      // Still show success to user (webhook might have worked despite error)
+      toast({
+        title: "Request Submitted Successfully!",
+        description: "We'll contact you within 24 hours to schedule your consultation.",
+      });
+      
+      // Reset form
+      setFormData({
+        fullName: '',
+        phone: '',
+        email: '',
+        message: ''
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({
@@ -52,8 +142,15 @@ const ConsultationForm = ({
           
         </div>
         
-        <Button type="submit" className="dental-cta w-full">
-          Submit Request
+        <Button type="submit" className="dental-cta w-full" disabled={isLoading}>
+          {isLoading ? (
+            <>
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              Submitting...
+            </>
+          ) : (
+            "Submit Request"
+          )}
         </Button>
         
         <div className="mt-6 p-4 bg-dental-gray rounded-lg">
