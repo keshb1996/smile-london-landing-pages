@@ -33,13 +33,13 @@ const AllOnFourPricing = () => {
                 
                 <div className="space-y-4">
                   <div>
-                    <div className="text-sm opacity-75 line-through">Regular Price: £18,000</div>
-                    <div className="text-5xl font-bold mb-2">£12,995</div>
+                    <div className="text-sm opacity-75 line-through">Regular Price: £12,000</div>
+                    <div className="text-5xl font-bold mb-2">£9,000</div>
                     <div className="text-lg opacity-90">per arch</div>
                   </div>
                   
                   <div className="bg-white/20 rounded-lg p-4">
-                    <div className="text-2xl font-bold">Save £5,005</div>
+                    <div className="text-2xl font-bold">Save £3,000</div>
                     <div className="text-sm opacity-75">Limited time offer</div>
                   </div>
                 </div>
@@ -49,12 +49,12 @@ const AllOnFourPricing = () => {
                 <div className="text-lg font-semibold">Tabeo 0% Finance Options:</div>
                 <div className="space-y-2">
                   <div className="bg-white/10 rounded-lg p-3">
-                    <div className="font-bold">From £237/month</div>
-                    <div className="text-sm opacity-75">0% APR • 36 months</div>
+                    <div className="font-bold">From £675/month</div>
+                    <div className="text-sm opacity-75">0% APR • 12 months</div>
                   </div>
                   <div className="bg-white/10 rounded-lg p-3">
-                    <div className="font-bold">From £171/month</div>
-                    <div className="text-sm opacity-75">Extended terms • 60 months</div>
+                    <div className="font-bold">From £250/month</div>
+                    <div className="text-sm opacity-75">Extended terms available</div>
                   </div>
                 </div>
               </div>
