@@ -23,7 +23,7 @@ const AllOnFourBeforeAfter = () => {
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             See the incredible life-changing results our patients have achieved with All-on-4 dental implants. 
-            These authentic transformations showcase the power of full-mouth restoration in just one day.
+            These transformations showcase the power of full-mouth restoration in just one day.
           </p>
         </div>
         
