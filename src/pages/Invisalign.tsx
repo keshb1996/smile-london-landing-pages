@@ -14,7 +14,7 @@ import GoogleReviews from '@/components/GoogleReviews';
 import BeforeAfterGallery from '@/components/BeforeAfterGallery';
 import DentalJourney from '@/components/DentalJourney';
 import FAQSection from '@/components/FAQSection';
-import FinanceFAQ from '@/components/FinanceFAQ';
+
 import FinalCTA from '@/components/FinalCTA';
 import ContactInfo from '@/components/ContactInfo';
 import Footer from '@/components/Footer';
@@ -65,7 +65,7 @@ const Invisalign = () => {
       
       <DentalJourney />
       <FAQSection />
-      <FinanceFAQ />
+      
       <ContactInfo />
       <Footer />
     </div>
