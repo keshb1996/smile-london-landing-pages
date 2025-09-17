@@ -1,6 +1,5 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
 import { useForm } from 'react-hook-form';
@@ -22,7 +21,6 @@ const formSchema = z.object({
   fullName: z.string().min(2, "Full name must be at least 2 characters"),
   phone: z.string().min(10, "Please enter a valid phone number"),
   email: z.string().email("Please enter a valid email address"),
-  message: z.string().optional(),
 });
 
 interface ConsultationFormProps {
@@ -45,7 +43,6 @@ const ConsultationForm = ({
       fullName: '',
       phone: '',
       email: '',
-      message: '',
     },
   });
   // Extract UTM parameters from URL
@@ -67,7 +64,6 @@ const ConsultationForm = ({
         fullName: values.fullName,
         email: values.email,
         phone: values.phone,
-        message: values.message || '',
         
         // Treatment and page context
         treatmentType: treatmentType,
@@ -158,23 +154,6 @@ const ConsultationForm = ({
               <FormItem>
                 <FormControl>
                   <Input type="email" placeholder="Email Address" className="dental-form-input" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          
-          <FormField
-            control={form.control}
-            name="message"
-            render={({ field }) => (
-              <FormItem>
-                <FormControl>
-                  <Textarea 
-                    placeholder="Tell us about your dental concerns or any questions you have..."
-                    className="dental-form-input min-h-[100px]"
-                    {...field}
-                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
