@@ -14,8 +14,6 @@ import {
 } from '@/components/ui/form';
 import { supabase } from '@/integrations/supabase/client';
 
-// Webhook URL for form submissions
-const WEBHOOK_URL = import.meta.env.VITE_WEBHOOK_URL || "https://your-n8n-webhook-url.com/webhook/consultation";
 
 // Form validation schema
 const formSchema = z.object({
@@ -72,7 +70,7 @@ const ConsultationForm = ({
         user_agent: navigator.userAgent
       };
 
-      // Save to Supabase first (primary storage)
+      // Save to Supabase (Supabase webhook will handle n8n notification)
       const { data: savedSubmission, error: supabaseError } = await supabase
         .from('form_submissions')
         .insert([submissionData])
@@ -85,34 +83,6 @@ const ConsultationForm = ({
       }
 
       console.log('Saved to Supabase:', savedSubmission);
-
-      // Send to webhook (secondary notification)
-      try {
-        const webhookData = {
-          ...submissionData,
-          submissionId: savedSubmission.id,
-          timestamp: savedSubmission.created_at
-        };
-
-        await fetch(WEBHOOK_URL, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          mode: "no-cors",
-          body: JSON.stringify(webhookData),
-        });
-
-        // Mark webhook as sent
-        await supabase
-          .from('form_submissions')
-          .update({ webhook_sent: true })
-          .eq('id', savedSubmission.id);
-
-      } catch (webhookError) {
-        console.error('Webhook error (non-critical):', webhookError);
-        // Don't throw - data is already saved in Supabase
-      }
 
       // Show success message
       toast({
