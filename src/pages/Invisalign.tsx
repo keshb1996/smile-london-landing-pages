@@ -7,7 +7,6 @@ import ConsultationForm from '@/components/ConsultationForm';
 import InvisalignBenefits from '@/components/InvisalignBenefits';
 import PromotionalBanner from '@/components/PromotionalBanner';
 import WhyChooseUs from '@/components/WhyChooseUs';
-import TabeoFinanceSection from '@/components/TabeoFinanceSection';
 import InvisalignInfo from '@/components/InvisalignInfo';
 import TestimonialSection from '@/components/TestimonialSection';
 import GoogleReviews from '@/components/GoogleReviews';
@@ -79,7 +78,6 @@ const Invisalign = () => {
       <PromotionalBanner />
       <BeforeAfterGallery />
       <WhyChooseUs />
-      <TabeoFinanceSection />
       <InvisalignInfo />
       <TestimonialSection />
       <GoogleReviews />
