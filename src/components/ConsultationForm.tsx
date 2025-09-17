@@ -1,12 +1,29 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from '@/components/ui/form';
 
 // Webhook URL for form submissions
-const WEBHOOK_URL = "https://your-n8n-webhook-url.com/webhook/consultation";
+const WEBHOOK_URL = import.meta.env.VITE_WEBHOOK_URL || "https://your-n8n-webhook-url.com/webhook/consultation";
+
+// Form validation schema
+const formSchema = z.object({
+  fullName: z.string().min(2, "Full name must be at least 2 characters"),
+  phone: z.string().min(10, "Please enter a valid phone number"),
+  email: z.string().email("Please enter a valid email address"),
+  message: z.string().optional(),
+});
 
 interface ConsultationFormProps {
   title?: string;
@@ -20,15 +37,17 @@ const ConsultationForm = ({
   className = "",
   treatmentType = "General"
 }: ConsultationFormProps) => {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    phone: '',
-    email: '',
-    message: ''
-  });
-  
-  const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
+  
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      fullName: '',
+      phone: '',
+      email: '',
+      message: '',
+    },
+  });
   // Extract UTM parameters from URL
   const extractUtmParams = () => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -41,17 +60,14 @@ const ConsultationForm = ({
     };
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-    
+  const handleSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       const webhookData = {
         // Form data
-        fullName: formData.fullName,
-        email: formData.email,
-        phone: formData.phone,
-        message: formData.message,
+        fullName: values.fullName,
+        email: values.email,
+        phone: values.phone,
+        message: values.message || '',
         
         // Treatment and page context
         treatmentType: treatmentType,
@@ -86,12 +102,7 @@ const ConsultationForm = ({
       });
 
       // Reset form
-      setFormData({
-        fullName: '',
-        phone: '',
-        email: '',
-        message: ''
-      });
+      form.reset();
 
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -103,21 +114,8 @@ const ConsultationForm = ({
       });
       
       // Reset form
-      setFormData({
-        fullName: '',
-        phone: '',
-        email: '',
-        message: ''
-      });
-    } finally {
-      setIsLoading(false);
+      form.reset();
     }
-  };
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
   };
   return <div className={`max-w-md mx-auto ${className}`}>
       <div className="text-center mb-4">
@@ -125,65 +123,107 @@ const ConsultationForm = ({
         
       </div>
       
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div>
-          <Input name="fullName" placeholder="Full Name" value={formData.fullName} onChange={handleChange} className="dental-form-input" required />
-        </div>
-        
-        <div>
-          <Input name="phone" type="tel" placeholder="Phone Number" value={formData.phone} onChange={handleChange} className="dental-form-input" required />
-        </div>
-        
-        <div>
-          <Input name="email" type="email" placeholder="Email Address" value={formData.email} onChange={handleChange} className="dental-form-input" required />
-        </div>
-        
-        <div>
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-6">
+          <FormField
+            control={form.control}
+            name="fullName"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Input placeholder="Full Name" className="dental-form-input" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
           
-        </div>
-        
-        <Button type="submit" className="dental-cta w-full" disabled={isLoading}>
-          {isLoading ? (
-            <>
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Submitting...
-            </>
-          ) : (
-            "Submit Request"
-          )}
-        </Button>
-        
-        <div className="mt-6 p-4 bg-dental-gray rounded-lg">
-          <h4 className="font-semibold mb-2">Flexible Payment Plans Available</h4>
-          <p className="text-sm text-muted-foreground mb-3">
-            Worried about cost? We offer 0% interest-free finance options through our partner Tabeo.
-          </p>
-          <a 
-            href="https://lead.tabeo.co.uk/smile-london/finance?utm_source=landing_page&utm_medium=consultation_form&utm_campaign=finance_check"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-6 py-2 border border-primary bg-transparent text-primary rounded-lg font-medium hover:bg-primary hover:text-primary-foreground transition-colors text-sm"
-          >
-            Check Your Eligibility
-          </a>
-          <p className="text-xs text-muted-foreground mt-2">
-            No impact on your credit score for eligibility check
-          </p>
-        </div>
-        
-        <p className="text-xs text-muted-foreground text-center">
-          By submitting this form, you agree to our privacy policy and consent to be contacted about our services.
-        </p>
-        
-        <div className="text-center mt-6">
-          <p className="text-sm text-muted-foreground mb-3">Or call us directly</p>
-          <Button variant="outline" className="w-full" asChild>
-            <a href="tel:02045401566">
-              Call Now: 020 4540 1566
-            </a>
+          <FormField
+            control={form.control}
+            name="phone"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Input type="tel" placeholder="Phone Number" className="dental-form-input" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Input type="email" placeholder="Email Address" className="dental-form-input" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          
+          <FormField
+            control={form.control}
+            name="message"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Textarea 
+                    placeholder="Tell us about your dental concerns or any questions you have..."
+                    className="dental-form-input min-h-[100px]"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          
+          <Button type="submit" className="dental-cta w-full" disabled={form.formState.isSubmitting}>
+            {form.formState.isSubmitting ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Submitting...
+              </>
+            ) : (
+              "Submit Request"
+            )}
           </Button>
-        </div>
-      </form>
+        </form>
+      </Form>
+        
+      <div className="mt-6 p-4 bg-dental-gray rounded-lg">
+        <h4 className="font-semibold mb-2">Flexible Payment Plans Available</h4>
+        <p className="text-sm text-muted-foreground mb-3">
+          Worried about cost? We offer 0% interest-free finance options through our partner Tabeo.
+        </p>
+        <a 
+          href="https://lead.tabeo.co.uk/smile-london/finance?utm_source=landing_page&utm_medium=consultation_form&utm_campaign=finance_check"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center px-6 py-2 border border-primary bg-transparent text-primary rounded-lg font-medium hover:bg-primary hover:text-primary-foreground transition-colors text-sm"
+        >
+          Check Your Eligibility
+        </a>
+        <p className="text-xs text-muted-foreground mt-2">
+          No impact on your credit score for eligibility check
+        </p>
+      </div>
+      
+      <p className="text-xs text-muted-foreground text-center">
+        By submitting this form, you agree to our privacy policy and consent to be contacted about our services.
+      </p>
+      
+      <div className="text-center mt-6">
+        <p className="text-sm text-muted-foreground mb-3">Or call us directly</p>
+        <Button variant="outline" className="w-full" asChild>
+          <a href="tel:02045401566">
+            Call Now: 020 4540 1566
+          </a>
+        </Button>
+      </div>
     </div>;
 };
 export default ConsultationForm;
