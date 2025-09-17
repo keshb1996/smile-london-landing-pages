@@ -6,13 +6,13 @@ const AllOnFourBeforeAfter = () => {
   } = useScrollAnimation();
   const transformations = [{
     image: "/before-after-transformation-1.png",
-    caption: "Complete smile transformation with All-on-4 implants"
+    caption: "Complete smile transformation"
   }, {
     image: "/before-after-transformation-2.png", 
-    caption: "Full mouth rehabilitation - Natural looking results"
+    caption: "Natural looking results"
   }, {
     image: "/before-after-transformation-3.png",
-    caption: "Advanced All-on-4 restoration - Restored function & aesthetics"
+    caption: "Restored function & aesthetics"
   }];
   return (
     <section ref={ref} className={`bg-white ${isVisible ? 'animate-fade-up' : 'opacity-0 translate-y-[30px]'}`}>
