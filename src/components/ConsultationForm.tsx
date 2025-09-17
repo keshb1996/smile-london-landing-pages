@@ -32,7 +32,7 @@ const ConsultationForm = ({
   title = "Book an Expert Consultation",
   subtitle = "Get your personalised treatment plan",
   className = "",
-  treatmentType = "General"
+  treatmentType
 }: ConsultationFormProps) => {
   const { toast } = useToast();
   
@@ -56,13 +56,21 @@ const ConsultationForm = ({
     };
   };
 
+  const inferTreatmentFromPath = (pathname: string) => {
+    const p = pathname.toLowerCase();
+    if (p.includes('invisalign')) return 'Invisalign';
+    if (p.includes('all-on-4') || p.includes('all-on-four') || p.includes('allon4')) return 'All-on-4';
+    return 'General';
+  };
+
   const handleSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
+      const effectiveTreatment = (treatmentType && treatmentType.trim()) ? treatmentType : inferTreatmentFromPath(window.location.pathname);
       const submissionData = {
         full_name: values.fullName,
         email: values.email,
         phone: values.phone,
-        treatment_type: treatmentType,
+        treatment_type: effectiveTreatment,
         page_path: window.location.pathname,
         lead_source: "Lovable Landing Page",
         utm_params: extractUtmParams(),
