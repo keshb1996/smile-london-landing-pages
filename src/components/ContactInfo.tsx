@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import ConsultationForm from './ConsultationForm';
-import InteractiveMap from './InteractiveMap';
+import SecureInteractiveMap from './SecureInteractiveMap';
 
 const ContactInfo = ({ treatmentType }: { treatmentType?: string }) => {
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -107,7 +107,7 @@ const ContactInfo = ({ treatmentType }: { treatmentType?: string }) => {
           {/* Map Placeholder */}
           <div className="relative">
             <div className="bg-dental-gray rounded-2xl overflow-hidden shadow-dental-lg h-full min-h-96">
-              <InteractiveMap />
+              <SecureInteractiveMap />
             </div>
             
             {/* Overlay with key location info */}

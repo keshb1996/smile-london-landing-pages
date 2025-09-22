@@ -44,16 +44,24 @@ const ConsultationForm = ({
       email: '',
     },
   });
-  // Extract UTM parameters from URL
+  // Extract UTM parameters from URL with safe window access
   const extractUtmParams = () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    return {
-      utm_source: urlParams.get('utm_source') || '',
-      utm_medium: urlParams.get('utm_medium') || '',
-      utm_campaign: urlParams.get('utm_campaign') || '',
-      utm_term: urlParams.get('utm_term') || '',
-      utm_content: urlParams.get('utm_content') || ''
-    };
+    try {
+      if (typeof window === 'undefined' || !window.location) {
+        return { utm_source: '', utm_medium: '', utm_campaign: '', utm_term: '', utm_content: '' };
+      }
+      const urlParams = new URLSearchParams(window.location.search);
+      return {
+        utm_source: urlParams.get('utm_source') || '',
+        utm_medium: urlParams.get('utm_medium') || '',
+        utm_campaign: urlParams.get('utm_campaign') || '',
+        utm_term: urlParams.get('utm_term') || '',
+        utm_content: urlParams.get('utm_content') || ''
+      };
+    } catch (error) {
+      console.warn('Failed to extract UTM parameters:', error);
+      return { utm_source: '', utm_medium: '', utm_campaign: '', utm_term: '', utm_content: '' };
+    }
   };
 
   const inferTreatmentFromPath = (pathname: string) => {
@@ -65,13 +73,14 @@ const ConsultationForm = ({
 
   const handleSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      const effectiveTreatment = (treatmentType && treatmentType.trim()) ? treatmentType : inferTreatmentFromPath(window.location.pathname);
+      const pathname = (typeof window !== 'undefined' && window.location) ? window.location.pathname : '/';
+      const effectiveTreatment = (treatmentType && treatmentType.trim()) ? treatmentType : inferTreatmentFromPath(pathname);
       const submissionData = {
         full_name: values.fullName,
         email: values.email,
         phone: values.phone,
         treatment_type: effectiveTreatment,
-        page_path: window.location.pathname,
+        page_path: pathname,
         lead_source: "Lovable Landing Page",
         utm_params: extractUtmParams(),
         referrer: document.referrer || '',

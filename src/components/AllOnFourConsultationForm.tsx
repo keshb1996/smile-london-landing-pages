@@ -3,7 +3,7 @@ import { Check, MapPin, Phone, Mail, Clock, Navigation } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import ConsultationForm from './ConsultationForm';
-import InteractiveMap from './InteractiveMap';
+import SecureInteractiveMap from './SecureInteractiveMap';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const AllOnFourConsultationForm = () => {
@@ -186,7 +186,7 @@ const AllOnFourConsultationForm = () => {
             {/* Right Column - Map */}
             <div className="relative">
               <div className="bg-muted rounded-2xl overflow-hidden shadow-lg h-full min-h-96">
-                <InteractiveMap />
+                <SecureInteractiveMap />
                 
                 {/* Map Overlay */}
                 <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg max-w-xs">
