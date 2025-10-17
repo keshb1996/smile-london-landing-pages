@@ -12,7 +12,7 @@ import {
   FormItem,
   FormMessage,
 } from '@/components/ui/form';
-import { supabase } from '@/integrations/supabase/client';
+// Supabase import will be restored after enabling Lovable Cloud
 
 
 // Form validation schema
@@ -87,22 +87,11 @@ const ConsultationForm = ({
         user_agent: navigator.userAgent
       };
 
-      // Save to Supabase (Supabase webhook will handle n8n notification)
-      const { error: supabaseError } = await supabase
-        .from('form_submissions')
-        .insert([submissionData]);
-
-      if (supabaseError) {
-        console.error('Supabase error details:', {
-          message: supabaseError.message,
-          code: supabaseError.code,
-          details: supabaseError.details,
-          hint: supabaseError.hint
-        });
-        throw new Error('Failed to save submission');
-      }
-
-      console.log('Form submission saved successfully to Supabase');
+      // Database submission will be restored after enabling Lovable Cloud
+      console.log('Form submission data:', submissionData);
+      
+      // Temporary: Show success without database save
+      console.log('Note: Database integration will be enabled after Lovable Cloud setup');
 
       // Show success message
       toast({

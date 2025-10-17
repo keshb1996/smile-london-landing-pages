@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { supabase } from '@/integrations/supabase/client';
+// Supabase import will be restored after enabling Lovable Cloud
 
 const SecureInteractiveMap = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
@@ -13,30 +13,10 @@ const SecureInteractiveMap = () => {
   // Clinic location coordinates (Harley Street area)
   const clinicLocation: [number, number] = [-0.1448, 51.5191];
 
-  // Fetch Mapbox token from Supabase Edge Function
+  // Map temporarily disabled during Cloud migration
   useEffect(() => {
-    const fetchMapboxToken = async () => {
-      try {
-        const { data, error } = await supabase.functions.invoke('get-mapbox-token');
-        
-        if (error) {
-          throw error;
-        }
-        
-        if (data?.token) {
-          setMapboxToken(data.token);
-        } else {
-          throw new Error('No token received');
-        }
-      } catch (err) {
-        console.error('Failed to fetch Mapbox token:', err);
-        setError('Map temporarily unavailable');
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchMapboxToken();
+    setError('Map temporarily unavailable during migration');
+    setIsLoading(false);
   }, []);
 
   const initializeMap = () => {
