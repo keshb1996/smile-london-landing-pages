@@ -5,21 +5,13 @@ import ConsultationForm from './ConsultationForm';
 const AllOnFourHero = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   return <section className="min-h-[75vh] md:min-h-screen relative flex items-center overflow-hidden">
-      {/* Gradient Background - Desktop & Tablet */}
-      <div className="absolute inset-0 w-full h-full hidden md:block bg-gradient-to-br from-slate-100 via-gray-50 to-slate-200">
+      {/* Background - All devices */}
+      <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-slate-100 via-gray-50 to-slate-200">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-slate-50/50 to-primary/5"></div>
       </div>
       
-      {/* Video Background - Mobile */}
-      <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover md:hidden">
-        <source src="/mobile-hero-video.mp4" type="video/mp4" />
-      </video>
-      
       {/* Transparent Overlay */}
-      <div className="absolute inset-0 bg-background/50 md:bg-background/50 md:backdrop-blur-sm"></div>
-      
-      {/* Mobile Dark Overlay */}
-      <div className="absolute inset-0 bg-black/60 md:hidden"></div>
+      <div className="absolute inset-0 bg-background/50 md:backdrop-blur-sm"></div>
       
       {/* Content */}
       <div className="py-4 md:py-20 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto relative z-10">
