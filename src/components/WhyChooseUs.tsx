@@ -4,8 +4,6 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import ConsultationForm from './ConsultationForm';
-import dentistImage from '@/assets/dentist-portrait.jpg';
-import clinicImage from '@/assets/clinic-interior.jpg';
 
 const WhyChooseUs = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -92,7 +90,7 @@ const WhyChooseUs = () => {
             
             <div className="text-center text-white">
               <div className="relative mb-6">
-                <img src={clinicImage} alt="Elite Dental modern clinic interior" className="rounded-2xl mx-auto w-64 h-64 object-cover shadow-dental-lg" />
+                <img src="/lovable-uploads/28609ed5-650c-4d6c-bc43-5ee4fabfc4e6.png" alt="Elite Dental modern clinic interior" className="rounded-2xl mx-auto w-64 h-64 object-cover shadow-dental-lg" />
               </div>
               <h3 className="text-xl font-semibold text-dental-gold mb-2">Advanced Technology</h3>
               <p className="text-gray-700 mb-3">State-of-the-Art Facility</p>
