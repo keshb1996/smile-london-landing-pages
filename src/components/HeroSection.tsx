@@ -3,12 +3,13 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { useState } from 'react';
 import ConsultationForm from './ConsultationForm';
+import MobileHeroImage from './MobileHeroImage';
 const HeroSection = ({ treatmentType }: { treatmentType?: string }) => {
   const [dialogOpen, setDialogOpen] = useState(false);
   const benefits = ["Harley Street Centre of Excellence", "World-Renowned Dentists", "5 year guarantee", "FREE X-ray", "0% interest-free finance available"];
   return <section className="relative overflow-hidden bg-white">
       {/* Video Background */}
-      <div className="absolute inset-0 w-full h-full">
+      <div className="absolute inset-0 w-full h-full hidden md:block">
         <video
           autoPlay
           muted
@@ -22,8 +23,10 @@ const HeroSection = ({ treatmentType }: { treatmentType?: string }) => {
         {/* Overlay for text readability */}
         <div className="absolute inset-0 bg-black/30"></div>
       </div>
-      {/* Mobile overlay for text readability */}
-      <div className="absolute inset-0 w-full h-full md:hidden bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
+      {/* Mobile hero video above content */}
+      <div className="block md:hidden">
+        <MobileHeroImage />
+      </div>
       
       <div className="dental-section pt-6 md:pt-8 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
