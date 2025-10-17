@@ -3,19 +3,18 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { useState } from 'react';
 import ConsultationForm from './ConsultationForm';
-import MobileHeroImage from './MobileHeroImage';
 const HeroSection = ({ treatmentType }: { treatmentType?: string }) => {
   const [dialogOpen, setDialogOpen] = useState(false);
   const benefits = ["Harley Street Centre of Excellence", "World-Renowned Dentists", "5 year guarantee", "FREE X-ray", "0% interest-free finance available"];
   return <section className="relative overflow-hidden bg-white">
       {/* Video Background */}
-      <div className="absolute inset-0 w-full h-full hidden md:block z-0 pointer-events-none">
+      <div className="absolute inset-0 w-full h-full">
         <video
           autoPlay
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           className="w-full h-full object-cover"
         >
           <source src="https://res.cloudinary.com/dvezevabk/video/upload/v1757686423/Invisalign_Landing_Page_Hero_Image_wzro4j.mp4" type="video/mp4" />
@@ -23,10 +22,8 @@ const HeroSection = ({ treatmentType }: { treatmentType?: string }) => {
         {/* Overlay for text readability */}
         <div className="absolute inset-0 bg-black/30"></div>
       </div>
-      {/* Mobile hero video above content */}
-      <div className="block md:hidden">
-        <MobileHeroImage />
-      </div>
+      {/* Mobile grey gradient background */}
+      <div className="absolute inset-0 w-full h-full md:hidden bg-gradient-to-b from-muted/90 via-muted/95 to-background/90"></div>
       
       <div className="dental-section pt-6 md:pt-8 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
