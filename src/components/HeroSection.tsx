@@ -22,8 +22,8 @@ const HeroSection = ({ treatmentType }: { treatmentType?: string }) => {
         {/* Overlay for text readability */}
         <div className="absolute inset-0 bg-black/30"></div>
       </div>
-      {/* Mobile grey gradient background */}
-      <div className="absolute inset-0 w-full h-full md:hidden bg-gradient-to-b from-muted/90 via-muted/95 to-background/90"></div>
+      {/* Mobile overlay for text readability */}
+      <div className="absolute inset-0 w-full h-full md:hidden bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
       
       <div className="dental-section pt-6 md:pt-8 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
