@@ -12,7 +12,7 @@ import {
   FormItem,
   FormMessage,
 } from '@/components/ui/form';
-import { supabase } from '@/integrations/supabase/client';
+// Supabase import removed - will be reconnected after enabling Lovable Cloud
 
 
 // Form validation schema
@@ -57,51 +57,22 @@ const ConsultationForm = ({
   };
 
   const handleSubmit = async (values: z.infer<typeof formSchema>) => {
-    try {
-      const submissionData = {
-        full_name: values.fullName,
-        email: values.email,
-        phone: values.phone,
-        treatment_type: treatmentType,
-        page_path: window.location.pathname,
-        lead_source: "Lovable Landing Page",
-        utm_params: extractUtmParams(),
-        referrer: document.referrer || '',
-        user_agent: navigator.userAgent
-      };
+    // TODO: Reconnect to Lovable Cloud database after remix
+    console.log('Form submission (temporarily disabled):', {
+      fullName: values.fullName,
+      email: values.email,
+      phone: values.phone,
+      treatmentType,
+      utmParams: extractUtmParams()
+    });
 
-      // Save to Supabase (Supabase webhook will handle n8n notification)
-      const { data: savedSubmission, error: supabaseError } = await supabase
-        .from('form_submissions')
-        .insert([submissionData])
-        .select()
-        .single();
+    toast({
+      title: "Form Temporarily Disabled",
+      description: "Please call us directly at 020 4540 1566 to book your consultation.",
+      variant: "default"
+    });
 
-      if (supabaseError) {
-        console.error('Supabase error:', supabaseError);
-        throw new Error('Failed to save submission');
-      }
-
-      console.log('Saved to Supabase:', savedSubmission);
-
-      // Show success message
-      toast({
-        title: "Request Submitted Successfully!",
-        description: "We'll contact you within 24 hours to schedule your consultation.",
-      });
-
-      // Reset form
-      form.reset();
-
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      
-      toast({
-        title: "Submission Error",
-        description: "Please try again or call us directly at 020 4540 1566.",
-        variant: "destructive"
-      });
-    }
+    form.reset();
   };
   return <div className={`max-w-md mx-auto ${className}`}>
       <div className="text-center mb-4">
