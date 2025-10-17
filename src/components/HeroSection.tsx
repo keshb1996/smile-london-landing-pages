@@ -9,13 +9,13 @@ const HeroSection = ({ treatmentType }: { treatmentType?: string }) => {
   const benefits = ["Harley Street Centre of Excellence", "World-Renowned Dentists", "5 year guarantee", "FREE X-ray", "0% interest-free finance available"];
   return <section className="relative overflow-hidden bg-white">
       {/* Video Background */}
-      <div className="absolute inset-0 w-full h-full hidden md:block">
+      <div className="absolute inset-0 w-full h-full hidden md:block z-0 pointer-events-none">
         <video
           autoPlay
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="auto"
           className="w-full h-full object-cover"
         >
           <source src="https://res.cloudinary.com/dvezevabk/video/upload/v1757686423/Invisalign_Landing_Page_Hero_Image_wzro4j.mp4" type="video/mp4" />
