@@ -23,7 +23,7 @@ const HeroSection = ({ treatmentType }: { treatmentType?: string }) => {
         <div className="absolute inset-0 bg-black/30"></div>
       </div>
       {/* Mobile grey gradient background */}
-      <div className="absolute inset-0 w-full h-full md:hidden bg-gradient-to-b from-muted/90 via-muted/95 to-background/90"></div>
+      <div className="absolute inset-0 w-full h-full md:hidden bg-gradient-to-b from-muted/40 via-muted/50 to-background/60"></div>
       
       <div className="dental-section pt-6 md:pt-8 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
