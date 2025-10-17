@@ -5,8 +5,8 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 const InteractiveMap = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
-  const [mapboxToken] = useState('pk.eyJ1Ijoia2VzaGI5NiIsImEiOiJjbWZmZ2FjdmQwZ212Mm1yOXF6dHRiMDNzIn0.YCLyo3ezwAe_OUor_Cltsw');
-  const [tokenEntered] = useState(true);
+  const [mapboxToken] = useState<string>('');
+  const tokenEntered = false;
 
   // Clinic location coordinates (Harley Street area)
   const clinicLocation: [number, number] = [-0.1448, 51.5191];
@@ -72,8 +72,22 @@ const InteractiveMap = () => {
 
   return (
     <div className="relative w-full h-full">
-      <div ref={mapContainer} className="absolute inset-0 rounded-2xl shadow-lg" />
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent to-background/5 rounded-2xl" />
+      {!mapboxToken ? (
+        <div className="flex flex-col items-start justify-center p-4 rounded-2xl border bg-background shadow-sm h-[320px]">
+          <p className="text-sm text-muted-foreground">Interactive map temporarily disabled.</p>
+          <div className="mt-2">
+            <p className="font-medium">Smile London</p>
+            <p className="text-sm text-muted-foreground">38 Queen Anne Street</p>
+            <p className="text-sm text-muted-foreground">Marylebone, London W1G 8HZ</p>
+            <p className="text-sm text-primary mt-1">2 min from Oxford Circus</p>
+          </div>
+        </div>
+      ) : (
+        <>
+          <div ref={mapContainer} className="absolute inset-0 rounded-2xl shadow-lg" />
+          <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent to-background/5 rounded-2xl" />
+        </>
+      )}
     </div>
   );
 };
