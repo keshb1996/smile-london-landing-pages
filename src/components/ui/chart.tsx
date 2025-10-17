@@ -58,13 +58,6 @@ const ChartContainer = React.forwardRef<
 });
 ChartContainer.displayName = "Chart";
 
-// Sanitize CSS values to prevent XSS
-const sanitizeCSSValue = (value: string): string => {
-  // Only allow valid CSS color values (hex, rgb, hsl, named colors)
-  const colorRegex = /^(#[0-9a-fA-F]{3,8}|rgb\([0-9\s,%]+\)|rgba\([0-9\s,%\.]+\)|hsl\([0-9\s,%]+\)|hsla\([0-9\s,%\.]+\)|[a-zA-Z]+)$/;
-  return colorRegex.test(value.trim()) ? value.trim() : '';
-};
-
 const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
   const colorConfig = Object.entries(config).filter(([_, config]) => config.theme || config.color);
 
@@ -72,38 +65,23 @@ const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
     return null;
   }
 
-  // Validate and sanitize the chart ID to prevent XSS
-  const sanitizedId = id.replace(/[^a-zA-Z0-9-_]/g, '');
-
-  const cssRules = Object.entries(THEMES)
-    .map(([theme, prefix]) => {
-      const sanitizedColorConfig = colorConfig
-        .map(([key, itemConfig]) => {
-          const color = itemConfig.theme?.[theme as keyof typeof itemConfig.theme] || itemConfig.color;
-          if (!color) return null;
-          
-          const sanitizedColor = sanitizeCSSValue(color);
-          if (!sanitizedColor) return null;
-          
-          const sanitizedKey = key.replace(/[^a-zA-Z0-9-_]/g, '');
-          return `  --color-${sanitizedKey}: ${sanitizedColor};`;
-        })
-        .filter(Boolean)
-        .join('\n');
-
-      return sanitizedColorConfig ? `${prefix} [data-chart="${sanitizedId}"] {\n${sanitizedColorConfig}\n}` : '';
-    })
-    .filter(Boolean)
-    .join('\n');
-
-  if (!cssRules) {
-    return null;
-  }
-
   return (
     <style
       dangerouslySetInnerHTML={{
-        __html: cssRules,
+        __html: Object.entries(THEMES)
+          .map(
+            ([theme, prefix]) => `
+${prefix} [data-chart=${id}] {
+${colorConfig
+  .map(([key, itemConfig]) => {
+    const color = itemConfig.theme?.[theme as keyof typeof itemConfig.theme] || itemConfig.color;
+    return color ? `  --color-${key}: ${color};` : null;
+  })
+  .join("\n")}
+}
+`,
+          )
+          .join("\n"),
       }}
     />
   );

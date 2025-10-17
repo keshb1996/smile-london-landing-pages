@@ -7,7 +7,7 @@ import ConsultationForm from './ConsultationForm';
 import dentistImage from '@/assets/dentist-portrait.jpg';
 import clinicImage from '@/assets/clinic-interior.jpg';
 
-const WhyChooseUs = ({ treatmentType }: { treatmentType?: string }) => {
+const WhyChooseUs = () => {
   const { ref, isVisible } = useScrollAnimation();
   const [dialogOpen, setDialogOpen] = useState(false);
   
@@ -111,7 +111,7 @@ const WhyChooseUs = ({ treatmentType }: { treatmentType?: string }) => {
                 </Button>
               </DialogTrigger>
               <DialogContent className="max-w-md bg-white">
-                <ConsultationForm treatmentType={treatmentType} />
+                <ConsultationForm />
               </DialogContent>
             </Dialog>
           </div>

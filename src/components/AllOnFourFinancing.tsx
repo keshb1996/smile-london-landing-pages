@@ -12,15 +12,15 @@ const AllOnFourFinancing = () => {
   const financingOptions = [{
     icon: CreditCard,
     title: "0% Interest Finance",
-    monthly: "From £675",
-    period: "12 months",
+    monthly: "From £237",
+    period: "36 months",
     features: ["0% APR - No interest charges", "Fixed monthly payments", "Instant online decision", "No early payment fees"],
     highlight: "Most Popular"
   }, {
     icon: Calculator,
     title: "Extended Payment Plans",
-    monthly: "From £250",
-    period: "Extended terms",
+    monthly: "From £171",
+    period: "60 months",
     features: ["Longer repayment terms", "Lower monthly payments", "Up to £25,000 available", "Flexible deposit options"],
     highlight: "Lowest Monthly"
   }, {

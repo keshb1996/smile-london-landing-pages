@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { useState } from 'react';
 import ConsultationForm from './ConsultationForm';
-const HeroSection = ({ treatmentType }: { treatmentType?: string }) => {
+const HeroSection = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
   const benefits = ["Harley Street Centre of Excellence", "World-Renowned Dentists", "5 year guarantee", "FREE X-ray", "0% interest-free finance available"];
   return <section className="relative overflow-hidden bg-white">
@@ -14,7 +14,7 @@ const HeroSection = ({ treatmentType }: { treatmentType?: string }) => {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           className="w-full h-full object-cover"
         >
           <source src="https://res.cloudinary.com/dvezevabk/video/upload/v1757686423/Invisalign_Landing_Page_Hero_Image_wzro4j.mp4" type="video/mp4" />
@@ -54,7 +54,7 @@ const HeroSection = ({ treatmentType }: { treatmentType?: string }) => {
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="max-w-md bg-white">
-                  <ConsultationForm treatmentType={treatmentType} />
+                  <ConsultationForm />
                 </DialogContent>
               </Dialog>
             </div>

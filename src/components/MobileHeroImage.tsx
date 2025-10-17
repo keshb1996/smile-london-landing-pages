@@ -6,7 +6,7 @@ const MobileHeroImage = () => {
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
         className="w-full h-auto object-cover"
       >
         <source src="https://res.cloudinary.com/dvezevabk/video/upload/v1757686423/Invisalign_Landing_Page_Hero_Image_wzro4j.mp4" type="video/mp4" />

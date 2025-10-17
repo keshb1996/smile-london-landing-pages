@@ -3,9 +3,9 @@ import { useState } from 'react';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import ConsultationForm from './ConsultationForm';
-import SecureInteractiveMap from './SecureInteractiveMap';
+import InteractiveMap from './InteractiveMap';
 
-const ContactInfo = ({ treatmentType }: { treatmentType?: string }) => {
+const ContactInfo = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
   const contactDetails = [
     {
@@ -17,7 +17,7 @@ const ContactInfo = ({ treatmentType }: { treatmentType?: string }) => {
     {
       icon: Phone,
       title: "Phone",
-      info: "020 4540 1566",
+      info: "020 7123 4567",
       extra: "Available 24/7 for emergencies"
     },
     {
@@ -29,8 +29,8 @@ const ContactInfo = ({ treatmentType }: { treatmentType?: string }) => {
     {
       icon: Navigation,
       title: "Transport",
-      info: "Bond Street, Oxford Circus, Regent's Park & Baker Street",
-      extra: "Central, Bakerloo, Victoria, Hammersmith & City, Central and Jubilee line"
+      info: "Oxford Circus Station (2 min walk)",
+      extra: "Central, Circle, Elizabeth, Northern lines"
     }
   ];
 
@@ -96,8 +96,8 @@ const ContactInfo = ({ treatmentType }: { treatmentType?: string }) => {
             <div className="bg-dental-gold/10 rounded-2xl p-8">
               <h3 className="text-xl font-semibold text-dental-black mb-4">Getting Here</h3>
               <div className="space-y-3 text-muted-foreground">
-                <p><strong>By Tube:</strong> Oxford Circus Station - 5 minutes walk</p>
-                <p><strong>By Bus:</strong> Routes 7, 94, 98, 113, 139, 159, 390, 88 and 453</p>
+                <p><strong>By Tube:</strong> Oxford Circus Station - 2 minutes walk</p>
+                <p><strong>By Bus:</strong> Routes 6, 7, 10, 25, 55, 98, 139, 189</p>
                 <p><strong>By Car:</strong> Limited street parking, public car parks nearby</p>
                 <p><strong>Accessibility:</strong> Wheelchair accessible with lift access</p>
               </div>
@@ -107,7 +107,7 @@ const ContactInfo = ({ treatmentType }: { treatmentType?: string }) => {
           {/* Map Placeholder */}
           <div className="relative">
             <div className="bg-dental-gray rounded-2xl overflow-hidden shadow-dental-lg h-full min-h-96">
-              <SecureInteractiveMap />
+              <InteractiveMap />
             </div>
             
             {/* Overlay with key location info */}
@@ -115,7 +115,7 @@ const ContactInfo = ({ treatmentType }: { treatmentType?: string }) => {
               <div className="text-sm">
                 <div className="font-semibold text-dental-black">Smile London</div>
                 <div className="text-muted-foreground">38 Queen Anne Street</div>
-                <div className="text-dental-gold font-medium">5 min from Oxford Circus</div>
+                <div className="text-dental-gold font-medium">2 min from Oxford Circus</div>
               </div>
             </div>
           </div>
@@ -130,7 +130,7 @@ const ContactInfo = ({ treatmentType }: { treatmentType?: string }) => {
               </Button>
             </DialogTrigger>
             <DialogContent className="max-w-md bg-white">
-              <ConsultationForm treatmentType={treatmentType} />
+              <ConsultationForm />
             </DialogContent>
           </Dialog>
         </div>

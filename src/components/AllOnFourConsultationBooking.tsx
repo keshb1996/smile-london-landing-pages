@@ -118,7 +118,7 @@ const AllOnFourConsultationBooking = () => {
             </div>
 
             <div className="bg-card rounded-2xl p-8 shadow-lg border">
-              <ConsultationForm title="Book Your FREE Consultation" subtitle="Normally £150 - Limited time offer" treatmentType="All-on-4" />
+              <ConsultationForm title="Book Your FREE Consultation" subtitle="Normally £150 - Limited time offer" />
             </div>
           </div>
         </div>

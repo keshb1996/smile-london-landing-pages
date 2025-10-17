@@ -12,7 +12,7 @@ import {
   FormItem,
   FormMessage,
 } from '@/components/ui/form';
-// Supabase import will be restored after enabling Lovable Cloud
+import { supabase } from '@/integrations/supabase/client';
 
 
 // Form validation schema
@@ -32,7 +32,7 @@ const ConsultationForm = ({
   title = "Book an Expert Consultation",
   subtitle = "Get your personalised treatment plan",
   className = "",
-  treatmentType
+  treatmentType = "General"
 }: ConsultationFormProps) => {
   const { toast } = useToast();
   
@@ -44,54 +44,45 @@ const ConsultationForm = ({
       email: '',
     },
   });
-  // Extract UTM parameters from URL with safe window access
+  // Extract UTM parameters from URL
   const extractUtmParams = () => {
-    try {
-      if (typeof window === 'undefined' || !window.location) {
-        return { utm_source: '', utm_medium: '', utm_campaign: '', utm_term: '', utm_content: '' };
-      }
-      const urlParams = new URLSearchParams(window.location.search);
-      return {
-        utm_source: urlParams.get('utm_source') || '',
-        utm_medium: urlParams.get('utm_medium') || '',
-        utm_campaign: urlParams.get('utm_campaign') || '',
-        utm_term: urlParams.get('utm_term') || '',
-        utm_content: urlParams.get('utm_content') || ''
-      };
-    } catch (error) {
-      console.warn('Failed to extract UTM parameters:', error);
-      return { utm_source: '', utm_medium: '', utm_campaign: '', utm_term: '', utm_content: '' };
-    }
-  };
-
-  const inferTreatmentFromPath = (pathname: string) => {
-    const p = pathname.toLowerCase();
-    if (p.includes('invisalign')) return 'Invisalign';
-    if (p.includes('all-on-4') || p.includes('all-on-four') || p.includes('allon4')) return 'All-on-4';
-    return 'General';
+    const urlParams = new URLSearchParams(window.location.search);
+    return {
+      utm_source: urlParams.get('utm_source') || '',
+      utm_medium: urlParams.get('utm_medium') || '',
+      utm_campaign: urlParams.get('utm_campaign') || '',
+      utm_term: urlParams.get('utm_term') || '',
+      utm_content: urlParams.get('utm_content') || ''
+    };
   };
 
   const handleSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      const pathname = (typeof window !== 'undefined' && window.location) ? window.location.pathname : '/';
-      const effectiveTreatment = (treatmentType && treatmentType.trim()) ? treatmentType : inferTreatmentFromPath(pathname);
       const submissionData = {
         full_name: values.fullName,
         email: values.email,
         phone: values.phone,
-        treatment_type: effectiveTreatment,
-        page_path: pathname,
+        treatment_type: treatmentType,
+        page_path: window.location.pathname,
         lead_source: "Lovable Landing Page",
         utm_params: extractUtmParams(),
         referrer: document.referrer || '',
         user_agent: navigator.userAgent
       };
 
-      // Database submission will be restored after enabling Lovable Cloud
-      console.log('Form submission data:', submissionData);
-      
-      // Temporary: Show success without database save
-      console.log('Note: Database integration will be enabled after Lovable Cloud setup');
+      // Save to Supabase (Supabase webhook will handle n8n notification)
+      const { data: savedSubmission, error: supabaseError } = await supabase
+        .from('form_submissions')
+        .insert([submissionData])
+        .select()
+        .single();
+
+      if (supabaseError) {
+        console.error('Supabase error:', supabaseError);
+        throw new Error('Failed to save submission');
+      }
+
+      console.log('Saved to Supabase:', savedSubmission);
 
       // Show success message
       toast({

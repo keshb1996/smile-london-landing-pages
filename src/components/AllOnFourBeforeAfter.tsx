@@ -13,13 +13,14 @@ const AllOnFourBeforeAfter = () => {
     image: "/before-after-transformation-1.png",
     caption: "Complete smile transformation"
   }, {
-    image: "/before-after-transformation-2.png",
+    image: "/before-after-transformation-2.png", 
     caption: "Natural looking results"
   }, {
     image: "/before-after-transformation-3.png",
     caption: "Restored function & aesthetics"
   }];
-  return <section ref={ref} className={`bg-white ${isVisible ? 'animate-fade-up' : 'opacity-0 translate-y-[30px]'}`}>
+  return (
+    <section ref={ref} className={`bg-white ${isVisible ? 'animate-fade-up' : 'opacity-0 translate-y-[30px]'}`}>
       <div className="dental-section">
         <div className="text-center mb-16">
           <h2 className="dental-subheading text-dental-black mb-6">
@@ -32,16 +33,25 @@ const AllOnFourBeforeAfter = () => {
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {transformations.map((transformation, index) => <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-dental-lg hover:shadow-xl transition-all duration-300 group">
+          {transformations.map((transformation, index) => (
+            <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-dental-lg hover:shadow-xl transition-all duration-300 group">
               {/* Square Before/After Image */}
               <div className="relative">
                 <div className="absolute top-4 left-4 z-10">
                   <div className="flex flex-col gap-2">
-                    
-                    
+                    <span className="bg-red-500/90 text-white px-2 py-1 rounded text-xs font-medium backdrop-blur-sm">
+                      Before (Top)
+                    </span>
+                    <span className="bg-green-500/90 text-white px-2 py-1 rounded text-xs font-medium backdrop-blur-sm">
+                      After (Bottom)
+                    </span>
                   </div>
                 </div>
-                <img src={transformation.image} alt={`All-on-4 transformation: ${transformation.caption}`} className="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105" />
+                <img 
+                  src={transformation.image} 
+                  alt={`All-on-4 transformation: ${transformation.caption}`}
+                  className="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               
@@ -51,7 +61,8 @@ const AllOnFourBeforeAfter = () => {
                   {transformation.caption}
                 </p>
               </div>
-            </div>)}
+            </div>
+          ))}
         </div>
         
         <div className="text-center mt-12">
@@ -65,11 +76,15 @@ const AllOnFourBeforeAfter = () => {
               </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-md">
-              <ConsultationForm title="Book Your All-on-4 Consultation" subtitle="Free consultation worth £150" treatmentType="All-on-4" />
+              <ConsultationForm 
+                title="Book Your All-on-4 Consultation" 
+                subtitle="Free consultation worth £150"
+              />
             </DialogContent>
           </Dialog>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 export default AllOnFourBeforeAfter;

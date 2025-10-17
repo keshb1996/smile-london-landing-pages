@@ -4,14 +4,34 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import ConsultationForm from './ConsultationForm';
+
 const AllOnFourPricing = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const {
-    ref,
-    isVisible
-  } = useScrollAnimation();
-  const packageIncludes = ["Initial consultation and comprehensive examination", "Advanced 3D CBCT imaging and digital treatment planning", "Four premium titanium dental implants per arch", "Immediate temporary teeth fitted same day", "Final custom-made permanent prosthetic teeth", "All surgical procedures and materials", "Local anaesthesia and sedation options", "Post-operative care and follow-up appointments", "5-year comprehensive warranty on treatment", "Detailed aftercare instructions and support", "24/7 emergency contact during healing period", "Professional cleaning and maintenance guidance"];
-  return <section ref={ref} className={`bg-dental-gold text-dental-gold-foreground ${isVisible ? 'animate-fade-up' : 'opacity-0 translate-y-[30px]'}`}>
+  const { ref, isVisible } = useScrollAnimation();
+  const packageIncludes = [
+    "Initial consultation and comprehensive examination",
+    "Advanced 3D CBCT imaging and digital treatment planning",
+    "Four premium titanium dental implants per arch",
+    "Immediate temporary teeth fitted same day",
+    "Final custom-made permanent prosthetic teeth",
+    "All surgical procedures and materials",
+    "Local anaesthesia and sedation options",
+    "Post-operative care and follow-up appointments",
+    "5-year comprehensive warranty on treatment",
+    "Detailed aftercare instructions and support",
+    "24/7 emergency contact during healing period",
+    "Professional cleaning and maintenance guidance"
+  ];
+
+  return (
+    <section 
+      ref={ref}
+      className={`bg-dental-gold text-dental-gold-foreground ${
+        isVisible 
+          ? 'animate-fade-up' 
+          : 'opacity-0 translate-y-[30px]'
+      }`}
+    >
       <div className="dental-section">
         <div className="text-center mb-16">
           <h2 className="dental-heading mb-6 text-dental-gold-foreground">
@@ -33,13 +53,13 @@ const AllOnFourPricing = () => {
                 
                 <div className="space-y-4">
                   <div>
-                    <div className="text-sm opacity-75 line-through">Regular Price: £12,000</div>
-                    <div className="text-5xl font-bold mb-2">£9,000</div>
+                    <div className="text-sm opacity-75 line-through">Regular Price: £18,000</div>
+                    <div className="text-5xl font-bold mb-2">£12,995</div>
                     <div className="text-lg opacity-90">per arch</div>
                   </div>
                   
                   <div className="bg-white/20 rounded-lg p-4">
-                    <div className="text-2xl font-bold">Save £3,000</div>
+                    <div className="text-2xl font-bold">Save £5,005</div>
                     <div className="text-sm opacity-75">Limited time offer</div>
                   </div>
                 </div>
@@ -49,12 +69,12 @@ const AllOnFourPricing = () => {
                 <div className="text-lg font-semibold">Tabeo 0% Finance Options:</div>
                 <div className="space-y-2">
                   <div className="bg-white/10 rounded-lg p-3">
-                    <div className="font-bold">From £675/month</div>
-                    <div className="text-sm opacity-75">0% APR • 12 months</div>
+                    <div className="font-bold">From £237/month</div>
+                    <div className="text-sm opacity-75">0% APR • 36 months</div>
                   </div>
                   <div className="bg-white/10 rounded-lg p-3">
-                    <div className="font-bold">From £250/month</div>
-                    <div className="text-sm opacity-75">Extended terms available</div>
+                    <div className="font-bold">From £171/month</div>
+                    <div className="text-sm opacity-75">Extended terms • 60 months</div>
                   </div>
                 </div>
               </div>
@@ -66,7 +86,10 @@ const AllOnFourPricing = () => {
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-md">
-                  <ConsultationForm title="Book Free Consultation" subtitle="Free consultation worth £150" treatmentType="All-on-4" />
+                  <ConsultationForm 
+                    title="Book Free Consultation" 
+                    subtitle="Free consultation worth £150"
+                  />
                 </DialogContent>
               </Dialog>
               
@@ -80,12 +103,14 @@ const AllOnFourPricing = () => {
               <h3 className="text-3xl font-bold mb-8">Everything Included:</h3>
               
               <div className="space-y-4">
-                {packageIncludes.map((item, index) => <div key={index} className="flex items-start gap-3">
+                {packageIncludes.map((item, index) => (
+                  <div key={index} className="flex items-start gap-3">
                     <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check className="w-4 h-4 text-dental-gold-foreground" />
                     </div>
                     <span className="text-lg leading-relaxed">{item}</span>
-                  </div>)}
+                  </div>
+                ))}
               </div>
               
               <div className="mt-8 bg-white/20 backdrop-blur-sm rounded-xl p-6">
@@ -115,12 +140,15 @@ const AllOnFourPricing = () => {
                     </Button>
                   </DialogTrigger>
                   <DialogContent className="sm:max-w-md">
-                    <ConsultationForm title="Schedule Consultation" subtitle="Free consultation worth £150" treatmentType="All-on-4" />
+                    <ConsultationForm 
+                      title="Schedule Consultation" 
+                      subtitle="Free consultation worth £150"
+                    />
                   </DialogContent>
                 </Dialog>
                 
                 <div className="text-center">
-                  <p className="text-lg font-semibold">Call: 020 4540 1566</p>
+                  <p className="text-lg font-semibold">Call: 020 7183 4091</p>
                   <p className="text-sm opacity-75">Speak to our treatment coordinator</p>
                 </div>
               </div>
@@ -128,6 +156,8 @@ const AllOnFourPricing = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default AllOnFourPricing;

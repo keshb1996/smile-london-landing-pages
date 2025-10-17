@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import Header from '@/components/Header';
 import AllOnFourHero from '@/components/AllOnFourHero';
 import MobileTestimonialSection from '@/components/MobileTestimonialSection';
-import VideoTestimonialSection from '@/components/VideoTestimonialSection';
 import AllOnFourBenefits from '@/components/AllOnFourBenefits';
 import AllOnFourBeforeAfter from '@/components/AllOnFourBeforeAfter';
 import AllOnFourExplanation from '@/components/AllOnFourExplanation';
@@ -48,7 +47,6 @@ const AllOnFour = () => {
       <Header />
       <AllOnFourHero />
       <MobileTestimonialSection />
-      <VideoTestimonialSection />
       <AllOnFourConsultationBooking />
       <AllOnFourBenefits />
       <TabeoFinanceSection />

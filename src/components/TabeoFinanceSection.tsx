@@ -80,19 +80,19 @@ const TabeoFinanceSection = () => {
             <div className="space-y-4">
               <div className="flex justify-between items-center py-2 border-b border-gray-100">
                 <span>Treatment cost:</span>
-                <span className="font-semibold">£9,000</span>
+                <span className="font-semibold">£9,500</span>
               </div>
               <div className="flex justify-between items-center py-2 border-b border-gray-100">
                 <span>Deposit (10%):</span>
-                <span className="font-semibold">£900</span>
+                <span className="font-semibold">£950</span>
               </div>
               <div className="flex justify-between items-center py-2 border-b border-gray-100">
                 <span>Amount financed:</span>
-                <span className="font-semibold">£8,100</span>
+                <span className="font-semibold">£8,550</span>
               </div>
               <div className="flex justify-between items-center py-2 text-lg font-bold text-primary">
-                <span>12 monthly payments of:</span>
-                <span>£675</span>
+                <span>36 monthly payments of:</span>
+                <span>£237.50</span>
               </div>
               <div className="text-center text-sm text-muted-foreground">
                 0% APR Representative

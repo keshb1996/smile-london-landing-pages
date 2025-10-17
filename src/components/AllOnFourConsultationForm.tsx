@@ -3,7 +3,7 @@ import { Check, MapPin, Phone, Mail, Clock, Navigation } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import ConsultationForm from './ConsultationForm';
-import SecureInteractiveMap from './SecureInteractiveMap';
+import InteractiveMap from './InteractiveMap';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const AllOnFourConsultationForm = () => {
@@ -38,7 +38,7 @@ const AllOnFourConsultationForm = () => {
     {
       icon: Navigation,
       title: "Transport",
-      info: ["Oxford Circus Station", "(5 min walk)"]
+      info: ["Oxford Circus Station", "(2 min walk)"]
     }
   ];
 
@@ -155,10 +155,10 @@ const AllOnFourConsultationForm = () => {
                 <h3 className="font-semibold mb-4">Getting Here</h3>
                 <div className="space-y-3 text-sm text-muted-foreground">
                   <p>
-                    <strong>By Underground:</strong> Bond Street, Oxford Circus, Regent's Park & Baker Street (Central, Bakerloo, Victoria, Hammersmith & City, Central and Jubilee line) - 5 minute walk
+                    <strong>By Underground:</strong> Oxford Circus Station (Central, Northern, Bakerloo & Elizabeth lines) - 2 minute walk
                   </p>
                   <p>
-                    <strong>By Bus:</strong> Routes 7, 94, 98, 113, 139, 159, 390, 88 and 453
+                    <strong>By Bus:</strong> Multiple bus routes stop nearby on Oxford Street and Regent Street
                   </p>
                   <p>
                     <strong>By Car:</strong> Limited street parking available. Nearest car parks: Q-Park Oxford Street and NCP Cavendish Square
@@ -186,7 +186,7 @@ const AllOnFourConsultationForm = () => {
             {/* Right Column - Map */}
             <div className="relative">
               <div className="bg-muted rounded-2xl overflow-hidden shadow-lg h-full min-h-96">
-                <SecureInteractiveMap />
+                <InteractiveMap />
                 
                 {/* Map Overlay */}
                 <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg max-w-xs">
@@ -196,7 +196,7 @@ const AllOnFourConsultationForm = () => {
                     Marylebone, London W1G 8HZ
                   </p>
                   <p className="text-xs text-primary font-medium">
-                    5 minutes from Oxford Circus
+                    2 minutes from Oxford Circus
                   </p>
                 </div>
               </div>
